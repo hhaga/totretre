@@ -1,0 +1,17 @@
+var _user$project$Model$Model = function (a) {
+	return {kupong: a};
+};
+var _user$project$Model$B = {ctor: 'B'};
+var _user$project$Model$U = {ctor: 'U'};
+var _user$project$Model$H = {ctor: 'H'};
+var _user$project$Model$Utgangspunkt = function (a) {
+	return {ctor: 'Utgangspunkt', _0: a};
+};
+var _user$project$Model$Sikker = function (a) {
+	return {ctor: 'Sikker', _0: a};
+};
+var _user$project$Model$Heil = {ctor: 'Heil'};
+var _user$project$Model$HalvUtenUtg = {ctor: 'HalvUtenUtg'};
+var _user$project$Model$EnkelUtg = {ctor: 'EnkelUtg'};
+var _user$project$Model$GenerateKupong = {ctor: 'GenerateKupong'};
+var _user$project$Model$ClearKupong = {ctor: 'ClearKupong'};
