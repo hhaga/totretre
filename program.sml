@@ -25,7 +25,7 @@ structure ExtList =
 
 structure Show =
    struct
-      
+
       type 'a t = 'a -> string
 
       val int: int t = Int.toString
@@ -38,8 +38,8 @@ structure Show =
       val pair: 'a t * 'b t -> ('a * 'b) t =
        fn (showa,showb) => fn (a,b) => showa a ^ showb b
 
-       val markeringToString: markering -> string = 
-       fn H => "H" | U => "U" | B => "B"      
+       val markeringToString: markering -> string =
+       fn H => "H" | U => "U" | B => "B"
    end
 
 
@@ -81,17 +81,17 @@ fun markeringForKamp(utgangspunkt: markering, systemvalg: gardering) =
 		| HalvUtenUtg => List.filter (fn x => x <> utgangspunkt) [H,U,B]
 		| Heil => [H,U,B]
 
-fun produserKupong(tips: kampTips list, kupongSetup: kupongKamp list, kupong: kampkryss list): kampkryss list = 
-	case tips of 
+fun produserKupong(tips: kampTips list, kupongSetup: kupongKamp list, kupong: kampkryss list): kampkryss list =
+	case tips of
 		[] => kupong
 		| (i, Sikker(x)) :: rest => produserKupong(rest, kupongSetup, kupong @ [(i, markeringForKamp(x, EnkelUtg))])
-		| (i, Utgangspunkt(x)) :: rest => 
+		| (i, Utgangspunkt(x)) :: rest =>
 			case kupongSetup of
 				[] => kupong (* TODO throw Exception*)
 				| (j, markValg) :: tail => produserKupong(rest, tail, kupong @ [(j, markeringForKamp(x, markValg))])
 
 fun toTreTre(tips: kampTips list): kampkryss list list =
-	let 
+	let
 		val usikre = List.filter (fn (i, sik) => sik = Utgangspunkt(H) orelse sik = Utgangspunkt(U) orelse sik = Utgangspunkt(B)) tips
 		val usikreKampNr = List.map #1 usikre
 		fun tail_rec_kupong_setups(kupongUtgSetups: gardering list list, kupongNr: int, acc: kupongKamp list list) =
@@ -103,7 +103,7 @@ fun toTreTre(tips: kampTips list): kampkryss list list =
 				[] => kuponger
 				| head :: tail => tail_helper(tips, tail, produserKupong(tips, head, []) :: kuponger)
 
-	in 
+	in
 		tail_helper(tips, tail_rec_kupong_setups(toTreTreSetup, 1, []) , [])
 	end
 
@@ -140,7 +140,3 @@ printToOutStream ost blabla
 
 (* ,1(\l)  \n\n1$1 *)
 (* ,(\d)  \n$1 *)
-
-
-
-

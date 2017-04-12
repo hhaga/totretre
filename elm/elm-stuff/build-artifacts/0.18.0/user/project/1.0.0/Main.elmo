@@ -2,7 +2,136 @@ var _user$project$Main$init = {
 	kupong: {ctor: '[]'}
 };
 var _user$project$Main$view = function (model) {
-	return _elm_lang$html$Html$text('html');
+	var gameNumbers = {
+		ctor: '::',
+		_0: '1',
+		_1: {
+			ctor: '::',
+			_0: '2',
+			_1: {
+				ctor: '::',
+				_0: '3',
+				_1: {
+					ctor: '::',
+					_0: '4',
+					_1: {
+						ctor: '::',
+						_0: '5',
+						_1: {
+							ctor: '::',
+							_0: '6',
+							_1: {
+								ctor: '::',
+								_0: '7',
+								_1: {
+									ctor: '::',
+									_0: '8',
+									_1: {
+										ctor: '::',
+										_0: '9',
+										_1: {
+											ctor: '::',
+											_0: '10',
+											_1: {
+												ctor: '::',
+												_0: '11',
+												_1: {
+													ctor: '::',
+													_0: '12',
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	};
+	var rows = A2(
+		_elm_lang$core$List$map,
+		function (gameNumber) {
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('row'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('number'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(gameNumber),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('leftcell marking'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('H'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('middlecell marking'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('U'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('rightcell marking'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('B'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				});
+		},
+		gameNumbers);
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('rows'),
+			_1: {ctor: '[]'}
+		},
+		rows);
 };
 var _user$project$Main$update = F2(
 	function (msg, model) {
