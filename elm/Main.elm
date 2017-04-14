@@ -3,6 +3,7 @@ module Main exposing (..)
 import Model exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
+import Html.Events exposing (onClick)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -13,6 +14,9 @@ update msg model =
 
         GenerateKupong ->
             ( { kupong = [] }, Cmd.none )
+
+        Marking marking ->
+            ( { model | kupong = marking :: model.kupong }, Cmd.none )
 
 
 view : Model -> Html Msg
@@ -27,13 +31,21 @@ view model =
                     (\gameNumber ->
                         div [ class "row" ]
                             [ div [ class "number" ] [ text gameNumber ]
-                            , div [ class "leftcell marking" ] [ text "H" ]
-                            , div [ class "middlecell marking" ] [ text "U" ]
-                            , div [ class "rightcell marking" ] [ text "B" ]
+                            , input [ type_ "radio", onClick (Marking ( gameNumber, Sikker H )) ] []
+                            , input [ type_ "radio", onClick (Marking ( gameNumber, Sikker U )) ] []
+                            , input [ type_ "radio", onClick (Marking ( gameNumber, Sikker B )) ] []
                             ]
                     )
     in
-        div [ class "rows" ] rows
+        div [ class "rows" ]
+            [ div []
+                [ div [ class "number" ] [ text " " ]
+                , div [ class "leftcell marking" ] [ text "H" ]
+                , div [ class "middlecell marking" ] [ text "U" ]
+                , div [ class "rightcell marking" ] [ text "B" ]
+                ]
+            , div [] rows
+            ]
 
 
 init : Model

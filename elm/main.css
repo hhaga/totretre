@@ -1,3 +1,9 @@
 .marking {
   display: inline-block;
 }
+
+.number {
+  text-align: right;
+  display: inline-block;
+  width: 30px;
+}

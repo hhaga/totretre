@@ -19,7 +19,7 @@ type Gardering
 
 
 type alias KampTips =
-    Int Sikkerhet
+    ( String, Sikkerhet )
 
 
 type alias Model =
@@ -29,11 +29,12 @@ type alias Model =
 type Msg
     = ClearKupong
     | GenerateKupong
+    | Marking KampTips
 
 
 type alias KupongKamp =
-    Int Gardering
+    ( Int, Gardering )
 
 
 type alias Kampkryss =
-    List (Int Markering)
+    List ( Int, Markering )

@@ -13,5 +13,8 @@ var _user$project$Model$Sikker = function (a) {
 var _user$project$Model$Heil = {ctor: 'Heil'};
 var _user$project$Model$HalvUtenUtg = {ctor: 'HalvUtenUtg'};
 var _user$project$Model$EnkelUtg = {ctor: 'EnkelUtg'};
+var _user$project$Model$Marking = function (a) {
+	return {ctor: 'Marking', _0: a};
+};
 var _user$project$Model$GenerateKupong = {ctor: 'GenerateKupong'};
 var _user$project$Model$ClearKupong = {ctor: 'ClearKupong'};
