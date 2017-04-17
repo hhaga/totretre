@@ -8367,14 +8367,18 @@ var _user$project$Main$view = function (model) {
 								_0: _elm_lang$html$Html_Attributes$type_('radio'),
 								_1: {
 									ctor: '::',
-									_0: _elm_lang$html$Html_Events$onClick(
-										_user$project$Model$Marking(
-											{
-												ctor: '_Tuple2',
-												_0: gameNumber,
-												_1: _user$project$Model$Sikker(_user$project$Model$H)
-											})),
-									_1: {ctor: '[]'}
+									_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(
+											_user$project$Model$Marking(
+												{
+													ctor: '_Tuple2',
+													_0: gameNumber,
+													_1: _user$project$Model$Sikker(_user$project$Model$H)
+												})),
+										_1: {ctor: '[]'}
+									}
 								}
 							},
 							{ctor: '[]'}),
@@ -8387,14 +8391,18 @@ var _user$project$Main$view = function (model) {
 									_0: _elm_lang$html$Html_Attributes$type_('radio'),
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_user$project$Model$Marking(
-												{
-													ctor: '_Tuple2',
-													_0: gameNumber,
-													_1: _user$project$Model$Sikker(_user$project$Model$U)
-												})),
-										_1: {ctor: '[]'}
+										_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(
+												_user$project$Model$Marking(
+													{
+														ctor: '_Tuple2',
+														_0: gameNumber,
+														_1: _user$project$Model$Sikker(_user$project$Model$U)
+													})),
+											_1: {ctor: '[]'}
+										}
 									}
 								},
 								{ctor: '[]'}),
@@ -8407,14 +8415,18 @@ var _user$project$Main$view = function (model) {
 										_0: _elm_lang$html$Html_Attributes$type_('radio'),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html_Events$onClick(
-												_user$project$Model$Marking(
-													{
-														ctor: '_Tuple2',
-														_0: gameNumber,
-														_1: _user$project$Model$Sikker(_user$project$Model$B)
-													})),
-											_1: {ctor: '[]'}
+											_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Events$onClick(
+													_user$project$Model$Marking(
+														{
+															ctor: '_Tuple2',
+															_0: gameNumber,
+															_1: _user$project$Model$Sikker(_user$project$Model$B)
+														})),
+												_1: {ctor: '[]'}
+											}
 										}
 									},
 									{ctor: '[]'}),

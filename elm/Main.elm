@@ -31,9 +31,9 @@ view model =
                     (\gameNumber ->
                         div [ class "row" ]
                             [ div [ class "number" ] [ text gameNumber ]
-                            , input [ type_ "radio", onClick (Marking ( gameNumber, Sikker H )) ] []
-                            , input [ type_ "radio", onClick (Marking ( gameNumber, Sikker U )) ] []
-                            , input [ type_ "radio", onClick (Marking ( gameNumber, Sikker B )) ] []
+                            , input [ type_ "radio", name gameNumber, onClick (Marking ( gameNumber, Sikker H )) ] []
+                            , input [ type_ "radio", name gameNumber, onClick (Marking ( gameNumber, Sikker U )) ] []
+                            , input [ type_ "radio", name gameNumber, onClick (Marking ( gameNumber, Sikker B )) ] []
                             ]
                     )
     in
