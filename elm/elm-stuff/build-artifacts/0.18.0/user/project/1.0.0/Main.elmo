@@ -88,12 +88,8 @@ var _user$project$Main$view = function (model) {
 									_1: {
 										ctor: '::',
 										_0: _elm_lang$html$Html_Events$onClick(
-											_user$project$Model$Marking(
-												{
-													ctor: '_Tuple2',
-													_0: gameNumber,
-													_1: _user$project$Model$Sikker(_user$project$Model$H)
-												})),
+											_user$project$Model$HUBMarking(
+												{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H})),
 										_1: {ctor: '[]'}
 									}
 								}
@@ -112,12 +108,8 @@ var _user$project$Main$view = function (model) {
 										_1: {
 											ctor: '::',
 											_0: _elm_lang$html$Html_Events$onClick(
-												_user$project$Model$Marking(
-													{
-														ctor: '_Tuple2',
-														_0: gameNumber,
-														_1: _user$project$Model$Sikker(_user$project$Model$U)
-													})),
+												_user$project$Model$HUBMarking(
+													{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$U})),
 											_1: {ctor: '[]'}
 										}
 									}
@@ -136,18 +128,35 @@ var _user$project$Main$view = function (model) {
 											_1: {
 												ctor: '::',
 												_0: _elm_lang$html$Html_Events$onClick(
-													_user$project$Model$Marking(
-														{
-															ctor: '_Tuple2',
-															_0: gameNumber,
-															_1: _user$project$Model$Sikker(_user$project$Model$B)
-														})),
+													_user$project$Model$HUBMarking(
+														{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$B})),
 												_1: {ctor: '[]'}
 											}
 										}
 									},
 									{ctor: '[]'}),
-								_1: {ctor: '[]'}
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$input,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onClick(
+														_user$project$Model$SikkerhetMarking(
+															{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H})),
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					}
@@ -237,6 +246,58 @@ var _user$project$Main$view = function (model) {
 			}
 		});
 };
+var _user$project$Main$updateSikkerhet = F2(
+	function (kt, kupong) {
+		var kamptips = A2(
+			_elm_lang$core$List$filter,
+			function (k) {
+				return _elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
+			},
+			kupong);
+		var updatedKamptips = A2(
+			_elm_lang$core$List$map,
+			function (k) {
+				return _elm_lang$core$Native_Utils.update(
+					k,
+					{sik: kt.sik});
+			},
+			kamptips);
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			updatedKamptips,
+			A2(
+				_elm_lang$core$List$filter,
+				function (k) {
+					return !_elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
+				},
+				kupong));
+	});
+var _user$project$Main$updateHUB = F2(
+	function (kt, kupong) {
+		var kamptips = A2(
+			_elm_lang$core$List$filter,
+			function (k) {
+				return _elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
+			},
+			kupong);
+		var updatedKamptips = A2(
+			_elm_lang$core$List$map,
+			function (k) {
+				return _elm_lang$core$Native_Utils.update(
+					k,
+					{x: kt.x});
+			},
+			kamptips);
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			updatedKamptips,
+			A2(
+				_elm_lang$core$List$filter,
+				function (k) {
+					return !_elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
+				},
+				kupong));
+	});
 var _user$project$Main$update = F2(
 	function (msg, model) {
 		var _p0 = msg;
@@ -251,13 +312,23 @@ var _user$project$Main$update = F2(
 					},
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
+			case 'HUBMarking':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							kupong: A2(_user$project$Main$updateHUB, _p0._0, model.kupong)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
 			default:
 				return {
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
-							kupong: {ctor: '::', _0: _p0._0, _1: model.kupong}
+							kupong: A2(_user$project$Main$updateSikkerhet, _p0._0, model.kupong)
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};

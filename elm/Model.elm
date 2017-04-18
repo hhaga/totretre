@@ -8,8 +8,8 @@ type Markering
 
 
 type Sikkerhet
-    = Sikker Markering
-    | Utgangspunkt Markering
+    = Sikker
+    | Utgangspunkt
 
 
 type Gardering
@@ -19,7 +19,7 @@ type Gardering
 
 
 type alias KampTips =
-    ( String, Sikkerhet )
+    { nr : String, sik : Sikkerhet, x : Markering }
 
 
 type alias Model =
@@ -29,7 +29,8 @@ type alias Model =
 type Msg
     = ClearKupong
     | GenerateKupong
-    | Marking KampTips
+    | HUBMarking KampTips
+    | SikkerhetMarking KampTips
 
 
 type alias KupongKamp =

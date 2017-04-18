@@ -6,6 +6,31 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 
 
+--updateKupong Marking -> (List KampTips) -> (List KampTips)
+
+
+updateHUB kt kupong =
+    let
+        kamptips =
+            List.filter (\k -> k.nr == kt.nr) kupong
+
+        updatedKamptips =
+            List.map (\k -> { k | x = kt.x }) kamptips
+    in
+        updatedKamptips ++ (List.filter (\k -> k.nr /= kt.nr) kupong)
+
+
+updateSikkerhet kt kupong =
+    let
+        kamptips =
+            List.filter (\k -> k.nr == kt.nr) kupong
+
+        updatedKamptips =
+            List.map (\k -> { k | sik = kt.sik }) kamptips
+    in
+        updatedKamptips ++ (List.filter (\k -> k.nr /= kt.nr) kupong)
+
+
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
@@ -15,8 +40,11 @@ update msg model =
         GenerateKupong ->
             ( { kupong = [] }, Cmd.none )
 
-        Marking marking ->
-            ( { model | kupong = marking :: model.kupong }, Cmd.none )
+        HUBMarking kamptips ->
+            ( { model | kupong = updateHUB kamptips model.kupong }, Cmd.none )
+
+        SikkerhetMarking kamptips ->
+            ( { model | kupong = updateSikkerhet kamptips model.kupong }, Cmd.none )
 
 
 view : Model -> Html Msg
@@ -31,9 +59,10 @@ view model =
                     (\gameNumber ->
                         div [ class "row" ]
                             [ div [ class "number" ] [ text gameNumber ]
-                            , input [ type_ "radio", name gameNumber, onClick (Marking ( gameNumber, Sikker H )) ] []
-                            , input [ type_ "radio", name gameNumber, onClick (Marking ( gameNumber, Sikker U )) ] []
-                            , input [ type_ "radio", name gameNumber, onClick (Marking ( gameNumber, Sikker B )) ] []
+                            , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
+                            , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = U }) ] []
+                            , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = B }) ] []
+                            , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
                             ]
                     )
     in
