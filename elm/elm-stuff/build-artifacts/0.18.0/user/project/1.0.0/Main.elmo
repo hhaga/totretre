@@ -246,40 +246,30 @@ var _user$project$Main$view = function (model) {
 			}
 		});
 };
-var _user$project$Main$updateSikkerhet = F2(
-	function (kt, kupong) {
-		var kamptips = A2(
-			_elm_lang$core$List$filter,
-			function (k) {
-				return _elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
-			},
-			kupong);
-		var updatedKamptips = A2(
-			_elm_lang$core$List$map,
-			function (k) {
-				return _elm_lang$core$Native_Utils.update(
-					k,
-					{sik: kt.sik});
-			},
-			kamptips);
+var _user$project$Main$updateCurrentKamp = F3(
+	function (oldKampTips, updatedKamptips, kupong) {
 		return A2(
 			_elm_lang$core$Basics_ops['++'],
 			updatedKamptips,
 			A2(
 				_elm_lang$core$List$filter,
 				function (k) {
-					return !_elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
+					return !_elm_lang$core$Native_Utils.eq(k.nr, oldKampTips.nr);
 				},
 				kupong));
 	});
-var _user$project$Main$updateHUB = F2(
+var _user$project$Main$getCurrentKamp = F2(
 	function (kt, kupong) {
-		var kamptips = A2(
+		return A2(
 			_elm_lang$core$List$filter,
 			function (k) {
 				return _elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
 			},
 			kupong);
+	});
+var _user$project$Main$updateHUB = F2(
+	function (kt, kupong) {
+		var kamptips = A2(_user$project$Main$getCurrentKamp, kt, kupong);
 		var updatedKamptips = A2(
 			_elm_lang$core$List$map,
 			function (k) {
@@ -288,15 +278,20 @@ var _user$project$Main$updateHUB = F2(
 					{x: kt.x});
 			},
 			kamptips);
-		return A2(
-			_elm_lang$core$Basics_ops['++'],
-			updatedKamptips,
-			A2(
-				_elm_lang$core$List$filter,
-				function (k) {
-					return !_elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
-				},
-				kupong));
+		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
+	});
+var _user$project$Main$updateSikkerhet = F2(
+	function (kt, kupong) {
+		var kamptips = A2(_user$project$Main$getCurrentKamp, kt, kupong);
+		var updatedKamptips = A2(
+			_elm_lang$core$List$map,
+			function (k) {
+				return _elm_lang$core$Native_Utils.update(
+					k,
+					{sik: kt.sik});
+			},
+			kamptips);
+		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
 	});
 var _user$project$Main$update = F2(
 	function (msg, model) {

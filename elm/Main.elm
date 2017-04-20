@@ -6,29 +6,38 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 
 
---updateKupong Marking -> (List KampTips) -> (List KampTips)
+getCurrentKamp : KampTips -> List KampTips -> List KampTips
+getCurrentKamp kt kupong =
+    List.filter (\k -> k.nr == kt.nr) kupong
 
 
+updateCurrentKamp : KampTips -> List KampTips -> List KampTips -> List KampTips
+updateCurrentKamp oldKampTips updatedKamptips kupong =
+    updatedKamptips ++ (List.filter (\k -> k.nr /= oldKampTips.nr) kupong)
+
+
+updateHUB : KampTips -> List KampTips -> List KampTips
 updateHUB kt kupong =
     let
         kamptips =
-            List.filter (\k -> k.nr == kt.nr) kupong
+            getCurrentKamp kt kupong
 
         updatedKamptips =
             List.map (\k -> { k | x = kt.x }) kamptips
     in
-        updatedKamptips ++ (List.filter (\k -> k.nr /= kt.nr) kupong)
+        updateCurrentKamp kt updatedKamptips kupong
 
 
+updateSikkerhet : KampTips -> List KampTips -> List KampTips
 updateSikkerhet kt kupong =
     let
         kamptips =
-            List.filter (\k -> k.nr == kt.nr) kupong
+            getCurrentKamp kt kupong
 
         updatedKamptips =
             List.map (\k -> { k | sik = kt.sik }) kamptips
     in
-        updatedKamptips ++ (List.filter (\k -> k.nr /= kt.nr) kupong)
+        updateCurrentKamp kt updatedKamptips kupong
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
