@@ -8287,57 +8287,8 @@ var _user$project$Model$ClearKupong = {ctor: 'ClearKupong'};
 var _user$project$Main$init = {
 	kupong: {ctor: '[]'}
 };
-var _user$project$Main$view = function (model) {
-	var gameNumbers = {
-		ctor: '::',
-		_0: '1',
-		_1: {
-			ctor: '::',
-			_0: '2',
-			_1: {
-				ctor: '::',
-				_0: '3',
-				_1: {
-					ctor: '::',
-					_0: '4',
-					_1: {
-						ctor: '::',
-						_0: '5',
-						_1: {
-							ctor: '::',
-							_0: '6',
-							_1: {
-								ctor: '::',
-								_0: '7',
-								_1: {
-									ctor: '::',
-									_0: '8',
-									_1: {
-										ctor: '::',
-										_0: '9',
-										_1: {
-											ctor: '::',
-											_0: '10',
-											_1: {
-												ctor: '::',
-												_0: '11',
-												_1: {
-													ctor: '::',
-													_0: '12',
-													_1: {ctor: '[]'}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	};
-	var rows = A2(
+var _user$project$Main$kupongView = function (gameNumbers) {
+	return A2(
 		_elm_lang$core$List$map,
 		function (gameNumber) {
 			return A2(
@@ -8449,6 +8400,58 @@ var _user$project$Main$view = function (model) {
 				});
 		},
 		gameNumbers);
+};
+var _user$project$Main$view = function (model) {
+	var gameNumbers = {
+		ctor: '::',
+		_0: '1',
+		_1: {
+			ctor: '::',
+			_0: '2',
+			_1: {
+				ctor: '::',
+				_0: '3',
+				_1: {
+					ctor: '::',
+					_0: '4',
+					_1: {
+						ctor: '::',
+						_0: '5',
+						_1: {
+							ctor: '::',
+							_0: '6',
+							_1: {
+								ctor: '::',
+								_0: '7',
+								_1: {
+									ctor: '::',
+									_0: '8',
+									_1: {
+										ctor: '::',
+										_0: '9',
+										_1: {
+											ctor: '::',
+											_0: '10',
+											_1: {
+												ctor: '::',
+												_0: '11',
+												_1: {
+													ctor: '::',
+													_0: '12',
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	};
+	var rows = _user$project$Main$kupongView(gameNumbers);
 	return A2(
 		_elm_lang$html$Html$div,
 		{

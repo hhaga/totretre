@@ -56,6 +56,20 @@ update msg model =
             ( { model | kupong = updateSikkerhet kamptips model.kupong }, Cmd.none )
 
 
+kupongView gameNumbers =
+    gameNumbers
+        |> List.map
+            (\gameNumber ->
+                div [ class "row" ]
+                    [ div [ class "number" ] [ text gameNumber ]
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = U }) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = B }) ] []
+                    , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
+                    ]
+            )
+
+
 view : Model -> Html Msg
 view model =
     let
@@ -63,17 +77,7 @@ view model =
             [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" ]
 
         rows =
-            gameNumbers
-                |> List.map
-                    (\gameNumber ->
-                        div [ class "row" ]
-                            [ div [ class "number" ] [ text gameNumber ]
-                            , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
-                            , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = U }) ] []
-                            , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = B }) ] []
-                            , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
-                            ]
-                    )
+            kupongView gameNumbers
     in
         div [ class "rows" ]
             [ div []
