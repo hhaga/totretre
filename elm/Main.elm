@@ -56,7 +56,7 @@ update msg model =
             ( { model | kupong = updateSikkerhet kamptips model.kupong }, Cmd.none )
 
 
-kupongView gameNumbers =
+kupongRowsView gameNumbers =
     gameNumbers
         |> List.map
             (\gameNumber ->
@@ -70,6 +70,14 @@ kupongView gameNumbers =
             )
 
 
+kupongHeaderView =
+    [ div [ class "number" ] [ text " " ]
+    , div [ class "leftcell marking" ] [ text "H" ]
+    , div [ class "middlecell marking" ] [ text "U" ]
+    , div [ class "rightcell marking" ] [ text "B" ]
+    ]
+
+
 view : Model -> Html Msg
 view model =
     let
@@ -77,15 +85,10 @@ view model =
             [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" ]
 
         rows =
-            kupongView gameNumbers
+            kupongRowsView gameNumbers
     in
         div [ class "rows" ]
-            [ div []
-                [ div [ class "number" ] [ text " " ]
-                , div [ class "leftcell marking" ] [ text "H" ]
-                , div [ class "middlecell marking" ] [ text "U" ]
-                , div [ class "rightcell marking" ] [ text "B" ]
-                ]
+            [ div [] kupongHeaderView
             , div [] rows
             ]
 
