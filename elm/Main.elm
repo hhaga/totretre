@@ -78,12 +78,13 @@ kupongHeaderView =
     ]
 
 
+gameNumbers =
+    [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" ]
+
+
 view : Model -> Html Msg
 view model =
     let
-        gameNumbers =
-            [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" ]
-
         rows =
             kupongRowsView gameNumbers
     in
