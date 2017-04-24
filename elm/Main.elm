@@ -40,20 +40,25 @@ updateSikkerhet kt kupong =
         updateCurrentKamp kt updatedKamptips kupong
 
 
+createKupongs : List KampTips -> List Kampkryss
+createKupongs kupong =
+    []
+
+
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         ClearKupong ->
             ( init, Cmd.none )
 
-        GenerateKupong ->
-            ( { kupong = [] }, Cmd.none )
-
         HUBMarking kamptips ->
             ( { model | kupong = updateHUB kamptips model.kupong }, Cmd.none )
 
         SikkerhetMarking kamptips ->
             ( { model | kupong = updateSikkerhet kamptips model.kupong }, Cmd.none )
+
+        CreateAndShow ->
+            ( { model | resultatKuponger = createKupongs model.kupong }, Cmd.none )
 
 
 kupongRowsView gameNumbers =
@@ -91,12 +96,13 @@ view model =
         div [ class "rows" ]
             [ div [] kupongHeaderView
             , div [] rows
+            , button [ onClick CreateAndShow ] [ text "+" ]
             ]
 
 
 init : Model
 init =
-    { kupong = [] }
+    { kupong = [], resultatKuponger = [] }
 
 
 main =

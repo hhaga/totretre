@@ -23,19 +23,19 @@ type alias KampTips =
 
 
 type alias Model =
-    { kupong : List KampTips }
+    { kupong : List KampTips, resultatKuponger : List Kampkryss }
 
 
 type Msg
     = ClearKupong
-    | GenerateKupong
     | HUBMarking KampTips
     | SikkerhetMarking KampTips
+    | CreateAndShow
 
 
 type alias KupongKamp =
-    ( Int, Gardering )
+    ( String, Gardering )
 
 
 type alias Kampkryss =
-    List ( Int, Markering )
+    ( String, List Markering )

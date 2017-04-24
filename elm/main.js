@@ -8264,9 +8264,10 @@ var _user$project$Model$KampTips = F3(
 	function (a, b, c) {
 		return {nr: a, sik: b, x: c};
 	});
-var _user$project$Model$Model = function (a) {
-	return {kupong: a};
-};
+var _user$project$Model$Model = F2(
+	function (a, b) {
+		return {kupong: a, resultatKuponger: b};
+	});
 var _user$project$Model$B = {ctor: 'B'};
 var _user$project$Model$U = {ctor: 'U'};
 var _user$project$Model$H = {ctor: 'H'};
@@ -8275,17 +8276,18 @@ var _user$project$Model$Sikker = {ctor: 'Sikker'};
 var _user$project$Model$Heil = {ctor: 'Heil'};
 var _user$project$Model$HalvUtenUtg = {ctor: 'HalvUtenUtg'};
 var _user$project$Model$EnkelUtg = {ctor: 'EnkelUtg'};
+var _user$project$Model$CreateAndShow = {ctor: 'CreateAndShow'};
 var _user$project$Model$SikkerhetMarking = function (a) {
 	return {ctor: 'SikkerhetMarking', _0: a};
 };
 var _user$project$Model$HUBMarking = function (a) {
 	return {ctor: 'HUBMarking', _0: a};
 };
-var _user$project$Model$GenerateKupong = {ctor: 'GenerateKupong'};
 var _user$project$Model$ClearKupong = {ctor: 'ClearKupong'};
 
 var _user$project$Main$init = {
-	kupong: {ctor: '[]'}
+	kupong: {ctor: '[]'},
+	resultatKuponger: {ctor: '[]'}
 };
 var _user$project$Main$gameNumbers = {
 	ctor: '::',
@@ -8532,9 +8534,27 @@ var _user$project$Main$view = function (model) {
 					_elm_lang$html$Html$div,
 					{ctor: '[]'},
 					rows),
-				_1: {ctor: '[]'}
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(_user$project$Model$CreateAndShow),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('+'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
 			}
 		});
+};
+var _user$project$Main$createKupongs = function (kupong) {
+	return {ctor: '[]'};
 };
 var _user$project$Main$updateCurrentKamp = F3(
 	function (oldKampTips, updatedKamptips, kupong) {
@@ -8589,14 +8609,6 @@ var _user$project$Main$update = F2(
 		switch (_p0.ctor) {
 			case 'ClearKupong':
 				return {ctor: '_Tuple2', _0: _user$project$Main$init, _1: _elm_lang$core$Platform_Cmd$none};
-			case 'GenerateKupong':
-				return {
-					ctor: '_Tuple2',
-					_0: {
-						kupong: {ctor: '[]'}
-					},
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
 			case 'HUBMarking':
 				return {
 					ctor: '_Tuple2',
@@ -8607,13 +8619,23 @@ var _user$project$Main$update = F2(
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
-			default:
+			case 'SikkerhetMarking':
 				return {
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
 							kupong: A2(_user$project$Main$updateSikkerhet, _p0._0, model.kupong)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			default:
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							resultatKuponger: _user$project$Main$createKupongs(model.kupong)
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
