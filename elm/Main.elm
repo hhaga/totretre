@@ -40,7 +40,7 @@ updateSikkerhet kt kupong =
         updateCurrentKamp kt updatedKamptips kupong
 
 
-createKupongs : List KampTips -> List Kampkryss
+createKupongs : List KampTips -> List (List Kampkryss)
 createKupongs kupong =
     []
 

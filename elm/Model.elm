@@ -23,7 +23,7 @@ type alias KampTips =
 
 
 type alias Model =
-    { kupong : List KampTips, resultatKuponger : List Kampkryss }
+    { kupong : List KampTips, resultatKuponger : List (List Kampkryss) }
 
 
 type Msg
