@@ -78,10 +78,10 @@ updateSikkerhet kt kupong =
 
 
 createKupongs : List KampTips -> List (List Kampkryss)
-createKupongs tips kupong =
+createKupongs tips =
     let
         usikre =
-            List.filter (\k -> k.sik == Utgangspunkt) kupong
+            List.filter (\k -> k.sik == Utgangspunkt) tips
 
         usikreKampNr =
             List.map (\k -> k.nr) usikre
