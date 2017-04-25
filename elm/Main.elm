@@ -107,20 +107,22 @@ createKupongs tips =
 
 produserKupong : List KampTips -> List KupongKamp -> List Kampkryss -> List Kampkryss
 produserKupong tips kupongSetup kupong =
-    if tips == [] then
-        kupong
-    else
-        case tips.head.sik of
-            Sikker ->
-                produserKupong tips.tail kupongSetup kupong ++ [ (tips.head.nr (markeringForKamp tips.head.x EnkelUtg)) ]
+    case tips of
+        [] ->
+            kupong
 
-            Utgangspunkt ->
-                case kupongSetup of
-                    [] ->
-                        kupong
+        head :: tail ->
+            case head.sik of
+                Sikker ->
+                    produserKupong tail kupongSetup kupong ++ [ ( head.nr, (markeringForKamp head.x EnkelUtg) ) ]
 
-                    ( j, markValg ) :: tail ->
-                        produserKupong tips.tail kupongSetup kupong ++ [ ( j, (markeringForKamp tips.head.x markValg) ) ]
+                Utgangspunkt ->
+                    case kupongSetup of
+                        [] ->
+                            kupong
+
+                        ( j, markValg ) :: lasttail ->
+                            produserKupong tail kupongSetup kupong ++ [ ( j, (markeringForKamp head.x markValg) ) ]
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -148,7 +150,7 @@ kupongRowsView gameNumbers =
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = U }) ] []
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = B }) ] []
-                    , input [ type_ "checkbox", name gameNumber, onClick ({ nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
+                    , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
                     ]
             )
 
