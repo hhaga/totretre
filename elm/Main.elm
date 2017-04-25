@@ -92,7 +92,7 @@ createKupongs tips =
                     acc
 
                 head :: tail ->
-                    tail_rec_kupong_setups tail (kupongNr + 1) (List.map2 ((,)) usikreKampNr head :: acc)
+                    tail_rec_kupong_setups tail (toString ((Result.withDefault 0 (String.toInt kupongNr)) + 1)) (List.map2 ((,)) usikreKampNr head :: acc)
 
         tail_helper tips kupongSetups kuponger =
             case kupongSetups of
@@ -102,7 +102,7 @@ createKupongs tips =
                 head :: tail ->
                     tail_helper tips tail ((produserKupong tips head []) :: kuponger)
     in
-        tail_helper tips (tail_rec_kupong_setups toTreTreSetup 1 []) []
+        tail_helper tips (tail_rec_kupong_setups toTreTreSetup "1" []) []
 
 
 produserKupong : List KampTips -> List KupongKamp -> List Kampkryss -> List Kampkryss

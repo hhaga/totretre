@@ -9309,7 +9309,11 @@ var _user$project$Main$createKupongs = function (tips) {
 					return acc;
 				} else {
 					var _v9 = _p7._1,
-						_v10 = kupongNr + 1,
+						_v10 = _elm_lang$core$Basics$toString(
+						A2(
+							_elm_lang$core$Result$withDefault,
+							0,
+							_elm_lang$core$String$toInt(kupongNr)) + 1),
 						_v11 = {
 						ctor: '::',
 						_0: A3(
@@ -9335,7 +9339,7 @@ var _user$project$Main$createKupongs = function (tips) {
 		A3(
 			tail_rec_kupong_setups,
 			_user$project$Main$toTreTreSetup,
-			1,
+			'1',
 			{ctor: '[]'}),
 		{ctor: '[]'});
 };
