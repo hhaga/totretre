@@ -92,7 +92,7 @@ createKupongs tips =
                     acc
 
                 head :: tail ->
-                    tail_rec_kupong_setups tail (toString ((Result.withDefault 0 (String.toInt kupongNr)) + 1)) (List.map2 ((,)) usikreKampNr head :: acc)
+                    tail_rec_kupong_setups tail (toString ((Result.withDefault 0 (String.toInt kupongNr)) + 1)) (List.map2 (,) usikreKampNr head :: acc)
 
         tail_helper tips kupongSetups kuponger =
             case kupongSetups of
@@ -122,7 +122,7 @@ produserKupong tips kupongSetup kupong =
                             kupong
 
                         ( j, markValg ) :: lasttail ->
-                            produserKupong tail kupongSetup kupong ++ [ ( j, (markeringForKamp head.x markValg) ) ]
+                            produserKupong tail lasttail kupong ++ [ ( j, (markeringForKamp head.x markValg) ) ]
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )

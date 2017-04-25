@@ -399,7 +399,7 @@ var _user$project$Main$produserKupong = F3(
 				} else {
 					return A2(
 						_elm_lang$core$Basics_ops['++'],
-						A3(_user$project$Main$produserKupong, _p5, kupongSetup, kupong),
+						A3(_user$project$Main$produserKupong, _p5, _p3._1, kupong),
 						{
 							ctor: '::',
 							_0: {
