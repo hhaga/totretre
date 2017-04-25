@@ -92,7 +92,7 @@ createKupongs tips =
                     acc
 
                 head :: tail ->
-                    tail_rec_kupong_setups tail (kupongNr + 1) List.map2 ((,) usikreKampNr head) :: acc
+                    tail_rec_kupong_setups tail (kupongNr + 1) (List.map2 ((,)) usikreKampNr head :: acc)
 
         tail_helper tips kupongSetups kuponger =
             case kupongSetups of
@@ -100,7 +100,7 @@ createKupongs tips =
                     kuponger
 
                 head :: tail ->
-                    tail_helper tips tail (produserKupong tips head []) :: kuponger
+                    tail_helper tips tail ((produserKupong tips head []) :: kuponger)
     in
         tail_helper tips (tail_rec_kupong_setups toTreTreSetup 1 []) []
 
@@ -120,7 +120,7 @@ produserKupong tips kupongSetup kupong =
                         kupong
 
                     ( j, markValg ) :: tail ->
-                        produserKupong tail kupongSetup kupong ++ [ ( j, (markeringForKamp tips.head.x markValg) ) ]
+                        produserKupong tips.tail kupongSetup kupong ++ [ ( j, (markeringForKamp tips.head.x markValg) ) ]
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
