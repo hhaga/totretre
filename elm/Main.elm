@@ -177,6 +177,7 @@ view model =
             [ div [] kupongHeaderView
             , div [] rows
             , button [ onClick CreateAndShow ] [ text "+" ]
+            , div [] [ text (toString model.resultatKuponger) ]
             ]
 
 
