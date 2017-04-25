@@ -6,6 +6,43 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 
 
+toTreTreSetup =
+    [ [ EnkelUtg, EnkelUtg, HalvUtenUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ] --1*)
+    , [ EnkelUtg, HalvUtenUtg, EnkelUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ] --2*)
+    , [ EnkelUtg, HalvUtenUtg, EnkelUtg, HalvUtenUtg, EnkelUtg, HalvUtenUtg ] --3*)
+    , [ EnkelUtg, HalvUtenUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg, EnkelUtg ] --4*)
+    , [ HalvUtenUtg, EnkelUtg, EnkelUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ] --5*)
+    , [ HalvUtenUtg, EnkelUtg, EnkelUtg, HalvUtenUtg, EnkelUtg, HalvUtenUtg ] --6*)
+    , [ HalvUtenUtg, EnkelUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg, EnkelUtg ] --7*)
+    , [ HalvUtenUtg, HalvUtenUtg, EnkelUtg, EnkelUtg, EnkelUtg, HalvUtenUtg ] --8*)
+    , [ HalvUtenUtg, HalvUtenUtg, EnkelUtg, EnkelUtg, HalvUtenUtg, EnkelUtg ] --9*)
+    , [ HalvUtenUtg, HalvUtenUtg, EnkelUtg, HalvUtenUtg, EnkelUtg, EnkelUtg ] --10*)
+    , [ EnkelUtg, EnkelUtg, EnkelUtg, Heil, HalvUtenUtg, HalvUtenUtg ] --11*)
+    , [ EnkelUtg, EnkelUtg, Heil, HalvUtenUtg, EnkelUtg, HalvUtenUtg ] --12*)
+    , [ EnkelUtg, EnkelUtg, Heil, HalvUtenUtg, HalvUtenUtg, EnkelUtg ] --13*)
+    , [ HalvUtenUtg, EnkelUtg, Heil, EnkelUtg, EnkelUtg, HalvUtenUtg ] --14*)
+    , [ HalvUtenUtg, EnkelUtg, Heil, EnkelUtg, HalvUtenUtg, EnkelUtg ] --15*)
+    , [ HalvUtenUtg, EnkelUtg, Heil, HalvUtenUtg, EnkelUtg, EnkelUtg ] --16*)
+    , [ EnkelUtg, Heil, Heil, EnkelUtg, EnkelUtg, HalvUtenUtg ] --17*)
+    , [ EnkelUtg, Heil, Heil, EnkelUtg, HalvUtenUtg, EnkelUtg ] --18*)
+    , [ EnkelUtg, Heil, Heil, HalvUtenUtg, EnkelUtg, EnkelUtg ] --19*)
+    , [ Heil, Heil, Heil, EnkelUtg, EnkelUtg, EnkelUtg ] --20
+    ]
+
+
+markeringForKamp : Markering -> Gardering -> List Markering
+markeringForKamp utgangspunkt systemvalg =
+    case systemvalg of
+        EnkelUtg ->
+            [ utgangspunkt ]
+
+        HalvUtenUtg ->
+            List.filter (\x -> x /= utgangspunkt) [ H, U, B ]
+
+        Heil ->
+            [ H, U, B ]
+
+
 getCurrentKamp : KampTips -> List KampTips -> List KampTips
 getCurrentKamp kt kupong =
     List.filter (\k -> k.nr == kt.nr) kupong
@@ -41,8 +78,49 @@ updateSikkerhet kt kupong =
 
 
 createKupongs : List KampTips -> List (List Kampkryss)
-createKupongs kupong =
-    []
+createKupongs tips kupong =
+    let
+        usikre =
+            List.filter (\k -> k.sik == Utgangspunkt) kupong
+
+        usikreKampNr =
+            List.map (\k -> k.nr) usikre
+
+        tail_rec_kupong_setups kupongUtgSetups kupongNr acc =
+            case kupongUtgSetups of
+                [] ->
+                    acc
+
+                head :: tail ->
+                    tail_rec_kupong_setups tail (kupongNr + 1) List.map2 ((,) usikreKampNr head) :: acc
+
+        tail_helper tips kupongSetups kuponger =
+            case kupongSetups of
+                [] ->
+                    kuponger
+
+                head :: tail ->
+                    tail_helper tips tail (produserKupong tips head []) :: kuponger
+    in
+        tail_helper tips (tail_rec_kupong_setups toTreTreSetup 1 []) []
+
+
+produserKupong : List KampTips -> List KupongKamp -> List Kampkryss -> List Kampkryss
+produserKupong tips kupongSetup kupong =
+    if tips == [] then
+        kupong
+    else
+        case tips.head.sik of
+            Sikker ->
+                produserKupong tips.tail kupongSetup kupong ++ [ (tips.head.nr (markeringForKamp tips.head.x EnkelUtg)) ]
+
+            Utgangspunkt ->
+                case kupongSetup of
+                    [] ->
+                        kupong
+
+                    ( j, markValg ) :: tail ->
+                        produserKupong tail kupongSetup kupong ++ [ ( j, (markeringForKamp tips.head.x markValg) ) ]
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -70,7 +148,7 @@ kupongRowsView gameNumbers =
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = U }) ] []
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = B }) ] []
-                    , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
+                    , input [ type_ "checkbox", name gameNumber, onClick ({ nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
                     ]
             )
 
