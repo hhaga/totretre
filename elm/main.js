@@ -8260,36 +8260,7 @@ var _elm_lang$html$Html_Events$Options = F2(
 		return {stopPropagation: a, preventDefault: b};
 	});
 
-var _user$project$Model$KampTips = F3(
-	function (a, b, c) {
-		return {nr: a, sik: b, x: c};
-	});
-var _user$project$Model$Model = F2(
-	function (a, b) {
-		return {kupong: a, resultatKuponger: b};
-	});
-var _user$project$Model$B = {ctor: 'B'};
-var _user$project$Model$U = {ctor: 'U'};
-var _user$project$Model$H = {ctor: 'H'};
-var _user$project$Model$Utgangspunkt = {ctor: 'Utgangspunkt'};
-var _user$project$Model$Sikker = {ctor: 'Sikker'};
-var _user$project$Model$Heil = {ctor: 'Heil'};
-var _user$project$Model$HalvUtenUtg = {ctor: 'HalvUtenUtg'};
-var _user$project$Model$EnkelUtg = {ctor: 'EnkelUtg'};
-var _user$project$Model$CreateAndShow = {ctor: 'CreateAndShow'};
-var _user$project$Model$SikkerhetMarking = function (a) {
-	return {ctor: 'SikkerhetMarking', _0: a};
-};
-var _user$project$Model$HUBMarking = function (a) {
-	return {ctor: 'HUBMarking', _0: a};
-};
-var _user$project$Model$ClearKupong = {ctor: 'ClearKupong'};
-
-var _user$project$Main$init = {
-	kupong: {ctor: '[]'},
-	resultatKuponger: {ctor: '[]'}
-};
-var _user$project$Main$gameNumbers = {
+var _user$project$Model$gameNumbers = {
 	ctor: '::',
 	_0: '1',
 	_1: {
@@ -8338,369 +8309,23 @@ var _user$project$Main$gameNumbers = {
 		}
 	}
 };
-var _user$project$Main$kupongHeaderView = {
-	ctor: '::',
-	_0: A2(
-		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('number'),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html$text(' '),
-			_1: {ctor: '[]'}
-		}),
-	_1: {
-		ctor: '::',
-		_0: A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('leftcell marking'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html$text('H'),
-				_1: {ctor: '[]'}
-			}),
-		_1: {
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('middlecell marking'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('U'),
-					_1: {ctor: '[]'}
-				}),
-			_1: {
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('rightcell marking'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('B'),
-						_1: {ctor: '[]'}
-					}),
-				_1: {ctor: '[]'}
-			}
-		}
-	}
-};
-var _user$project$Main$kupongRowsView = function (gameNumbers) {
-	return A2(
-		_elm_lang$core$List$map,
-		function (gameNumber) {
-			return A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('row'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('number'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text(gameNumber),
-							_1: {ctor: '[]'}
-						}),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$input,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$type_('radio'),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$name(gameNumber),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_user$project$Model$HUBMarking(
-												{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H})),
-										_1: {ctor: '[]'}
-									}
-								}
-							},
-							{ctor: '[]'}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$input,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$type_('radio'),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$name(gameNumber),
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$html$Html_Events$onClick(
-												_user$project$Model$HUBMarking(
-													{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$U})),
-											_1: {ctor: '[]'}
-										}
-									}
-								},
-								{ctor: '[]'}),
-							_1: {
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$input,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$type_('radio'),
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$name(gameNumber),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Events$onClick(
-													_user$project$Model$HUBMarking(
-														{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$B})),
-												_1: {ctor: '[]'}
-											}
-										}
-									},
-									{ctor: '[]'}),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$input,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$name(gameNumber),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html_Events$onClick(
-														_user$project$Model$SikkerhetMarking(
-															{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H})),
-													_1: {ctor: '[]'}
-												}
-											}
-										},
-										{ctor: '[]'}),
-									_1: {ctor: '[]'}
-								}
-							}
-						}
-					}
-				});
-		},
-		gameNumbers);
-};
-var _user$project$Main$view = function (model) {
-	var rows = _user$project$Main$kupongRowsView(_user$project$Main$gameNumbers);
-	return A2(
-		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('rows'),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$div,
-				{ctor: '[]'},
-				_user$project$Main$kupongHeaderView),
-			_1: {
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$div,
-					{ctor: '[]'},
-					rows),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$button,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Events$onClick(_user$project$Model$CreateAndShow),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('+'),
-							_1: {ctor: '[]'}
-						}),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{ctor: '[]'},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text(
-									_elm_lang$core$Basics$toString(model.resultatKuponger)),
-								_1: {ctor: '[]'}
-							}),
-						_1: {ctor: '[]'}
-					}
-				}
-			}
-		});
-};
-var _user$project$Main$updateCurrentKamp = F3(
-	function (oldKampTips, updatedKamptips, kupong) {
-		return A2(
-			_elm_lang$core$Basics_ops['++'],
-			updatedKamptips,
-			A2(
-				_elm_lang$core$List$filter,
-				function (k) {
-					return !_elm_lang$core$Native_Utils.eq(k.nr, oldKampTips.nr);
-				},
-				kupong));
+var _user$project$Model$KampTips = F3(
+	function (a, b, c) {
+		return {nr: a, sik: b, x: c};
 	});
-var _user$project$Main$getCurrentKamp = F2(
-	function (kt, kupong) {
-		return A2(
-			_elm_lang$core$List$filter,
-			function (k) {
-				return _elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
-			},
-			kupong);
+var _user$project$Model$Model = F2(
+	function (a, b) {
+		return {kupong: a, resultatKuponger: b};
 	});
-var _user$project$Main$updateHUB = F2(
-	function (kt, kupong) {
-		var kamptips = A2(_user$project$Main$getCurrentKamp, kt, kupong);
-		var updatedKamptips = A2(
-			_elm_lang$core$List$map,
-			function (k) {
-				return _elm_lang$core$Native_Utils.update(
-					k,
-					{x: kt.x});
-			},
-			kamptips);
-		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
-	});
-var _user$project$Main$updateSikkerhet = F2(
-	function (kt, kupong) {
-		var kamptips = A2(_user$project$Main$getCurrentKamp, kt, kupong);
-		var updatedKamptips = A2(
-			_elm_lang$core$List$map,
-			function (k) {
-				return _elm_lang$core$Native_Utils.update(
-					k,
-					{sik: kt.sik});
-			},
-			kamptips);
-		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
-	});
-var _user$project$Main$markeringForKamp = F2(
-	function (utgangspunkt, systemvalg) {
-		var _p0 = systemvalg;
-		switch (_p0.ctor) {
-			case 'EnkelUtg':
-				return {
-					ctor: '::',
-					_0: utgangspunkt,
-					_1: {ctor: '[]'}
-				};
-			case 'HalvUtenUtg':
-				return A2(
-					_elm_lang$core$List$filter,
-					function (x) {
-						return !_elm_lang$core$Native_Utils.eq(x, utgangspunkt);
-					},
-					{
-						ctor: '::',
-						_0: _user$project$Model$H,
-						_1: {
-							ctor: '::',
-							_0: _user$project$Model$U,
-							_1: {
-								ctor: '::',
-								_0: _user$project$Model$B,
-								_1: {ctor: '[]'}
-							}
-						}
-					});
-			default:
-				return {
-					ctor: '::',
-					_0: _user$project$Model$H,
-					_1: {
-						ctor: '::',
-						_0: _user$project$Model$U,
-						_1: {
-							ctor: '::',
-							_0: _user$project$Model$B,
-							_1: {ctor: '[]'}
-						}
-					}
-				};
-		}
-	});
-var _user$project$Main$produserKupong = F3(
-	function (tips, kupongSetup, kupong) {
-		var _p1 = tips;
-		if (_p1.ctor === '[]') {
-			return kupong;
-		} else {
-			var _p5 = _p1._1;
-			var _p4 = _p1._0;
-			var _p2 = _p4.sik;
-			if (_p2.ctor === 'Sikker') {
-				return A2(
-					_elm_lang$core$Basics_ops['++'],
-					A3(_user$project$Main$produserKupong, _p5, kupongSetup, kupong),
-					{
-						ctor: '::',
-						_0: {
-							ctor: '_Tuple2',
-							_0: _p4.nr,
-							_1: A2(_user$project$Main$markeringForKamp, _p4.x, _user$project$Model$EnkelUtg)
-						},
-						_1: {ctor: '[]'}
-					});
-			} else {
-				var _p3 = kupongSetup;
-				if (_p3.ctor === '[]') {
-					return kupong;
-				} else {
-					return A2(
-						_elm_lang$core$Basics_ops['++'],
-						A3(_user$project$Main$produserKupong, _p5, _p3._1, kupong),
-						{
-							ctor: '::',
-							_0: {
-								ctor: '_Tuple2',
-								_0: _p3._0._0,
-								_1: A2(_user$project$Main$markeringForKamp, _p4.x, _p3._0._1)
-							},
-							_1: {ctor: '[]'}
-						});
-				}
-			}
-		}
-	});
-var _user$project$Main$toTreTreSetup = {
+var _user$project$Model$B = {ctor: 'B'};
+var _user$project$Model$U = {ctor: 'U'};
+var _user$project$Model$H = {ctor: 'H'};
+var _user$project$Model$Utgangspunkt = {ctor: 'Utgangspunkt'};
+var _user$project$Model$Sikker = {ctor: 'Sikker'};
+var _user$project$Model$Heil = {ctor: 'Heil'};
+var _user$project$Model$HalvUtenUtg = {ctor: 'HalvUtenUtg'};
+var _user$project$Model$EnkelUtg = {ctor: 'EnkelUtg'};
+var _user$project$Model$toTreTreSetup = {
 	ctor: '::',
 	_0: {
 		ctor: '::',
@@ -9261,6 +8886,381 @@ var _user$project$Main$toTreTreSetup = {
 		}
 	}
 };
+var _user$project$Model$CreateAndShow = {ctor: 'CreateAndShow'};
+var _user$project$Model$SikkerhetMarking = function (a) {
+	return {ctor: 'SikkerhetMarking', _0: a};
+};
+var _user$project$Model$HUBMarking = function (a) {
+	return {ctor: 'HUBMarking', _0: a};
+};
+var _user$project$Model$ClearKupong = {ctor: 'ClearKupong'};
+
+var _user$project$Main$init = {
+	kupong: {ctor: '[]'},
+	resultatKuponger: {ctor: '[]'}
+};
+var _user$project$Main$kupongHeaderView = {
+	ctor: '::',
+	_0: A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('number'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(' '),
+			_1: {ctor: '[]'}
+		}),
+	_1: {
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('leftcell marking'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('H'),
+				_1: {ctor: '[]'}
+			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('middlecell marking'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('U'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('rightcell marking'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('B'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		}
+	}
+};
+var _user$project$Main$kupongRowsView = function (gameNumbers) {
+	return A2(
+		_elm_lang$core$List$map,
+		function (gameNumber) {
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('row'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('number'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(gameNumber),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$input,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$type_('radio'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(
+											_user$project$Model$HUBMarking(
+												{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H})),
+										_1: {ctor: '[]'}
+									}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$input,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$type_('radio'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(
+												_user$project$Model$HUBMarking(
+													{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$U})),
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$input,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$type_('radio'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Events$onClick(
+													_user$project$Model$HUBMarking(
+														{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$B})),
+												_1: {ctor: '[]'}
+											}
+										}
+									},
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$input,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onClick(
+														_user$project$Model$SikkerhetMarking(
+															{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H})),
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				});
+		},
+		gameNumbers);
+};
+var _user$project$Main$view = function (model) {
+	var rows = _user$project$Main$kupongRowsView(_user$project$Model$gameNumbers);
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('rows'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{ctor: '[]'},
+				_user$project$Main$kupongHeaderView),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{ctor: '[]'},
+					rows),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(_user$project$Model$CreateAndShow),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('+'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(
+									_elm_lang$core$Basics$toString(model.resultatKuponger)),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		});
+};
+var _user$project$Main$updateCurrentKamp = F3(
+	function (oldKampTips, updatedKamptips, kupong) {
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			updatedKamptips,
+			A2(
+				_elm_lang$core$List$filter,
+				function (k) {
+					return !_elm_lang$core$Native_Utils.eq(k.nr, oldKampTips.nr);
+				},
+				kupong));
+	});
+var _user$project$Main$getCurrentKamp = F2(
+	function (kt, kupong) {
+		return A2(
+			_elm_lang$core$List$filter,
+			function (k) {
+				return _elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
+			},
+			kupong);
+	});
+var _user$project$Main$updateHUB = F2(
+	function (kt, kupong) {
+		var kamptips = A2(_user$project$Main$getCurrentKamp, kt, kupong);
+		var updatedKamptips = A2(
+			_elm_lang$core$List$map,
+			function (k) {
+				return _elm_lang$core$Native_Utils.update(
+					k,
+					{x: kt.x});
+			},
+			kamptips);
+		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
+	});
+var _user$project$Main$updateSikkerhet = F2(
+	function (kt, kupong) {
+		var kamptips = A2(_user$project$Main$getCurrentKamp, kt, kupong);
+		var updatedKamptips = A2(
+			_elm_lang$core$List$map,
+			function (k) {
+				return _elm_lang$core$Native_Utils.update(
+					k,
+					{sik: kt.sik});
+			},
+			kamptips);
+		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
+	});
+var _user$project$Main$markeringForKamp = F2(
+	function (utgangspunkt, systemvalg) {
+		var _p0 = systemvalg;
+		switch (_p0.ctor) {
+			case 'EnkelUtg':
+				return {
+					ctor: '::',
+					_0: utgangspunkt,
+					_1: {ctor: '[]'}
+				};
+			case 'HalvUtenUtg':
+				return A2(
+					_elm_lang$core$List$filter,
+					function (x) {
+						return !_elm_lang$core$Native_Utils.eq(x, utgangspunkt);
+					},
+					{
+						ctor: '::',
+						_0: _user$project$Model$H,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$U,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$B,
+								_1: {ctor: '[]'}
+							}
+						}
+					});
+			default:
+				return {
+					ctor: '::',
+					_0: _user$project$Model$H,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Model$U,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$B,
+							_1: {ctor: '[]'}
+						}
+					}
+				};
+		}
+	});
+var _user$project$Main$produserKupong = F3(
+	function (tips, kupongSetup, kupong) {
+		var _p1 = tips;
+		if (_p1.ctor === '[]') {
+			return kupong;
+		} else {
+			var _p5 = _p1._1;
+			var _p4 = _p1._0;
+			var _p2 = _p4.sik;
+			if (_p2.ctor === 'Sikker') {
+				return A2(
+					_elm_lang$core$Basics_ops['++'],
+					A3(_user$project$Main$produserKupong, _p5, kupongSetup, kupong),
+					{
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: _p4.nr,
+							_1: A2(_user$project$Main$markeringForKamp, _p4.x, _user$project$Model$EnkelUtg)
+						},
+						_1: {ctor: '[]'}
+					});
+			} else {
+				var _p3 = kupongSetup;
+				if (_p3.ctor === '[]') {
+					return kupong;
+				} else {
+					return A2(
+						_elm_lang$core$Basics_ops['++'],
+						A3(_user$project$Main$produserKupong, _p5, _p3._1, kupong),
+						{
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: _p3._0._0,
+								_1: A2(_user$project$Main$markeringForKamp, _p4.x, _p3._0._1)
+							},
+							_1: {ctor: '[]'}
+						});
+				}
+			}
+		}
+	});
 var _user$project$Main$createKupongs = function (tips) {
 	var tail_helper = F3(
 		function (tips, kupongSetups, kuponger) {
@@ -9338,7 +9338,7 @@ var _user$project$Main$createKupongs = function (tips) {
 		tips,
 		A3(
 			tail_rec_kupong_setups,
-			_user$project$Main$toTreTreSetup,
+			_user$project$Model$toTreTreSetup,
 			'1',
 			{ctor: '[]'}),
 		{ctor: '[]'});

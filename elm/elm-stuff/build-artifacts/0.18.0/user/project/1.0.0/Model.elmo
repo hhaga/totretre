@@ -1,3 +1,52 @@
+var _user$project$Model$gameNumbers = {
+	ctor: '::',
+	_0: '1',
+	_1: {
+		ctor: '::',
+		_0: '2',
+		_1: {
+			ctor: '::',
+			_0: '3',
+			_1: {
+				ctor: '::',
+				_0: '4',
+				_1: {
+					ctor: '::',
+					_0: '5',
+					_1: {
+						ctor: '::',
+						_0: '6',
+						_1: {
+							ctor: '::',
+							_0: '7',
+							_1: {
+								ctor: '::',
+								_0: '8',
+								_1: {
+									ctor: '::',
+									_0: '9',
+									_1: {
+										ctor: '::',
+										_0: '10',
+										_1: {
+											ctor: '::',
+											_0: '11',
+											_1: {
+												ctor: '::',
+												_0: '12',
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};
 var _user$project$Model$KampTips = F3(
 	function (a, b, c) {
 		return {nr: a, sik: b, x: c};
@@ -14,6 +63,567 @@ var _user$project$Model$Sikker = {ctor: 'Sikker'};
 var _user$project$Model$Heil = {ctor: 'Heil'};
 var _user$project$Model$HalvUtenUtg = {ctor: 'HalvUtenUtg'};
 var _user$project$Model$EnkelUtg = {ctor: 'EnkelUtg'};
+var _user$project$Model$toTreTreSetup = {
+	ctor: '::',
+	_0: {
+		ctor: '::',
+		_0: _user$project$Model$EnkelUtg,
+		_1: {
+			ctor: '::',
+			_0: _user$project$Model$EnkelUtg,
+			_1: {
+				ctor: '::',
+				_0: _user$project$Model$HalvUtenUtg,
+				_1: {
+					ctor: '::',
+					_0: _user$project$Model$EnkelUtg,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Model$HalvUtenUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		}
+	},
+	_1: {
+		ctor: '::',
+		_0: {
+			ctor: '::',
+			_0: _user$project$Model$EnkelUtg,
+			_1: {
+				ctor: '::',
+				_0: _user$project$Model$HalvUtenUtg,
+				_1: {
+					ctor: '::',
+					_0: _user$project$Model$EnkelUtg,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Model$EnkelUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$HalvUtenUtg,
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			}
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				ctor: '::',
+				_0: _user$project$Model$EnkelUtg,
+				_1: {
+					ctor: '::',
+					_0: _user$project$Model$HalvUtenUtg,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Model$EnkelUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$EnkelUtg,
+								_1: {
+									ctor: '::',
+									_0: _user$project$Model$HalvUtenUtg,
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '::',
+					_0: _user$project$Model$EnkelUtg,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Model$HalvUtenUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$EnkelUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$HalvUtenUtg,
+								_1: {
+									ctor: '::',
+									_0: _user$project$Model$HalvUtenUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$EnkelUtg,
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '::',
+						_0: _user$project$Model$HalvUtenUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$EnkelUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$EnkelUtg,
+								_1: {
+									ctor: '::',
+									_0: _user$project$Model$EnkelUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$HalvUtenUtg,
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$EnkelUtg,
+								_1: {
+									ctor: '::',
+									_0: _user$project$Model$EnkelUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$EnkelUtg,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Model$HalvUtenUtg,
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '::',
+								_0: _user$project$Model$HalvUtenUtg,
+								_1: {
+									ctor: '::',
+									_0: _user$project$Model$EnkelUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$EnkelUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$HalvUtenUtg,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Model$HalvUtenUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$EnkelUtg,
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '::',
+									_0: _user$project$Model$HalvUtenUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$EnkelUtg,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Model$EnkelUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$EnkelUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$HalvUtenUtg,
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}
+									}
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '::',
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$HalvUtenUtg,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Model$EnkelUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$EnkelUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$HalvUtenUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$EnkelUtg,
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '::',
+											_0: _user$project$Model$HalvUtenUtg,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Model$HalvUtenUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$EnkelUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$HalvUtenUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$EnkelUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$EnkelUtg,
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}
+											}
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												ctor: '::',
+												_0: _user$project$Model$EnkelUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$EnkelUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$Heil,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$HalvUtenUtg,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$HalvUtenUtg,
+																	_1: {ctor: '[]'}
+																}
+															}
+														}
+													}
+												}
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													ctor: '::',
+													_0: _user$project$Model$EnkelUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$Heil,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$HalvUtenUtg,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$EnkelUtg,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$HalvUtenUtg,
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$EnkelUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$Heil,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$HalvUtenUtg,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$HalvUtenUtg,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$EnkelUtg,
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																}
+															}
+														}
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															ctor: '::',
+															_0: _user$project$Model$HalvUtenUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$EnkelUtg,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$Heil,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$EnkelUtg,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$EnkelUtg,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$HalvUtenUtg,
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}
+																}
+															}
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																ctor: '::',
+																_0: _user$project$Model$HalvUtenUtg,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$EnkelUtg,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$Heil,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$EnkelUtg,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$HalvUtenUtg,
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$Model$EnkelUtg,
+																					_1: {ctor: '[]'}
+																				}
+																			}
+																		}
+																	}
+																}
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	ctor: '::',
+																	_0: _user$project$Model$HalvUtenUtg,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$EnkelUtg,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$Heil,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$HalvUtenUtg,
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$Model$EnkelUtg,
+																					_1: {
+																						ctor: '::',
+																						_0: _user$project$Model$EnkelUtg,
+																						_1: {ctor: '[]'}
+																					}
+																				}
+																			}
+																		}
+																	}
+																},
+																_1: {
+																	ctor: '::',
+																	_0: {
+																		ctor: '::',
+																		_0: _user$project$Model$EnkelUtg,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$Heil,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$Heil,
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$Model$EnkelUtg,
+																					_1: {
+																						ctor: '::',
+																						_0: _user$project$Model$EnkelUtg,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$HalvUtenUtg,
+																							_1: {ctor: '[]'}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	},
+																	_1: {
+																		ctor: '::',
+																		_0: {
+																			ctor: '::',
+																			_0: _user$project$Model$EnkelUtg,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$Heil,
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$Model$Heil,
+																					_1: {
+																						ctor: '::',
+																						_0: _user$project$Model$EnkelUtg,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$HalvUtenUtg,
+																							_1: {
+																								ctor: '::',
+																								_0: _user$project$Model$EnkelUtg,
+																								_1: {ctor: '[]'}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		},
+																		_1: {
+																			ctor: '::',
+																			_0: {
+																				ctor: '::',
+																				_0: _user$project$Model$EnkelUtg,
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$Model$Heil,
+																					_1: {
+																						ctor: '::',
+																						_0: _user$project$Model$Heil,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$HalvUtenUtg,
+																							_1: {
+																								ctor: '::',
+																								_0: _user$project$Model$EnkelUtg,
+																								_1: {
+																									ctor: '::',
+																									_0: _user$project$Model$EnkelUtg,
+																									_1: {ctor: '[]'}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			},
+																			_1: {
+																				ctor: '::',
+																				_0: {
+																					ctor: '::',
+																					_0: _user$project$Model$Heil,
+																					_1: {
+																						ctor: '::',
+																						_0: _user$project$Model$Heil,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$Heil,
+																							_1: {
+																								ctor: '::',
+																								_0: _user$project$Model$EnkelUtg,
+																								_1: {
+																									ctor: '::',
+																									_0: _user$project$Model$EnkelUtg,
+																									_1: {
+																										ctor: '::',
+																										_0: _user$project$Model$EnkelUtg,
+																										_1: {ctor: '[]'}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				},
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};
 var _user$project$Model$CreateAndShow = {ctor: 'CreateAndShow'};
 var _user$project$Model$SikkerhetMarking = function (a) {
 	return {ctor: 'SikkerhetMarking', _0: a};
