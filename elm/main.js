@@ -9074,57 +9074,62 @@ var _user$project$Main$kupongRowsView = function (gameNumbers) {
 		},
 		gameNumbers);
 };
-var _user$project$Main$view = function (model) {
-	var rows = _user$project$Main$kupongRowsView(_user$project$Model$gameNumbers);
-	return A2(
-		_elm_lang$html$Html$div,
-		{
+var _user$project$Main$testKupongSetup = {
+	ctor: '::',
+	_0: {
+		ctor: '::',
+		_0: _user$project$Model$EnkelUtg,
+		_1: {
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('rows'),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$div,
-				{ctor: '[]'},
-				_user$project$Main$kupongHeaderView),
+			_0: _user$project$Model$EnkelUtg,
 			_1: {
 				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$div,
-					{ctor: '[]'},
-					rows),
+				_0: _user$project$Model$HalvUtenUtg,
 				_1: {
 					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$button,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Events$onClick(_user$project$Model$CreateAndShow),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('+'),
-							_1: {ctor: '[]'}
-						}),
+					_0: _user$project$Model$EnkelUtg,
 					_1: {
 						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{ctor: '[]'},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text(
-									_elm_lang$core$Basics$toString(model.resultatKuponger)),
-								_1: {ctor: '[]'}
-							}),
-						_1: {ctor: '[]'}
+						_0: _user$project$Model$HalvUtenUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			}
-		});
+		}
+	},
+	_1: {
+		ctor: '::',
+		_0: {
+			ctor: '::',
+			_0: _user$project$Model$EnkelUtg,
+			_1: {
+				ctor: '::',
+				_0: _user$project$Model$HalvUtenUtg,
+				_1: {
+					ctor: '::',
+					_0: _user$project$Model$EnkelUtg,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Model$EnkelUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$HalvUtenUtg,
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			}
+		},
+		_1: {ctor: '[]'}
+	}
 };
 var _user$project$Main$updateCurrentKamp = F3(
 	function (oldKampTips, updatedKamptips, kupong) {
@@ -9220,43 +9225,58 @@ var _user$project$Main$markeringForKamp = F2(
 	});
 var _user$project$Main$produserKupong = F3(
 	function (tips, kupongSetup, kupong) {
-		var _p1 = tips;
-		if (_p1.ctor === '[]') {
-			return kupong;
-		} else {
-			var _p5 = _p1._1;
-			var _p4 = _p1._0;
-			var _p2 = _p4.sik;
-			if (_p2.ctor === 'Sikker') {
-				return A2(
-					_elm_lang$core$Basics_ops['++'],
-					A3(_user$project$Main$produserKupong, _p5, kupongSetup, kupong),
-					{
-						ctor: '::',
-						_0: {
-							ctor: '_Tuple2',
-							_0: _p4.nr,
-							_1: A2(_user$project$Main$markeringForKamp, _p4.x, _user$project$Model$EnkelUtg)
-						},
-						_1: {ctor: '[]'}
-					});
+		produserKupong:
+		while (true) {
+			var _p1 = tips;
+			if (_p1.ctor === '[]') {
+				return kupong;
 			} else {
-				var _p3 = kupongSetup;
-				if (_p3.ctor === '[]') {
-					return kupong;
-				} else {
-					return A2(
+				var _p5 = _p1._1;
+				var _p4 = _p1._0;
+				var _p2 = _p4.sik;
+				if (_p2.ctor === 'Sikker') {
+					var _v3 = _p5,
+						_v4 = kupongSetup,
+						_v5 = A2(
 						_elm_lang$core$Basics_ops['++'],
-						A3(_user$project$Main$produserKupong, _p5, _p3._1, kupong),
+						kupong,
 						{
 							ctor: '::',
 							_0: {
 								ctor: '_Tuple2',
-								_0: _p3._0._0,
-								_1: A2(_user$project$Main$markeringForKamp, _p4.x, _p3._0._1)
+								_0: _p4.nr,
+								_1: A2(_user$project$Main$markeringForKamp, _p4.x, _user$project$Model$EnkelUtg)
 							},
 							_1: {ctor: '[]'}
 						});
+					tips = _v3;
+					kupongSetup = _v4;
+					kupong = _v5;
+					continue produserKupong;
+				} else {
+					var _p3 = kupongSetup;
+					if (_p3.ctor === '[]') {
+						return kupong;
+					} else {
+						var _v7 = _p5,
+							_v8 = _p3._1,
+							_v9 = A2(
+							_elm_lang$core$Basics_ops['++'],
+							kupong,
+							{
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: _p3._0._0,
+									_1: A2(_user$project$Main$markeringForKamp, _p4.x, _p3._0._1)
+								},
+								_1: {ctor: '[]'}
+							});
+						tips = _v7;
+						kupongSetup = _v8;
+						kupong = _v9;
+						continue produserKupong;
+					}
 				}
 			}
 		}
@@ -9270,9 +9290,9 @@ var _user$project$Main$createKupongs = function (tips) {
 				if (_p6.ctor === '[]') {
 					return kuponger;
 				} else {
-					var _v5 = tips,
-						_v6 = _p6._1,
-						_v7 = {
+					var _v11 = tips,
+						_v12 = _p6._1,
+						_v13 = {
 						ctor: '::',
 						_0: A3(
 							_user$project$Main$produserKupong,
@@ -9281,9 +9301,9 @@ var _user$project$Main$createKupongs = function (tips) {
 							{ctor: '[]'}),
 						_1: kuponger
 					};
-					tips = _v5;
-					kupongSetups = _v6;
-					kuponger = _v7;
+					tips = _v11;
+					kupongSetups = _v12;
+					kuponger = _v13;
 					continue tail_helper;
 				}
 			}
@@ -9308,13 +9328,13 @@ var _user$project$Main$createKupongs = function (tips) {
 				if (_p7.ctor === '[]') {
 					return acc;
 				} else {
-					var _v9 = _p7._1,
-						_v10 = _elm_lang$core$Basics$toString(
+					var _v15 = _p7._1,
+						_v16 = _elm_lang$core$Basics$toString(
 						A2(
 							_elm_lang$core$Result$withDefault,
 							0,
 							_elm_lang$core$String$toInt(kupongNr)) + 1),
-						_v11 = {
+						_v17 = {
 						ctor: '::',
 						_0: A3(
 							_elm_lang$core$List$map2,
@@ -9326,9 +9346,9 @@ var _user$project$Main$createKupongs = function (tips) {
 							_p7._0),
 						_1: acc
 					};
-					kupongUtgSetups = _v9;
-					kupongNr = _v10;
-					acc = _v11;
+					kupongUtgSetups = _v15;
+					kupongNr = _v16;
+					acc = _v17;
 					continue tail_rec_kupong_setups;
 				}
 			}
@@ -9381,6 +9401,97 @@ var _user$project$Main$update = F2(
 				};
 		}
 	});
+var _user$project$Main$view = function (model) {
+	var rows = _user$project$Main$kupongRowsView(_user$project$Model$gameNumbers);
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('rows'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{ctor: '[]'},
+				_user$project$Main$kupongHeaderView),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{ctor: '[]'},
+					rows),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(_user$project$Model$CreateAndShow),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('+'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(
+									_elm_lang$core$Basics$toString(model.resultatKuponger)),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(
+										_elm_lang$core$Basics$toString(model.kupong)),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{ctor: '[]'},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(
+											_elm_lang$core$Basics$toString(
+												{
+													ctor: '_Tuple3',
+													_0: _user$project$Main$produserKupong(
+														{
+															ctor: '::',
+															_0: {nr: '1', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+															_1: {
+																ctor: '::',
+																_0: {nr: '2', sik: _user$project$Model$Sikker, x: _user$project$Model$H},
+																_1: {ctor: '[]'}
+															}
+														}),
+													_1: _user$project$Main$testKupongSetup,
+													_2: {ctor: '[]'}
+												})),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			}
+		});
+};
 var _user$project$Main$main = _elm_lang$html$Html$program(
 	{
 		init: {ctor: '_Tuple2', _0: _user$project$Main$init, _1: _elm_lang$core$Platform_Cmd$none},

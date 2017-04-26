@@ -90,7 +90,7 @@ produserKupong tips kupongSetup kupong =
         head :: tail ->
             case head.sik of
                 Sikker ->
-                    produserKupong tail kupongSetup kupong ++ [ ( head.nr, (markeringForKamp head.x EnkelUtg) ) ]
+                    produserKupong tail kupongSetup (kupong ++ [ ( head.nr, markeringForKamp head.x EnkelUtg ) ])
 
                 Utgangspunkt ->
                     case kupongSetup of
@@ -98,7 +98,7 @@ produserKupong tips kupongSetup kupong =
                             kupong
 
                         ( j, markValg ) :: lasttail ->
-                            produserKupong tail lasttail kupong ++ [ ( j, (markeringForKamp head.x markValg) ) ]
+                            produserKupong tail lasttail (kupong ++ [ ( j, markeringForKamp head.x markValg ) ])
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -115,6 +115,12 @@ update msg model =
 
         CreateAndShow ->
             ( { model | resultatKuponger = createKupongs model.kupong }, Cmd.none )
+
+
+testKupongSetup =
+    [ [ EnkelUtg, EnkelUtg, HalvUtenUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ]
+    , [ EnkelUtg, HalvUtenUtg, EnkelUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ]
+    ]
 
 
 kupongRowsView gameNumbers =
@@ -150,6 +156,8 @@ view model =
             , div [] rows
             , button [ onClick CreateAndShow ] [ text "+" ]
             , div [] [ text (toString model.resultatKuponger) ]
+            , div [] [ text (toString model.kupong) ]
+            , div [] [ text (toString ( produserKupong [ { nr = "1", sik = Utgangspunkt, x = H }, { nr = "2", sik = Sikker, x = H } ], testKupongSetup, [] )) ]
             ]
 
 
