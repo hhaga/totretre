@@ -55,6 +55,10 @@ var _user$project$Model$Model = F2(
 	function (a, b) {
 		return {kupong: a, resultatKuponger: b};
 	});
+var _user$project$Model$KupongKamp = F2(
+	function (a, b) {
+		return {nr: a, gardering: b};
+	});
 var _user$project$Model$B = {ctor: 'B'};
 var _user$project$Model$U = {ctor: 'U'};
 var _user$project$Model$H = {ctor: 'H'};

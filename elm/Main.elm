@@ -62,43 +62,29 @@ createKupongs tips =
         usikreKampNr =
             List.map (\k -> k.nr) usikre
 
-        tail_rec_kupong_setups kupongUtgSetups kupongNr acc =
-            case kupongUtgSetups of
-                [] ->
-                    acc
+        combineNrAndGardering kupongUtgSetups =
+            List.map (\ks -> (List.map2 (\x y -> { nr = x, gardering = y }) usikreKampNr ks)) kupongUtgSetups
 
-                head :: tail ->
-                    tail_rec_kupong_setups tail (toString ((Result.withDefault 0 (String.toInt kupongNr)) + 1)) (List.map2 (,) usikreKampNr head :: acc)
-
-        tail_helper tips kupongSetups kuponger =
-            case kupongSetups of
-                [] ->
-                    kuponger
-
-                head :: tail ->
-                    tail_helper tips tail ((produserKupong tips head []) :: kuponger)
+        generateHelper tips kupongSetups =
+            List.map (\ks -> produserKupong tips ks) kupongSetups
     in
-        tail_helper tips (tail_rec_kupong_setups toTreTreSetup "1" []) []
+        generateHelper tips (combineNrAndGardering toTreTreSetup)
 
 
-produserKupong : List KampTips -> List KupongKamp -> List Kampkryss -> List Kampkryss
-produserKupong tips kupongSetup kupong =
-    case tips of
-        [] ->
-            kupong
+produserKupong : List KampTips -> List KupongKamp -> List Kampkryss
+produserKupong tips kupongSetup =
+    List.concat
+        (List.map
+            (\t ->
+                case t.sik of
+                    Sikker ->
+                        [ ( t.nr, markeringForKamp t.x EnkelUtg ) ]
 
-        head :: tail ->
-            case head.sik of
-                Sikker ->
-                    produserKupong tail kupongSetup (kupong ++ [ ( head.nr, markeringForKamp head.x EnkelUtg ) ])
-
-                Utgangspunkt ->
-                    case kupongSetup of
-                        [] ->
-                            kupong
-
-                        ( j, markValg ) :: lasttail ->
-                            produserKupong tail lasttail (kupong ++ [ ( j, markeringForKamp head.x markValg ) ])
+                    Utgangspunkt ->
+                        List.map (\ks -> ( ks.nr, markeringForKamp t.x ks.gardering )) kupongSetup
+            )
+            tips
+        )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -132,7 +118,7 @@ kupongRowsView gameNumbers =
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = U }) ] []
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = B }) ] []
-                    , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
+                    , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = Sikker, x = H }) ] []
                     ]
             )
 
@@ -157,7 +143,15 @@ view model =
             , button [ onClick CreateAndShow ] [ text "+" ]
             , div [] [ text (toString model.resultatKuponger) ]
             , div [] [ text (toString model.kupong) ]
-            , div [] [ text (toString ( produserKupong [ { nr = "1", sik = Utgangspunkt, x = H }, { nr = "2", sik = Sikker, x = H } ], testKupongSetup, [] )) ]
+            , div []
+                [ text
+                    (toString
+                        ( produserKupong [ { nr = "1", sik = Utgangspunkt, x = H }, { nr = "2", sik = Sikker, x = H } ]
+                        , testKupongSetup
+                        , []
+                        )
+                    )
+                ]
             ]
 
 

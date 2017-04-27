@@ -34,7 +34,7 @@ type Msg
 
 
 type alias KupongKamp =
-    ( String, Gardering )
+    { nr : String, gardering : Gardering }
 
 
 type alias Kampkryss =
