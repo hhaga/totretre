@@ -157,7 +157,22 @@ view model =
 
 init : Model
 init =
-    { kupong = [], resultatKuponger = [] }
+    { kupong =
+        [ { nr = "1", sik = Utgangspunkt, x = H }
+        , { nr = "2", sik = Utgangspunkt, x = H }
+        , { nr = "3", sik = Utgangspunkt, x = H }
+        , { nr = "4", sik = Utgangspunkt, x = H }
+        , { nr = "5", sik = Utgangspunkt, x = H }
+        , { nr = "6", sik = Utgangspunkt, x = H }
+        , { nr = "7", sik = Utgangspunkt, x = H }
+        , { nr = "8", sik = Utgangspunkt, x = H }
+        , { nr = "9", sik = Utgangspunkt, x = H }
+        , { nr = "10", sik = Utgangspunkt, x = H }
+        , { nr = "11", sik = Utgangspunkt, x = H }
+        , { nr = "12", sik = Utgangspunkt, x = H }
+        ]
+    , resultatKuponger = []
+    }
 
 
 main =

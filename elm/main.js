@@ -8900,7 +8900,55 @@ var _user$project$Model$HUBMarking = function (a) {
 var _user$project$Model$ClearKupong = {ctor: 'ClearKupong'};
 
 var _user$project$Main$init = {
-	kupong: {ctor: '[]'},
+	kupong: {
+		ctor: '::',
+		_0: {nr: '1', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+		_1: {
+			ctor: '::',
+			_0: {nr: '2', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+			_1: {
+				ctor: '::',
+				_0: {nr: '3', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+				_1: {
+					ctor: '::',
+					_0: {nr: '4', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+					_1: {
+						ctor: '::',
+						_0: {nr: '5', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+						_1: {
+							ctor: '::',
+							_0: {nr: '6', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+							_1: {
+								ctor: '::',
+								_0: {nr: '7', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+								_1: {
+									ctor: '::',
+									_0: {nr: '8', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+									_1: {
+										ctor: '::',
+										_0: {nr: '9', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+										_1: {
+											ctor: '::',
+											_0: {nr: '10', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+											_1: {
+												ctor: '::',
+												_0: {nr: '11', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+												_1: {
+													ctor: '::',
+													_0: {nr: '12', sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H},
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
 	resultatKuponger: {ctor: '[]'}
 };
 var _user$project$Main$kupongHeaderView = {
