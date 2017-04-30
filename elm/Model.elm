@@ -19,7 +19,7 @@ type Gardering
 
 
 type alias KampTips =
-    { nr : String, sik : Sikkerhet, x : Markering }
+    { nr : String, sik : Bool, x : Markering }
 
 
 type alias Model =

@@ -48,27 +48,33 @@ updateSikkerhet kt kupong =
             getCurrentKamp kt kupong
 
         updatedKamptips =
-            List.map (\k -> { k | sik = kt.sik }) kamptips
+            List.map (\k -> { k | sik = not k.sik }) kamptips
     in
         updateCurrentKamp kt updatedKamptips kupong
+
+
+usikre : List KampTips -> List KampTips
+usikre tips =
+    List.filter (\k -> k.sik == False) tips
+
+
+usikreKampNr : List KampTips -> List String
+usikreKampNr tips =
+    List.map (\k -> k.nr) (usikre tips)
+
+
+combineNrAndGardering : List KampTips -> List (List Gardering) -> List (List KupongKamp)
+combineNrAndGardering tips kupongUtgSetups =
+    List.map (\ks -> (List.map2 (\x y -> { nr = x, gardering = y }) (usikreKampNr tips) ks)) kupongUtgSetups
 
 
 createKupongs : List KampTips -> List (List Kampkryss)
 createKupongs tips =
     let
-        usikre =
-            List.filter (\k -> k.sik == Utgangspunkt) tips
-
-        usikreKampNr =
-            List.map (\k -> k.nr) usikre
-
-        combineNrAndGardering kupongUtgSetups =
-            List.map (\ks -> (List.map2 (\x y -> { nr = x, gardering = y }) usikreKampNr ks)) kupongUtgSetups
-
         generateHelper tips kupongSetups =
             List.map (\ks -> produserKupong tips ks) kupongSetups
     in
-        generateHelper tips (combineNrAndGardering toTreTreSetup)
+        generateHelper tips (combineNrAndGardering tips toTreTreSetup)
 
 
 produserKupong : List KampTips -> List KupongKamp -> List Kampkryss
@@ -77,10 +83,10 @@ produserKupong tips kupongSetup =
         (List.map
             (\t ->
                 case t.sik of
-                    Sikker ->
+                    True ->
                         [ ( t.nr, markeringForKamp t.x EnkelUtg ) ]
 
-                    Utgangspunkt ->
+                    False ->
                         List.map (\ks -> ( ks.nr, markeringForKamp t.x ks.gardering )) kupongSetup
             )
             tips
@@ -103,24 +109,24 @@ update msg model =
             ( { model | resultatKuponger = createKupongs model.kupong }, Cmd.none )
 
 
-testKupongSetup =
-    [ [ EnkelUtg, EnkelUtg, HalvUtenUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ]
-    , [ EnkelUtg, HalvUtenUtg, EnkelUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ]
-    ]
-
-
 kupongRowsView gameNumbers =
     gameNumbers
         |> List.map
             (\gameNumber ->
                 div [ class "row" ]
                     [ div [ class "number" ] [ text gameNumber ]
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = H }) ] []
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = U }) ] []
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = Utgangspunkt, x = B }) ] []
-                    , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = Sikker, x = H }) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = H }) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = U }) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = B }) ] []
+                    , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }) ] []
                     ]
             )
+
+
+testSetup =
+    [ [ EnkelUtg, EnkelUtg, HalvUtenUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ] --1*)
+    , [ EnkelUtg, HalvUtenUtg, EnkelUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ]
+    ]
 
 
 kupongHeaderView =
@@ -143,33 +149,24 @@ view model =
             , button [ onClick CreateAndShow ] [ text "+" ]
             , div [] [ text (toString model.resultatKuponger) ]
             , div [] [ text (toString model.kupong) ]
-            , div []
-                [ text
-                    (toString
-                        ( produserKupong [ { nr = "1", sik = Utgangspunkt, x = H }, { nr = "2", sik = Sikker, x = H } ]
-                        , testKupongSetup
-                        , []
-                        )
-                    )
-                ]
             ]
 
 
 init : Model
 init =
     { kupong =
-        [ { nr = "1", sik = Utgangspunkt, x = H }
-        , { nr = "2", sik = Utgangspunkt, x = H }
-        , { nr = "3", sik = Utgangspunkt, x = H }
-        , { nr = "4", sik = Utgangspunkt, x = H }
-        , { nr = "5", sik = Utgangspunkt, x = H }
-        , { nr = "6", sik = Utgangspunkt, x = H }
-        , { nr = "7", sik = Utgangspunkt, x = H }
-        , { nr = "8", sik = Utgangspunkt, x = H }
-        , { nr = "9", sik = Utgangspunkt, x = H }
-        , { nr = "10", sik = Utgangspunkt, x = H }
-        , { nr = "11", sik = Utgangspunkt, x = H }
-        , { nr = "12", sik = Utgangspunkt, x = H }
+        [ { nr = "1", sik = True, x = H }
+        , { nr = "2", sik = True, x = H }
+        , { nr = "3", sik = True, x = H }
+        , { nr = "4", sik = True, x = H }
+        , { nr = "5", sik = True, x = H }
+        , { nr = "6", sik = True, x = H }
+        , { nr = "7", sik = False, x = H }
+        , { nr = "8", sik = False, x = H }
+        , { nr = "9", sik = False, x = H }
+        , { nr = "10", sik = False, x = H }
+        , { nr = "11", sik = False, x = H }
+        , { nr = "12", sik = False, x = H }
         ]
     , resultatKuponger = []
     }
