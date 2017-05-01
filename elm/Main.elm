@@ -19,9 +19,9 @@ markeringForKamp utgangspunkt systemvalg =
             [ H, U, B ]
 
 
-getCurrentKamp : KampTips -> List KampTips -> List KampTips
-getCurrentKamp kt kupong =
-    List.filter (\k -> k.nr == kt.nr) kupong
+getCurrentKamp : String -> List KampTips -> List KampTips
+getCurrentKamp nr kupong =
+    List.filter (\k -> k.nr == nr) kupong
 
 
 updateCurrentKamp : KampTips -> List KampTips -> List KampTips -> List KampTips
@@ -33,7 +33,7 @@ updateHUB : KampTips -> List KampTips -> List KampTips
 updateHUB kt kupong =
     let
         kamptips =
-            getCurrentKamp kt kupong
+            getCurrentKamp kt.nr kupong
 
         updatedKamptips =
             List.map (\k -> { k | x = kt.x }) kamptips
@@ -45,7 +45,7 @@ updateSikkerhet : KampTips -> List KampTips -> List KampTips
 updateSikkerhet kt kupong =
     let
         kamptips =
-            getCurrentKamp kt kupong
+            getCurrentKamp kt.nr kupong
 
         updatedKamptips =
             List.map (\k -> { k | sik = not k.sik }) kamptips
@@ -113,14 +113,23 @@ update msg model =
             ( { model | resultatKuponger = createKupongs model.kupong }, Cmd.none )
 
 
-kupongRowsView : List String -> List (Html Msg)
-kupongRowsView gameNumbers =
+marked : String -> Markering -> Model -> Bool
+marked gameNumber mark model =
+    let
+        kamp =
+            getCurrentKamp gameNumber model.kupong
+    in
+        not (List.isEmpty (List.filter (\k -> k.x == mark) kamp))
+
+
+kupongRowsView : List String -> Model -> List (Html Msg)
+kupongRowsView gameNumbers model =
     gameNumbers
         |> List.map
             (\gameNumber ->
                 div [ class "row" ]
                     [ div [ class "number" ] [ text gameNumber ]
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = H }) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = H }), checked (marked gameNumber H model) ] []
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = U }) ] []
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = B }) ] []
                     , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }) ] []
@@ -140,7 +149,7 @@ view : Model -> Html Msg
 view model =
     let
         rows =
-            kupongRowsView gameNumbers
+            kupongRowsView gameNumbers model
     in
         div [ class "rows" ]
             [ div [] kupongHeaderView
