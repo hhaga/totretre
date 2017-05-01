@@ -8262,31 +8262,31 @@ var _elm_lang$html$Html_Events$Options = F2(
 
 var _user$project$Model$gameNumbers = {
 	ctor: '::',
-	_0: '1',
+	_0: '.1',
 	_1: {
 		ctor: '::',
-		_0: '2',
+		_0: '.2',
 		_1: {
 			ctor: '::',
-			_0: '3',
+			_0: '.3',
 			_1: {
 				ctor: '::',
-				_0: '4',
+				_0: '.4',
 				_1: {
 					ctor: '::',
-					_0: '5',
+					_0: '.5',
 					_1: {
 						ctor: '::',
-						_0: '6',
+						_0: '.6',
 						_1: {
 							ctor: '::',
-							_0: '7',
+							_0: '.7',
 							_1: {
 								ctor: '::',
-								_0: '8',
+								_0: '.8',
 								_1: {
 									ctor: '::',
-									_0: '9',
+									_0: '.9',
 									_1: {
 										ctor: '::',
 										_0: '10',
@@ -8320,6 +8320,10 @@ var _user$project$Model$Model = F2(
 var _user$project$Model$KupongKamp = F2(
 	function (a, b) {
 		return {nr: a, gardering: b};
+	});
+var _user$project$Model$Kampkryss = F2(
+	function (a, b) {
+		return {nr: a, markeringer: b};
 	});
 var _user$project$Model$B = {ctor: 'B'};
 var _user$project$Model$U = {ctor: 'U'};
@@ -8902,31 +8906,31 @@ var _user$project$Model$ClearKupong = {ctor: 'ClearKupong'};
 var _user$project$Main$init = {
 	kupong: {
 		ctor: '::',
-		_0: {nr: '1', sik: false, x: _user$project$Model$H},
+		_0: {nr: '.1', sik: false, x: _user$project$Model$H},
 		_1: {
 			ctor: '::',
-			_0: {nr: '2', sik: false, x: _user$project$Model$H},
+			_0: {nr: '.2', sik: false, x: _user$project$Model$H},
 			_1: {
 				ctor: '::',
-				_0: {nr: '3', sik: false, x: _user$project$Model$H},
+				_0: {nr: '.3', sik: false, x: _user$project$Model$H},
 				_1: {
 					ctor: '::',
-					_0: {nr: '4', sik: false, x: _user$project$Model$H},
+					_0: {nr: '.4', sik: false, x: _user$project$Model$H},
 					_1: {
 						ctor: '::',
-						_0: {nr: '5', sik: false, x: _user$project$Model$H},
+						_0: {nr: '.5', sik: false, x: _user$project$Model$H},
 						_1: {
 							ctor: '::',
-							_0: {nr: '6', sik: false, x: _user$project$Model$H},
+							_0: {nr: '.6', sik: false, x: _user$project$Model$H},
 							_1: {
 								ctor: '::',
-								_0: {nr: '7', sik: false, x: _user$project$Model$H},
+								_0: {nr: '.7', sik: false, x: _user$project$Model$H},
 								_1: {
 									ctor: '::',
-									_0: {nr: '8', sik: false, x: _user$project$Model$H},
+									_0: {nr: '.8', sik: false, x: _user$project$Model$H},
 									_1: {
 										ctor: '::',
-										_0: {nr: '9', sik: false, x: _user$project$Model$H},
+										_0: {nr: '.9', sik: false, x: _user$project$Model$H},
 										_1: {
 											ctor: '::',
 											_0: {nr: '10', sik: false, x: _user$project$Model$H},
@@ -9092,8 +9096,8 @@ var _user$project$Main$updateSikkerhet = F2(
 		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
 	});
 var _user$project$Main$marked = F3(
-	function (gameNumber, mark, model) {
-		var kamp = A2(_user$project$Main$getCurrentKamp, gameNumber, model.kupong);
+	function (gameNumber, mark, kupong) {
+		var kamp = A2(_user$project$Main$getCurrentKamp, gameNumber, kupong);
 		return !_elm_lang$core$List$isEmpty(
 			A2(
 				_elm_lang$core$List$filter,
@@ -9103,7 +9107,7 @@ var _user$project$Main$marked = F3(
 				kamp));
 	});
 var _user$project$Main$kupongRowsView = F2(
-	function (gameNumbers, model) {
+	function (gameNumbers, kupong) {
 		return A2(
 			_elm_lang$core$List$map,
 			function (gameNumber) {
@@ -9146,7 +9150,7 @@ var _user$project$Main$kupongRowsView = F2(
 											_1: {
 												ctor: '::',
 												_0: _elm_lang$html$Html_Attributes$checked(
-													A3(_user$project$Main$marked, gameNumber, _user$project$Model$H, model)),
+													A3(_user$project$Main$marked, gameNumber, _user$project$Model$H, kupong)),
 												_1: {ctor: '[]'}
 											}
 										}
@@ -9168,7 +9172,12 @@ var _user$project$Main$kupongRowsView = F2(
 												_0: _elm_lang$html$Html_Events$onClick(
 													_user$project$Model$HUBMarking(
 														{nr: gameNumber, sik: false, x: _user$project$Model$U})),
-												_1: {ctor: '[]'}
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$checked(
+														A3(_user$project$Main$marked, gameNumber, _user$project$Model$U, kupong)),
+													_1: {ctor: '[]'}
+												}
 											}
 										}
 									},
@@ -9188,7 +9197,12 @@ var _user$project$Main$kupongRowsView = F2(
 													_0: _elm_lang$html$Html_Events$onClick(
 														_user$project$Model$HUBMarking(
 															{nr: gameNumber, sik: false, x: _user$project$Model$B})),
-													_1: {ctor: '[]'}
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$checked(
+															A3(_user$project$Main$marked, gameNumber, _user$project$Model$B, kupong)),
+														_1: {ctor: '[]'}
+													}
 												}
 											}
 										},
@@ -9223,7 +9237,7 @@ var _user$project$Main$kupongRowsView = F2(
 			gameNumbers);
 	});
 var _user$project$Main$view = function (model) {
-	var rows = A2(_user$project$Main$kupongRowsView, _user$project$Model$gameNumbers, model);
+	var rows = A2(_user$project$Main$kupongRowsView, _user$project$Model$gameNumbers, model.kupong);
 	return A2(
 		_elm_lang$html$Html$div,
 		{
@@ -9351,9 +9365,8 @@ var _user$project$Main$produserKupong = F3(
 						{
 							ctor: '::',
 							_0: {
-								ctor: '_Tuple2',
-								_0: _p5.nr,
-								_1: A2(_user$project$Main$markeringForKamp, _p5.x, _user$project$Model$EnkelUtg)
+								nr: _p5.nr,
+								markeringer: A2(_user$project$Main$markeringForKamp, _p5.x, _user$project$Model$EnkelUtg)
 							},
 							_1: {ctor: '[]'}
 						});
@@ -9375,9 +9388,8 @@ var _user$project$Main$produserKupong = F3(
 							{
 								ctor: '::',
 								_0: {
-									ctor: '_Tuple2',
-									_0: _p4.nr,
-									_1: A2(_user$project$Main$markeringForKamp, _p5.x, _p4.gardering)
+									nr: _p4.nr,
+									markeringer: A2(_user$project$Main$markeringForKamp, _p5.x, _p4.gardering)
 								},
 								_1: {ctor: '[]'}
 							});
@@ -9396,11 +9408,16 @@ var _user$project$Main$createKupongs = function (tips) {
 			return A2(
 				_elm_lang$core$List$map,
 				function (ks) {
-					return A3(
-						_user$project$Main$produserKupong,
-						tips,
-						ks,
-						{ctor: '[]'});
+					return A2(
+						_elm_lang$core$List$sortBy,
+						function (_) {
+							return _.nr;
+						},
+						A3(
+							_user$project$Main$produserKupong,
+							tips,
+							ks,
+							{ctor: '[]'}));
 				},
 				kupongSetups);
 		});

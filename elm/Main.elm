@@ -72,7 +72,7 @@ createKupongs : List KampTips -> List (List Kampkryss)
 createKupongs tips =
     let
         generateHelper tips kupongSetups =
-            List.map (\ks -> produserKupong tips ks []) kupongSetups
+            List.map (\ks -> List.sortBy .nr (produserKupong tips ks [])) kupongSetups
     in
         generateHelper tips (combineNrAndGardering tips toTreTreSetup)
 
@@ -86,7 +86,7 @@ produserKupong tips kupongSetup kupong =
         head :: tail ->
             case head.sik of
                 True ->
-                    produserKupong tail kupongSetup (kupong ++ [ ( head.nr, markeringForKamp head.x EnkelUtg ) ])
+                    produserKupong tail kupongSetup (kupong ++ [ { nr = head.nr, markeringer = markeringForKamp head.x EnkelUtg } ])
 
                 False ->
                     case kupongSetup of
@@ -94,7 +94,7 @@ produserKupong tips kupongSetup kupong =
                             kupong
 
                         kupongkamp :: lasttail ->
-                            produserKupong tail lasttail (kupong ++ [ ( kupongkamp.nr, markeringForKamp head.x kupongkamp.gardering ) ])
+                            produserKupong tail lasttail (kupong ++ [ { nr = kupongkamp.nr, markeringer = markeringForKamp head.x kupongkamp.gardering } ])
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -113,25 +113,25 @@ update msg model =
             ( { model | resultatKuponger = createKupongs model.kupong }, Cmd.none )
 
 
-marked : String -> Markering -> Model -> Bool
-marked gameNumber mark model =
+marked : String -> Markering -> List KampTips -> Bool
+marked gameNumber mark kupong =
     let
         kamp =
-            getCurrentKamp gameNumber model.kupong
+            getCurrentKamp gameNumber kupong
     in
         not (List.isEmpty (List.filter (\k -> k.x == mark) kamp))
 
 
-kupongRowsView : List String -> Model -> List (Html Msg)
-kupongRowsView gameNumbers model =
+kupongRowsView : List String -> List KampTips -> List (Html Msg)
+kupongRowsView gameNumbers kupong =
     gameNumbers
         |> List.map
             (\gameNumber ->
                 div [ class "row" ]
                     [ div [ class "number" ] [ text gameNumber ]
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = H }), checked (marked gameNumber H model) ] []
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = U }) ] []
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = B }) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = H }), checked (marked gameNumber H kupong) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = U }), checked (marked gameNumber U kupong) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = B }), checked (marked gameNumber B kupong) ] []
                     , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }) ] []
                     ]
             )
@@ -149,7 +149,7 @@ view : Model -> Html Msg
 view model =
     let
         rows =
-            kupongRowsView gameNumbers model
+            kupongRowsView gameNumbers model.kupong
     in
         div [ class "rows" ]
             [ div [] kupongHeaderView
@@ -157,21 +157,23 @@ view model =
             , button [ onClick CreateAndShow ] [ text "+" ]
             , div [] [ text (toString model.resultatKuponger) ]
             , div [] [ text (toString model.kupong) ]
+
+            --, div [] List.map
             ]
 
 
 init : Model
 init =
     { kupong =
-        [ { nr = "1", sik = False, x = H }
-        , { nr = "2", sik = False, x = H }
-        , { nr = "3", sik = False, x = H }
-        , { nr = "4", sik = False, x = H }
-        , { nr = "5", sik = False, x = H }
-        , { nr = "6", sik = False, x = H }
-        , { nr = "7", sik = False, x = H }
-        , { nr = "8", sik = False, x = H }
-        , { nr = "9", sik = False, x = H }
+        [ { nr = ".1", sik = False, x = H }
+        , { nr = ".2", sik = False, x = H }
+        , { nr = ".3", sik = False, x = H }
+        , { nr = ".4", sik = False, x = H }
+        , { nr = ".5", sik = False, x = H }
+        , { nr = ".6", sik = False, x = H }
+        , { nr = ".7", sik = False, x = H }
+        , { nr = ".8", sik = False, x = H }
+        , { nr = ".9", sik = False, x = H }
         , { nr = "10", sik = False, x = H }
         , { nr = "11", sik = False, x = H }
         , { nr = "12", sik = False, x = H }

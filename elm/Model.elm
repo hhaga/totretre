@@ -38,7 +38,7 @@ type alias KupongKamp =
 
 
 type alias Kampkryss =
-    ( String, List Markering )
+    { nr : String, markeringer : List Markering }
 
 
 toTreTreSetup =
@@ -66,4 +66,4 @@ toTreTreSetup =
 
 
 gameNumbers =
-    [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" ]
+    [ ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".8", ".9", "10", "11", "12" ]
