@@ -113,8 +113,8 @@ update msg model =
             ( { model | resultatKuponger = createKupongs model.kupong }, Cmd.none )
 
 
-marked : String -> Markering -> List KampTips -> Bool
-marked gameNumber mark kupong =
+tipMarked : String -> Markering -> List KampTips -> Bool
+tipMarked gameNumber mark kupong =
     let
         kamp =
             getCurrentKamp gameNumber kupong
@@ -122,19 +122,48 @@ marked gameNumber mark kupong =
         not (List.isEmpty (List.filter (\k -> k.x == mark) kamp))
 
 
-kupongRowsView : List String -> List KampTips -> List (Html Msg)
-kupongRowsView gameNumbers kupong =
+tipsRowsView : List String -> List KampTips -> List (Html Msg)
+tipsRowsView gameNumbers kupong =
     gameNumbers
         |> List.map
             (\gameNumber ->
                 div [ class "row" ]
                     [ div [ class "number" ] [ text gameNumber ]
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = H }), checked (marked gameNumber H kupong) ] []
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = U }), checked (marked gameNumber U kupong) ] []
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = B }), checked (marked gameNumber B kupong) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = H }), checked (tipMarked gameNumber H kupong) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = U }), checked (tipMarked gameNumber U kupong) ] []
+                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = B }), checked (tipMarked gameNumber B kupong) ] []
                     , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }) ] []
                     ]
             )
+
+
+marked : String -> Markering -> List Kampkryss -> Bool
+marked gameNumber mark kupong =
+    let
+        kamp =
+            List.filter (\k -> k.nr == gameNumber) kupong
+    in
+        List.member mark kamp.markeringer
+
+
+resultatKupongerRowsView : List String -> List (List Kampkryss) -> List (Html Msg)
+resultatKupongerRowsView gameNumbers kuponger =
+    List.concat
+        (List.map
+            (\kupong ->
+                gameNumbers
+                    |> List.map
+                        (\gameNumber ->
+                            div [ class "row" ]
+                                [ div [ class "number" ] [ text gameNumber ]
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber H kupong) ] []
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber U kupong) ] []
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber B kupong) ] []
+                                ]
+                        )
+            )
+            kuponger
+        )
 
 
 kupongHeaderView =
@@ -149,7 +178,7 @@ view : Model -> Html Msg
 view model =
     let
         rows =
-            kupongRowsView gameNumbers model.kupong
+            tipsRowsView gameNumbers model.kupong
     in
         div [ class "rows" ]
             [ div [] kupongHeaderView
@@ -157,8 +186,7 @@ view model =
             , button [ onClick CreateAndShow ] [ text "+" ]
             , div [] [ text (toString model.resultatKuponger) ]
             , div [] [ text (toString model.kupong) ]
-
-            --, div [] List.map
+            , div [] (resultatKupongerRowsView gameNumbers model.resultatKuponger)
             ]
 
 
