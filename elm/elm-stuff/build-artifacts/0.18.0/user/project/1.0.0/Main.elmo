@@ -1,22 +1,22 @@
 var _user$project$Main$init = {
 	kupong: {
 		ctor: '::',
-		_0: {nr: '1', sik: true, x: _user$project$Model$H},
+		_0: {nr: '1', sik: false, x: _user$project$Model$H},
 		_1: {
 			ctor: '::',
-			_0: {nr: '2', sik: true, x: _user$project$Model$H},
+			_0: {nr: '2', sik: false, x: _user$project$Model$H},
 			_1: {
 				ctor: '::',
-				_0: {nr: '3', sik: true, x: _user$project$Model$H},
+				_0: {nr: '3', sik: false, x: _user$project$Model$H},
 				_1: {
 					ctor: '::',
-					_0: {nr: '4', sik: true, x: _user$project$Model$H},
+					_0: {nr: '4', sik: false, x: _user$project$Model$H},
 					_1: {
 						ctor: '::',
-						_0: {nr: '5', sik: true, x: _user$project$Model$H},
+						_0: {nr: '5', sik: false, x: _user$project$Model$H},
 						_1: {
 							ctor: '::',
-							_0: {nr: '6', sik: true, x: _user$project$Model$H},
+							_0: {nr: '6', sik: false, x: _user$project$Model$H},
 							_1: {
 								ctor: '::',
 								_0: {nr: '7', sik: false, x: _user$project$Model$H},
@@ -109,63 +109,6 @@ var _user$project$Main$kupongHeaderView = {
 				_1: {ctor: '[]'}
 			}
 		}
-	}
-};
-var _user$project$Main$testSetup = {
-	ctor: '::',
-	_0: {
-		ctor: '::',
-		_0: _user$project$Model$EnkelUtg,
-		_1: {
-			ctor: '::',
-			_0: _user$project$Model$EnkelUtg,
-			_1: {
-				ctor: '::',
-				_0: _user$project$Model$HalvUtenUtg,
-				_1: {
-					ctor: '::',
-					_0: _user$project$Model$EnkelUtg,
-					_1: {
-						ctor: '::',
-						_0: _user$project$Model$HalvUtenUtg,
-						_1: {
-							ctor: '::',
-							_0: _user$project$Model$HalvUtenUtg,
-							_1: {ctor: '[]'}
-						}
-					}
-				}
-			}
-		}
-	},
-	_1: {
-		ctor: '::',
-		_0: {
-			ctor: '::',
-			_0: _user$project$Model$EnkelUtg,
-			_1: {
-				ctor: '::',
-				_0: _user$project$Model$HalvUtenUtg,
-				_1: {
-					ctor: '::',
-					_0: _user$project$Model$EnkelUtg,
-					_1: {
-						ctor: '::',
-						_0: _user$project$Model$EnkelUtg,
-						_1: {
-							ctor: '::',
-							_0: _user$project$Model$HalvUtenUtg,
-							_1: {
-								ctor: '::',
-								_0: _user$project$Model$HalvUtenUtg,
-								_1: {ctor: '[]'}
-							}
-						}
-					}
-				}
-			}
-		},
-		_1: {ctor: '[]'}
 	}
 };
 var _user$project$Main$kupongRowsView = function (gameNumbers) {
@@ -282,38 +225,6 @@ var _user$project$Main$kupongRowsView = function (gameNumbers) {
 		},
 		gameNumbers);
 };
-var _user$project$Main$usikre = function (tips) {
-	return A2(
-		_elm_lang$core$List$filter,
-		function (k) {
-			return _elm_lang$core$Native_Utils.eq(k.sik, false);
-		},
-		tips);
-};
-var _user$project$Main$usikreKampNr = function (tips) {
-	return A2(
-		_elm_lang$core$List$map,
-		function (k) {
-			return k.nr;
-		},
-		_user$project$Main$usikre(tips));
-};
-var _user$project$Main$combineNrAndGardering = F2(
-	function (tips, kupongUtgSetups) {
-		return A2(
-			_elm_lang$core$List$map,
-			function (ks) {
-				return A3(
-					_elm_lang$core$List$map2,
-					F2(
-						function (x, y) {
-							return {nr: x, gardering: y};
-						}),
-					_user$project$Main$usikreKampNr(tips),
-					ks);
-			},
-			kupongUtgSetups);
-	});
 var _user$project$Main$view = function (model) {
 	var rows = _user$project$Main$kupongRowsView(_user$project$Model$gameNumbers);
 	return A2(
@@ -371,26 +282,45 @@ var _user$project$Main$view = function (model) {
 										_elm_lang$core$Basics$toString(model.kupong)),
 									_1: {ctor: '[]'}
 								}),
-							_1: {
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$div,
-									{ctor: '[]'},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text(
-											_elm_lang$core$Basics$toString(
-												A2(_user$project$Main$combineNrAndGardering, model.kupong, _user$project$Main$testSetup))),
-										_1: {ctor: '[]'}
-									}),
-								_1: {ctor: '[]'}
-							}
+							_1: {ctor: '[]'}
 						}
 					}
 				}
 			}
 		});
 };
+var _user$project$Main$usikre = function (tips) {
+	return A2(
+		_elm_lang$core$List$filter,
+		function (k) {
+			return _elm_lang$core$Native_Utils.eq(k.sik, false);
+		},
+		tips);
+};
+var _user$project$Main$usikreKampNr = function (tips) {
+	return A2(
+		_elm_lang$core$List$map,
+		function (k) {
+			return k.nr;
+		},
+		_user$project$Main$usikre(tips));
+};
+var _user$project$Main$combineNrAndGardering = F2(
+	function (tips, kupongUtgSetups) {
+		return A2(
+			_elm_lang$core$List$map,
+			function (ks) {
+				return A3(
+					_elm_lang$core$List$map2,
+					F2(
+						function (x, y) {
+							return {nr: x, gardering: y};
+						}),
+					_user$project$Main$usikreKampNr(tips),
+					ks);
+			},
+			kupongUtgSetups);
+	});
 var _user$project$Main$updateCurrentKamp = F3(
 	function (oldKampTips, updatedKamptips, kupong) {
 		return A2(
@@ -483,37 +413,64 @@ var _user$project$Main$markeringForKamp = F2(
 				};
 		}
 	});
-var _user$project$Main$produserKupong = F2(
-	function (tips, kupongSetup) {
-		return _elm_lang$core$List$concat(
-			A2(
-				_elm_lang$core$List$map,
-				function (t) {
-					var _p1 = t.sik;
-					if (_p1 === true) {
-						return {
+var _user$project$Main$produserKupong = F3(
+	function (tips, kupongSetup, kupong) {
+		produserKupong:
+		while (true) {
+			var _p1 = tips;
+			if (_p1.ctor === '[]') {
+				return kupong;
+			} else {
+				var _p6 = _p1._1;
+				var _p5 = _p1._0;
+				var _p2 = _p5.sik;
+				if (_p2 === true) {
+					var _v3 = _p6,
+						_v4 = kupongSetup,
+						_v5 = A2(
+						_elm_lang$core$Basics_ops['++'],
+						kupong,
+						{
 							ctor: '::',
 							_0: {
 								ctor: '_Tuple2',
-								_0: t.nr,
-								_1: A2(_user$project$Main$markeringForKamp, t.x, _user$project$Model$EnkelUtg)
+								_0: _p5.nr,
+								_1: A2(_user$project$Main$markeringForKamp, _p5.x, _user$project$Model$EnkelUtg)
 							},
 							_1: {ctor: '[]'}
-						};
+						});
+					tips = _v3;
+					kupongSetup = _v4;
+					kupong = _v5;
+					continue produserKupong;
+				} else {
+					var _p3 = kupongSetup;
+					if (_p3.ctor === '[]') {
+						return kupong;
 					} else {
-						return A2(
-							_elm_lang$core$List$map,
-							function (ks) {
-								return {
+						var _p4 = _p3._0;
+						var _v7 = _p6,
+							_v8 = _p3._1,
+							_v9 = A2(
+							_elm_lang$core$Basics_ops['++'],
+							kupong,
+							{
+								ctor: '::',
+								_0: {
 									ctor: '_Tuple2',
-									_0: ks.nr,
-									_1: A2(_user$project$Main$markeringForKamp, t.x, ks.gardering)
-								};
-							},
-							kupongSetup);
+									_0: _p4.nr,
+									_1: A2(_user$project$Main$markeringForKamp, _p5.x, _p4.gardering)
+								},
+								_1: {ctor: '[]'}
+							});
+						tips = _v7;
+						kupongSetup = _v8;
+						kupong = _v9;
+						continue produserKupong;
 					}
-				},
-				tips));
+				}
+			}
+		}
 	});
 var _user$project$Main$createKupongs = function (tips) {
 	var generateHelper = F2(
@@ -521,7 +478,11 @@ var _user$project$Main$createKupongs = function (tips) {
 			return A2(
 				_elm_lang$core$List$map,
 				function (ks) {
-					return A2(_user$project$Main$produserKupong, tips, ks);
+					return A3(
+						_user$project$Main$produserKupong,
+						tips,
+						ks,
+						{ctor: '[]'});
 				},
 				kupongSetups);
 		});
@@ -532,8 +493,8 @@ var _user$project$Main$createKupongs = function (tips) {
 };
 var _user$project$Main$update = F2(
 	function (msg, model) {
-		var _p2 = msg;
-		switch (_p2.ctor) {
+		var _p7 = msg;
+		switch (_p7.ctor) {
 			case 'ClearKupong':
 				return {ctor: '_Tuple2', _0: _user$project$Main$init, _1: _elm_lang$core$Platform_Cmd$none};
 			case 'HUBMarking':
@@ -542,7 +503,7 @@ var _user$project$Main$update = F2(
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
-							kupong: A2(_user$project$Main$updateHUB, _p2._0, model.kupong)
+							kupong: A2(_user$project$Main$updateHUB, _p7._0, model.kupong)
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
@@ -552,7 +513,7 @@ var _user$project$Main$update = F2(
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
-							kupong: A2(_user$project$Main$updateSikkerhet, _p2._0, model.kupong)
+							kupong: A2(_user$project$Main$updateSikkerhet, _p7._0, model.kupong)
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};

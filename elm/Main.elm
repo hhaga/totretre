@@ -72,25 +72,29 @@ createKupongs : List KampTips -> List (List Kampkryss)
 createKupongs tips =
     let
         generateHelper tips kupongSetups =
-            List.map (\ks -> produserKupong tips ks) kupongSetups
+            List.map (\ks -> produserKupong tips ks []) kupongSetups
     in
         generateHelper tips (combineNrAndGardering tips toTreTreSetup)
 
 
-produserKupong : List KampTips -> List KupongKamp -> List Kampkryss
-produserKupong tips kupongSetup =
-    List.concat
-        (List.map
-            (\t ->
-                case t.sik of
-                    True ->
-                        [ ( t.nr, markeringForKamp t.x EnkelUtg ) ]
+produserKupong : List KampTips -> List KupongKamp -> List Kampkryss -> List Kampkryss
+produserKupong tips kupongSetup kupong =
+    case tips of
+        [] ->
+            kupong
 
-                    False ->
-                        List.map (\ks -> ( ks.nr, markeringForKamp t.x ks.gardering )) kupongSetup
-            )
-            tips
-        )
+        head :: tail ->
+            case head.sik of
+                True ->
+                    produserKupong tail kupongSetup (kupong ++ [ ( head.nr, markeringForKamp head.x EnkelUtg ) ])
+
+                False ->
+                    case kupongSetup of
+                        [] ->
+                            kupong
+
+                        kupongkamp :: lasttail ->
+                            produserKupong tail lasttail (kupong ++ [ ( kupongkamp.nr, markeringForKamp head.x kupongkamp.gardering ) ])
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -109,6 +113,7 @@ update msg model =
             ( { model | resultatKuponger = createKupongs model.kupong }, Cmd.none )
 
 
+kupongRowsView : List String -> List (Html Msg)
 kupongRowsView gameNumbers =
     gameNumbers
         |> List.map
@@ -121,12 +126,6 @@ kupongRowsView gameNumbers =
                     , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }) ] []
                     ]
             )
-
-
-testSetup =
-    [ [ EnkelUtg, EnkelUtg, HalvUtenUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ] --1*)
-    , [ EnkelUtg, HalvUtenUtg, EnkelUtg, EnkelUtg, HalvUtenUtg, HalvUtenUtg ]
-    ]
 
 
 kupongHeaderView =
@@ -155,12 +154,12 @@ view model =
 init : Model
 init =
     { kupong =
-        [ { nr = "1", sik = True, x = H }
-        , { nr = "2", sik = True, x = H }
-        , { nr = "3", sik = True, x = H }
-        , { nr = "4", sik = True, x = H }
-        , { nr = "5", sik = True, x = H }
-        , { nr = "6", sik = True, x = H }
+        [ { nr = "1", sik = False, x = H }
+        , { nr = "2", sik = False, x = H }
+        , { nr = "3", sik = False, x = H }
+        , { nr = "4", sik = False, x = H }
+        , { nr = "5", sik = False, x = H }
+        , { nr = "6", sik = False, x = H }
         , { nr = "7", sik = False, x = H }
         , { nr = "8", sik = False, x = H }
         , { nr = "9", sik = False, x = H }
