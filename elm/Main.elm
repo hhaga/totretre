@@ -143,7 +143,7 @@ marked gameNumber mark kupong =
         kamp =
             List.filter (\k -> k.nr == gameNumber) kupong
     in
-        List.member mark kamp.markeringer
+        List.member mark (List.concat (List.map (\k -> k.markeringer) kamp))
 
 
 resultatKupongerRowsView : List String -> List (List Kampkryss) -> List (Html Msg)
@@ -151,16 +151,16 @@ resultatKupongerRowsView gameNumbers kuponger =
     List.concat
         (List.map
             (\kupong ->
-                gameNumbers
-                    |> List.map
-                        (\gameNumber ->
-                            div [ class "row" ]
-                                [ div [ class "number" ] [ text gameNumber ]
-                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber H kupong) ] []
-                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber U kupong) ] []
-                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber B kupong) ] []
-                                ]
-                        )
+                List.map
+                    (\gameNumber ->
+                        div [ class "row" ]
+                            [ div [ class "number" ] [ text gameNumber ]
+                            , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber H kupong) ] []
+                            , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber U kupong) ] []
+                            , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber B kupong) ] []
+                            ]
+                    )
+                    gameNumbers
             )
             kuponger
         )
@@ -183,9 +183,7 @@ view model =
         div [ class "rows" ]
             [ div [] kupongHeaderView
             , div [] rows
-            , button [ onClick CreateAndShow ] [ text "+" ]
-            , div [] [ text (toString model.resultatKuponger) ]
-            , div [] [ text (toString model.kupong) ]
+            , button [ onClick CreateAndShow ] [ text "Generer kuponger" ]
             , div [] (resultatKupongerRowsView gameNumbers model.resultatKuponger)
             ]
 
