@@ -151,16 +151,18 @@ resultatKupongerRowsView gameNumbers kuponger =
     List.concat
         (List.map
             (\kupong ->
-                List.map
-                    (\gameNumber ->
-                        div [ class "row" ]
-                            [ div [ class "number" ] [ text gameNumber ]
-                            , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber H kupong) ] []
-                            , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber U kupong) ] []
-                            , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber B kupong) ] []
-                            ]
-                    )
-                    gameNumbers
+                ([ div [] [ text "test" ] ]
+                    ++ List.map
+                        (\gameNumber ->
+                            div [ class "row" ]
+                                [ div [ class "number" ] [ text gameNumber ]
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber H kupong) ] []
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber U kupong) ] []
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber B kupong) ] []
+                                ]
+                        )
+                        gameNumbers
+                )
             )
             kuponger
         )

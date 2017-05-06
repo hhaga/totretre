@@ -9042,48 +9042,43 @@ var _user$project$Main$resultatKupongerRowsView = F2(
 				_elm_lang$core$List$map,
 				function (kupong) {
 					return A2(
-						_elm_lang$core$List$map,
-						function (gameNumber) {
-							return A2(
+						_elm_lang$core$Basics_ops['++'],
+						{
+							ctor: '::',
+							_0: A2(
 								_elm_lang$html$Html$div,
+								{ctor: '[]'},
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('row'),
+									_0: _elm_lang$html$Html$text('test'),
 									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$div,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('number'),
-											_1: {ctor: '[]'}
-										},
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html$text(gameNumber),
-											_1: {ctor: '[]'}
-										}),
-									_1: {
+								}),
+							_1: {ctor: '[]'}
+						},
+						A2(
+							_elm_lang$core$List$map,
+							function (gameNumber) {
+								return A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('row'),
+										_1: {ctor: '[]'}
+									},
+									{
 										ctor: '::',
 										_0: A2(
-											_elm_lang$html$Html$input,
+											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$name(gameNumber),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$checked(
-															A3(_user$project$Main$marked, gameNumber, _user$project$Model$H, kupong)),
-														_1: {ctor: '[]'}
-													}
-												}
+												_0: _elm_lang$html$Html_Attributes$class('number'),
+												_1: {ctor: '[]'}
 											},
-											{ctor: '[]'}),
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(gameNumber),
+												_1: {ctor: '[]'}
+											}),
 										_1: {
 											ctor: '::',
 											_0: A2(
@@ -9097,7 +9092,7 @@ var _user$project$Main$resultatKupongerRowsView = F2(
 														_1: {
 															ctor: '::',
 															_0: _elm_lang$html$Html_Attributes$checked(
-																A3(_user$project$Main$marked, gameNumber, _user$project$Model$U, kupong)),
+																A3(_user$project$Main$marked, gameNumber, _user$project$Model$H, kupong)),
 															_1: {ctor: '[]'}
 														}
 													}
@@ -9116,19 +9111,38 @@ var _user$project$Main$resultatKupongerRowsView = F2(
 															_1: {
 																ctor: '::',
 																_0: _elm_lang$html$Html_Attributes$checked(
-																	A3(_user$project$Main$marked, gameNumber, _user$project$Model$B, kupong)),
+																	A3(_user$project$Main$marked, gameNumber, _user$project$Model$U, kupong)),
 																_1: {ctor: '[]'}
 															}
 														}
 													},
 													{ctor: '[]'}),
-												_1: {ctor: '[]'}
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$input,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$checked(
+																		A3(_user$project$Main$marked, gameNumber, _user$project$Model$B, kupong)),
+																	_1: {ctor: '[]'}
+																}
+															}
+														},
+														{ctor: '[]'}),
+													_1: {ctor: '[]'}
+												}
 											}
 										}
-									}
-								});
-						},
-						gameNumbers);
+									});
+							},
+							gameNumbers));
 				},
 				kuponger));
 	});
