@@ -8325,6 +8325,18 @@ var _user$project$Model$Kampkryss = F2(
 	function (a, b) {
 		return {nr: a, markeringer: b};
 	});
+var _user$project$Model$ResultatKupong = F2(
+	function (a, b) {
+		return {kupongNr: a, kampkryss: b};
+	});
+var _user$project$Model$KupongSetup = F2(
+	function (a, b) {
+		return {number: a, setup: b};
+	});
+var _user$project$Model$KupongSetup2 = F2(
+	function (a, b) {
+		return {number: a, setup: b};
+	});
 var _user$project$Model$B = {ctor: 'B'};
 var _user$project$Model$U = {ctor: 'U'};
 var _user$project$Model$H = {ctor: 'H'};
@@ -8336,41 +8348,16 @@ var _user$project$Model$EnkelUtg = {ctor: 'EnkelUtg'};
 var _user$project$Model$toTreTreSetup = {
 	ctor: '::',
 	_0: {
-		ctor: '::',
-		_0: _user$project$Model$EnkelUtg,
-		_1: {
+		number: '1',
+		setup: {
 			ctor: '::',
 			_0: _user$project$Model$EnkelUtg,
 			_1: {
 				ctor: '::',
-				_0: _user$project$Model$HalvUtenUtg,
+				_0: _user$project$Model$EnkelUtg,
 				_1: {
 					ctor: '::',
-					_0: _user$project$Model$EnkelUtg,
-					_1: {
-						ctor: '::',
-						_0: _user$project$Model$HalvUtenUtg,
-						_1: {
-							ctor: '::',
-							_0: _user$project$Model$HalvUtenUtg,
-							_1: {ctor: '[]'}
-						}
-					}
-				}
-			}
-		}
-	},
-	_1: {
-		ctor: '::',
-		_0: {
-			ctor: '::',
-			_0: _user$project$Model$EnkelUtg,
-			_1: {
-				ctor: '::',
-				_0: _user$project$Model$HalvUtenUtg,
-				_1: {
-					ctor: '::',
-					_0: _user$project$Model$EnkelUtg,
+					_0: _user$project$Model$HalvUtenUtg,
 					_1: {
 						ctor: '::',
 						_0: _user$project$Model$EnkelUtg,
@@ -8386,10 +8373,13 @@ var _user$project$Model$toTreTreSetup = {
 					}
 				}
 			}
-		},
-		_1: {
-			ctor: '::',
-			_0: {
+		}
+	},
+	_1: {
+		ctor: '::',
+		_0: {
+			number: '2',
+			setup: {
 				ctor: '::',
 				_0: _user$project$Model$EnkelUtg,
 				_1: {
@@ -8400,10 +8390,10 @@ var _user$project$Model$toTreTreSetup = {
 						_0: _user$project$Model$EnkelUtg,
 						_1: {
 							ctor: '::',
-							_0: _user$project$Model$HalvUtenUtg,
+							_0: _user$project$Model$EnkelUtg,
 							_1: {
 								ctor: '::',
-								_0: _user$project$Model$EnkelUtg,
+								_0: _user$project$Model$HalvUtenUtg,
 								_1: {
 									ctor: '::',
 									_0: _user$project$Model$HalvUtenUtg,
@@ -8413,10 +8403,13 @@ var _user$project$Model$toTreTreSetup = {
 						}
 					}
 				}
-			},
-			_1: {
-				ctor: '::',
-				_0: {
+			}
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				number: '3',
+				setup: {
 					ctor: '::',
 					_0: _user$project$Model$EnkelUtg,
 					_1: {
@@ -8430,11 +8423,42 @@ var _user$project$Model$toTreTreSetup = {
 								_0: _user$project$Model$HalvUtenUtg,
 								_1: {
 									ctor: '::',
+									_0: _user$project$Model$EnkelUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					number: '4',
+					setup: {
+						ctor: '::',
+						_0: _user$project$Model$EnkelUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$EnkelUtg,
+								_1: {
+									ctor: '::',
 									_0: _user$project$Model$HalvUtenUtg,
 									_1: {
 										ctor: '::',
-										_0: _user$project$Model$EnkelUtg,
-										_1: {ctor: '[]'}
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$EnkelUtg,
+											_1: {ctor: '[]'}
+										}
 									}
 								}
 							}
@@ -8444,33 +8468,8 @@ var _user$project$Model$toTreTreSetup = {
 				_1: {
 					ctor: '::',
 					_0: {
-						ctor: '::',
-						_0: _user$project$Model$HalvUtenUtg,
-						_1: {
-							ctor: '::',
-							_0: _user$project$Model$EnkelUtg,
-							_1: {
-								ctor: '::',
-								_0: _user$project$Model$EnkelUtg,
-								_1: {
-									ctor: '::',
-									_0: _user$project$Model$EnkelUtg,
-									_1: {
-										ctor: '::',
-										_0: _user$project$Model$HalvUtenUtg,
-										_1: {
-											ctor: '::',
-											_0: _user$project$Model$HalvUtenUtg,
-											_1: {ctor: '[]'}
-										}
-									}
-								}
-							}
-						}
-					},
-					_1: {
-						ctor: '::',
-						_0: {
+						number: '5',
+						setup: {
 							ctor: '::',
 							_0: _user$project$Model$HalvUtenUtg,
 							_1: {
@@ -8481,10 +8480,10 @@ var _user$project$Model$toTreTreSetup = {
 									_0: _user$project$Model$EnkelUtg,
 									_1: {
 										ctor: '::',
-										_0: _user$project$Model$HalvUtenUtg,
+										_0: _user$project$Model$EnkelUtg,
 										_1: {
 											ctor: '::',
-											_0: _user$project$Model$EnkelUtg,
+											_0: _user$project$Model$HalvUtenUtg,
 											_1: {
 												ctor: '::',
 												_0: _user$project$Model$HalvUtenUtg,
@@ -8494,10 +8493,13 @@ var _user$project$Model$toTreTreSetup = {
 									}
 								}
 							}
-						},
-						_1: {
-							ctor: '::',
-							_0: {
+						}
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							number: '6',
+							setup: {
 								ctor: '::',
 								_0: _user$project$Model$HalvUtenUtg,
 								_1: {
@@ -8511,11 +8513,42 @@ var _user$project$Model$toTreTreSetup = {
 											_0: _user$project$Model$HalvUtenUtg,
 											_1: {
 												ctor: '::',
+												_0: _user$project$Model$EnkelUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$HalvUtenUtg,
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								number: '7',
+								setup: {
+									ctor: '::',
+									_0: _user$project$Model$HalvUtenUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$EnkelUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$EnkelUtg,
+											_1: {
+												ctor: '::',
 												_0: _user$project$Model$HalvUtenUtg,
 												_1: {
 													ctor: '::',
-													_0: _user$project$Model$EnkelUtg,
-													_1: {ctor: '[]'}
+													_0: _user$project$Model$HalvUtenUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {ctor: '[]'}
+													}
 												}
 											}
 										}
@@ -8525,33 +8558,8 @@ var _user$project$Model$toTreTreSetup = {
 							_1: {
 								ctor: '::',
 								_0: {
-									ctor: '::',
-									_0: _user$project$Model$HalvUtenUtg,
-									_1: {
-										ctor: '::',
-										_0: _user$project$Model$HalvUtenUtg,
-										_1: {
-											ctor: '::',
-											_0: _user$project$Model$EnkelUtg,
-											_1: {
-												ctor: '::',
-												_0: _user$project$Model$EnkelUtg,
-												_1: {
-													ctor: '::',
-													_0: _user$project$Model$EnkelUtg,
-													_1: {
-														ctor: '::',
-														_0: _user$project$Model$HalvUtenUtg,
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								},
-								_1: {
-									ctor: '::',
-									_0: {
+									number: '8',
+									setup: {
 										ctor: '::',
 										_0: _user$project$Model$HalvUtenUtg,
 										_1: {
@@ -8565,20 +8573,23 @@ var _user$project$Model$toTreTreSetup = {
 													_0: _user$project$Model$EnkelUtg,
 													_1: {
 														ctor: '::',
-														_0: _user$project$Model$HalvUtenUtg,
+														_0: _user$project$Model$EnkelUtg,
 														_1: {
 															ctor: '::',
-															_0: _user$project$Model$EnkelUtg,
+															_0: _user$project$Model$HalvUtenUtg,
 															_1: {ctor: '[]'}
 														}
 													}
 												}
 											}
 										}
-									},
-									_1: {
-										ctor: '::',
-										_0: {
+									}
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										number: '9',
+										setup: {
 											ctor: '::',
 											_0: _user$project$Model$HalvUtenUtg,
 											_1: {
@@ -8589,10 +8600,10 @@ var _user$project$Model$toTreTreSetup = {
 													_0: _user$project$Model$EnkelUtg,
 													_1: {
 														ctor: '::',
-														_0: _user$project$Model$HalvUtenUtg,
+														_0: _user$project$Model$EnkelUtg,
 														_1: {
 															ctor: '::',
-															_0: _user$project$Model$EnkelUtg,
+															_0: _user$project$Model$HalvUtenUtg,
 															_1: {
 																ctor: '::',
 																_0: _user$project$Model$EnkelUtg,
@@ -8602,64 +8613,46 @@ var _user$project$Model$toTreTreSetup = {
 													}
 												}
 											}
-										},
-										_1: {
-											ctor: '::',
-											_0: {
+										}
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											number: '10',
+											setup: {
 												ctor: '::',
-												_0: _user$project$Model$EnkelUtg,
+												_0: _user$project$Model$HalvUtenUtg,
 												_1: {
 													ctor: '::',
-													_0: _user$project$Model$EnkelUtg,
+													_0: _user$project$Model$HalvUtenUtg,
 													_1: {
 														ctor: '::',
 														_0: _user$project$Model$EnkelUtg,
 														_1: {
 															ctor: '::',
-															_0: _user$project$Model$Heil,
+															_0: _user$project$Model$HalvUtenUtg,
 															_1: {
 																ctor: '::',
-																_0: _user$project$Model$HalvUtenUtg,
+																_0: _user$project$Model$EnkelUtg,
 																_1: {
 																	ctor: '::',
-																	_0: _user$project$Model$HalvUtenUtg,
+																	_0: _user$project$Model$EnkelUtg,
 																	_1: {ctor: '[]'}
 																}
 															}
 														}
 													}
 												}
-											},
-											_1: {
-												ctor: '::',
-												_0: {
+											}
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												number: '11',
+												setup: {
 													ctor: '::',
 													_0: _user$project$Model$EnkelUtg,
 													_1: {
-														ctor: '::',
-														_0: _user$project$Model$EnkelUtg,
-														_1: {
-															ctor: '::',
-															_0: _user$project$Model$Heil,
-															_1: {
-																ctor: '::',
-																_0: _user$project$Model$HalvUtenUtg,
-																_1: {
-																	ctor: '::',
-																	_0: _user$project$Model$EnkelUtg,
-																	_1: {
-																		ctor: '::',
-																		_0: _user$project$Model$HalvUtenUtg,
-																		_1: {ctor: '[]'}
-																	}
-																}
-															}
-														}
-													}
-												},
-												_1: {
-													ctor: '::',
-													_0: {
 														ctor: '::',
 														_0: _user$project$Model$EnkelUtg,
 														_1: {
@@ -8674,10 +8667,68 @@ var _user$project$Model$toTreTreSetup = {
 																	_1: {
 																		ctor: '::',
 																		_0: _user$project$Model$HalvUtenUtg,
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}
+												}
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													number: '12',
+													setup: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$EnkelUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$Heil,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$HalvUtenUtg,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$EnkelUtg,
 																		_1: {
 																			ctor: '::',
-																			_0: _user$project$Model$EnkelUtg,
+																			_0: _user$project$Model$HalvUtenUtg,
 																			_1: {ctor: '[]'}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														number: '13',
+														setup: {
+															ctor: '::',
+															_0: _user$project$Model$EnkelUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$EnkelUtg,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$Heil,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$HalvUtenUtg,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$HalvUtenUtg,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$EnkelUtg,
+																				_1: {ctor: '[]'}
+																			}
 																		}
 																	}
 																}
@@ -8687,33 +8738,8 @@ var _user$project$Model$toTreTreSetup = {
 													_1: {
 														ctor: '::',
 														_0: {
-															ctor: '::',
-															_0: _user$project$Model$HalvUtenUtg,
-															_1: {
-																ctor: '::',
-																_0: _user$project$Model$EnkelUtg,
-																_1: {
-																	ctor: '::',
-																	_0: _user$project$Model$Heil,
-																	_1: {
-																		ctor: '::',
-																		_0: _user$project$Model$EnkelUtg,
-																		_1: {
-																			ctor: '::',
-																			_0: _user$project$Model$EnkelUtg,
-																			_1: {
-																				ctor: '::',
-																				_0: _user$project$Model$HalvUtenUtg,
-																				_1: {ctor: '[]'}
-																			}
-																		}
-																	}
-																}
-															}
-														},
-														_1: {
-															ctor: '::',
-															_0: {
+															number: '14',
+															setup: {
 																ctor: '::',
 																_0: _user$project$Model$HalvUtenUtg,
 																_1: {
@@ -8727,20 +8753,23 @@ var _user$project$Model$toTreTreSetup = {
 																			_0: _user$project$Model$EnkelUtg,
 																			_1: {
 																				ctor: '::',
-																				_0: _user$project$Model$HalvUtenUtg,
+																				_0: _user$project$Model$EnkelUtg,
 																				_1: {
 																					ctor: '::',
-																					_0: _user$project$Model$EnkelUtg,
+																					_0: _user$project$Model$HalvUtenUtg,
 																					_1: {ctor: '[]'}
 																				}
 																			}
 																		}
 																	}
 																}
-															},
-															_1: {
-																ctor: '::',
-																_0: {
+															}
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																number: '15',
+																setup: {
 																	ctor: '::',
 																	_0: _user$project$Model$HalvUtenUtg,
 																	_1: {
@@ -8751,10 +8780,10 @@ var _user$project$Model$toTreTreSetup = {
 																			_0: _user$project$Model$Heil,
 																			_1: {
 																				ctor: '::',
-																				_0: _user$project$Model$HalvUtenUtg,
+																				_0: _user$project$Model$EnkelUtg,
 																				_1: {
 																					ctor: '::',
-																					_0: _user$project$Model$EnkelUtg,
+																					_0: _user$project$Model$HalvUtenUtg,
 																					_1: {
 																						ctor: '::',
 																						_0: _user$project$Model$EnkelUtg,
@@ -8764,37 +8793,43 @@ var _user$project$Model$toTreTreSetup = {
 																			}
 																		}
 																	}
-																},
-																_1: {
-																	ctor: '::',
-																	_0: {
+																}
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	number: '16',
+																	setup: {
 																		ctor: '::',
-																		_0: _user$project$Model$EnkelUtg,
+																		_0: _user$project$Model$HalvUtenUtg,
 																		_1: {
 																			ctor: '::',
-																			_0: _user$project$Model$Heil,
+																			_0: _user$project$Model$EnkelUtg,
 																			_1: {
 																				ctor: '::',
 																				_0: _user$project$Model$Heil,
 																				_1: {
 																					ctor: '::',
-																					_0: _user$project$Model$EnkelUtg,
+																					_0: _user$project$Model$HalvUtenUtg,
 																					_1: {
 																						ctor: '::',
 																						_0: _user$project$Model$EnkelUtg,
 																						_1: {
 																							ctor: '::',
-																							_0: _user$project$Model$HalvUtenUtg,
+																							_0: _user$project$Model$EnkelUtg,
 																							_1: {ctor: '[]'}
 																						}
 																					}
 																				}
 																			}
 																		}
-																	},
-																	_1: {
-																		ctor: '::',
-																		_0: {
+																	}
+																},
+																_1: {
+																	ctor: '::',
+																	_0: {
+																		number: '17',
+																		setup: {
 																			ctor: '::',
 																			_0: _user$project$Model$EnkelUtg,
 																			_1: {
@@ -8808,20 +8843,23 @@ var _user$project$Model$toTreTreSetup = {
 																						_0: _user$project$Model$EnkelUtg,
 																						_1: {
 																							ctor: '::',
-																							_0: _user$project$Model$HalvUtenUtg,
+																							_0: _user$project$Model$EnkelUtg,
 																							_1: {
 																								ctor: '::',
-																								_0: _user$project$Model$EnkelUtg,
+																								_0: _user$project$Model$HalvUtenUtg,
 																								_1: {ctor: '[]'}
 																							}
 																						}
 																					}
 																				}
 																			}
-																		},
-																		_1: {
-																			ctor: '::',
-																			_0: {
+																		}
+																	},
+																	_1: {
+																		ctor: '::',
+																		_0: {
+																			number: '18',
+																			setup: {
 																				ctor: '::',
 																				_0: _user$project$Model$EnkelUtg,
 																				_1: {
@@ -8832,10 +8870,10 @@ var _user$project$Model$toTreTreSetup = {
 																						_0: _user$project$Model$Heil,
 																						_1: {
 																							ctor: '::',
-																							_0: _user$project$Model$HalvUtenUtg,
+																							_0: _user$project$Model$EnkelUtg,
 																							_1: {
 																								ctor: '::',
-																								_0: _user$project$Model$EnkelUtg,
+																								_0: _user$project$Model$HalvUtenUtg,
 																								_1: {
 																									ctor: '::',
 																									_0: _user$project$Model$EnkelUtg,
@@ -8845,12 +8883,15 @@ var _user$project$Model$toTreTreSetup = {
 																						}
 																					}
 																				}
-																			},
-																			_1: {
-																				ctor: '::',
-																				_0: {
+																			}
+																		},
+																		_1: {
+																			ctor: '::',
+																			_0: {
+																				number: '19',
+																				setup: {
 																					ctor: '::',
-																					_0: _user$project$Model$Heil,
+																					_0: _user$project$Model$EnkelUtg,
 																					_1: {
 																						ctor: '::',
 																						_0: _user$project$Model$Heil,
@@ -8859,7 +8900,7 @@ var _user$project$Model$toTreTreSetup = {
 																							_0: _user$project$Model$Heil,
 																							_1: {
 																								ctor: '::',
-																								_0: _user$project$Model$EnkelUtg,
+																								_0: _user$project$Model$HalvUtenUtg,
 																								_1: {
 																									ctor: '::',
 																									_0: _user$project$Model$EnkelUtg,
@@ -8867,6 +8908,37 @@ var _user$project$Model$toTreTreSetup = {
 																										ctor: '::',
 																										_0: _user$project$Model$EnkelUtg,
 																										_1: {ctor: '[]'}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			},
+																			_1: {
+																				ctor: '::',
+																				_0: {
+																					number: '20',
+																					setup: {
+																						ctor: '::',
+																						_0: _user$project$Model$Heil,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$Heil,
+																							_1: {
+																								ctor: '::',
+																								_0: _user$project$Model$Heil,
+																								_1: {
+																									ctor: '::',
+																									_0: _user$project$Model$EnkelUtg,
+																									_1: {
+																										ctor: '::',
+																										_0: _user$project$Model$EnkelUtg,
+																										_1: {
+																											ctor: '::',
+																											_0: _user$project$Model$EnkelUtg,
+																											_1: {ctor: '[]'}
+																										}
 																									}
 																								}
 																							}
@@ -9050,7 +9122,7 @@ var _user$project$Main$resultatKupongerRowsView = F2(
 								{ctor: '[]'},
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('test'),
+									_0: _elm_lang$html$Html$text(kupong.kupongNr),
 									_1: {ctor: '[]'}
 								}),
 							_1: {ctor: '[]'}
@@ -9092,7 +9164,7 @@ var _user$project$Main$resultatKupongerRowsView = F2(
 														_1: {
 															ctor: '::',
 															_0: _elm_lang$html$Html_Attributes$checked(
-																A3(_user$project$Main$marked, gameNumber, _user$project$Model$H, kupong)),
+																A3(_user$project$Main$marked, gameNumber, _user$project$Model$H, kupong.kampkryss)),
 															_1: {ctor: '[]'}
 														}
 													}
@@ -9111,7 +9183,7 @@ var _user$project$Main$resultatKupongerRowsView = F2(
 															_1: {
 																ctor: '::',
 																_0: _elm_lang$html$Html_Attributes$checked(
-																	A3(_user$project$Main$marked, gameNumber, _user$project$Model$U, kupong)),
+																	A3(_user$project$Main$marked, gameNumber, _user$project$Model$U, kupong.kampkryss)),
 																_1: {ctor: '[]'}
 															}
 														}
@@ -9130,7 +9202,7 @@ var _user$project$Main$resultatKupongerRowsView = F2(
 																_1: {
 																	ctor: '::',
 																	_0: _elm_lang$html$Html_Attributes$checked(
-																		A3(_user$project$Main$marked, gameNumber, _user$project$Model$B, kupong)),
+																		A3(_user$project$Main$marked, gameNumber, _user$project$Model$B, kupong.kampkryss)),
 																	_1: {ctor: '[]'}
 																}
 															}
@@ -9167,14 +9239,17 @@ var _user$project$Main$combineNrAndGardering = F2(
 		return A2(
 			_elm_lang$core$List$map,
 			function (ks) {
-				return A3(
-					_elm_lang$core$List$map2,
-					F2(
-						function (x, y) {
-							return {nr: x, gardering: y};
-						}),
-					_user$project$Main$usikreKampNr(tips),
-					ks);
+				return {
+					number: ks.number,
+					setup: A3(
+						_elm_lang$core$List$map2,
+						F2(
+							function (x, y) {
+								return {nr: x, gardering: y};
+							}),
+						_user$project$Main$usikreKampNr(tips),
+						ks.setup)
+				};
 			},
 			kupongUtgSetups);
 	});
@@ -9458,62 +9533,78 @@ var _user$project$Main$markeringForKamp = F2(
 				};
 		}
 	});
-var _user$project$Main$produserKupong = F3(
-	function (tips, kupongSetup, kupong) {
-		produserKupong:
-		while (true) {
-			var _p1 = tips;
-			if (_p1.ctor === '[]') {
-				return kupong;
-			} else {
-				var _p6 = _p1._1;
-				var _p5 = _p1._0;
-				var _p2 = _p5.sik;
-				if (_p2 === true) {
-					var _v3 = _p6,
-						_v4 = kupongSetup,
-						_v5 = A2(
-						_elm_lang$core$Basics_ops['++'],
-						kupong,
-						{
-							ctor: '::',
-							_0: {
-								nr: _p5.nr,
-								markeringer: A2(_user$project$Main$markeringForKamp, _p5.x, _user$project$Model$EnkelUtg)
-							},
-							_1: {ctor: '[]'}
-						});
-					tips = _v3;
-					kupongSetup = _v4;
-					kupong = _v5;
-					continue produserKupong;
-				} else {
-					var _p3 = kupongSetup;
-					if (_p3.ctor === '[]') {
+var _user$project$Main$produserKupong = F2(
+	function (tips, kupongSetup) {
+		var kupongMarkeringer = F3(
+			function (tips, kupongSetup, kupong) {
+				kupongMarkeringer:
+				while (true) {
+					var _p1 = tips;
+					if (_p1.ctor === '[]') {
 						return kupong;
 					} else {
-						var _p4 = _p3._0;
-						var _v7 = _p6,
-							_v8 = _p3._1,
-							_v9 = A2(
-							_elm_lang$core$Basics_ops['++'],
-							kupong,
-							{
-								ctor: '::',
-								_0: {
-									nr: _p4.nr,
-									markeringer: A2(_user$project$Main$markeringForKamp, _p5.x, _p4.gardering)
-								},
-								_1: {ctor: '[]'}
-							});
-						tips = _v7;
-						kupongSetup = _v8;
-						kupong = _v9;
-						continue produserKupong;
+						var _p6 = _p1._1;
+						var _p5 = _p1._0;
+						var _p2 = _p5.sik;
+						if (_p2 === true) {
+							var _v3 = _p6,
+								_v4 = kupongSetup,
+								_v5 = A2(
+								_elm_lang$core$Basics_ops['++'],
+								kupong,
+								{
+									ctor: '::',
+									_0: {
+										nr: _p5.nr,
+										markeringer: A2(_user$project$Main$markeringForKamp, _p5.x, _user$project$Model$EnkelUtg)
+									},
+									_1: {ctor: '[]'}
+								});
+							tips = _v3;
+							kupongSetup = _v4;
+							kupong = _v5;
+							continue kupongMarkeringer;
+						} else {
+							var _p3 = kupongSetup;
+							if (_p3.ctor === '[]') {
+								return kupong;
+							} else {
+								var _p4 = _p3._0;
+								var _v7 = _p6,
+									_v8 = _p3._1,
+									_v9 = A2(
+									_elm_lang$core$Basics_ops['++'],
+									kupong,
+									{
+										ctor: '::',
+										_0: {
+											nr: _p4.nr,
+											markeringer: A2(_user$project$Main$markeringForKamp, _p5.x, _p4.gardering)
+										},
+										_1: {ctor: '[]'}
+									});
+								tips = _v7;
+								kupongSetup = _v8;
+								kupong = _v9;
+								continue kupongMarkeringer;
+							}
+						}
 					}
 				}
-			}
-		}
+			});
+		return {
+			kupongNr: kupongSetup.number,
+			kampkryss: A2(
+				_elm_lang$core$List$sortBy,
+				function (_) {
+					return _.nr;
+				},
+				A3(
+					kupongMarkeringer,
+					tips,
+					kupongSetup.setup,
+					{ctor: '[]'}))
+		};
 	});
 var _user$project$Main$createKupongs = function (tips) {
 	var generateHelper = F2(
@@ -9521,16 +9612,7 @@ var _user$project$Main$createKupongs = function (tips) {
 			return A2(
 				_elm_lang$core$List$map,
 				function (ks) {
-					return A2(
-						_elm_lang$core$List$sortBy,
-						function (_) {
-							return _.nr;
-						},
-						A3(
-							_user$project$Main$produserKupong,
-							tips,
-							ks,
-							{ctor: '[]'}));
+					return A2(_user$project$Main$produserKupong, tips, ks);
 				},
 				kupongSetups);
 		});

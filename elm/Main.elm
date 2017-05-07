@@ -63,38 +63,42 @@ usikreKampNr tips =
     List.map (\k -> k.nr) (usikre tips)
 
 
-combineNrAndGardering : List KampTips -> List (List Gardering) -> List (List KupongKamp)
+combineNrAndGardering : List KampTips -> List KupongSetup -> List KupongSetup2
 combineNrAndGardering tips kupongUtgSetups =
-    List.map (\ks -> (List.map2 (\x y -> { nr = x, gardering = y }) (usikreKampNr tips) ks)) kupongUtgSetups
+    List.map (\ks -> { number = ks.number, setup = (List.map2 (\x y -> { nr = x, gardering = y }) (usikreKampNr tips) ks.setup) }) kupongUtgSetups
 
 
-createKupongs : List KampTips -> List (List Kampkryss)
+createKupongs : List KampTips -> List ResultatKupong
 createKupongs tips =
     let
         generateHelper tips kupongSetups =
-            List.map (\ks -> List.sortBy .nr (produserKupong tips ks [])) kupongSetups
+            List.map (\ks -> produserKupong tips ks) kupongSetups
     in
         generateHelper tips (combineNrAndGardering tips toTreTreSetup)
 
 
-produserKupong : List KampTips -> List KupongKamp -> List Kampkryss -> List Kampkryss
-produserKupong tips kupongSetup kupong =
-    case tips of
-        [] ->
-            kupong
+produserKupong : List KampTips -> KupongSetup2 -> ResultatKupong
+produserKupong tips kupongSetup =
+    let
+        kupongMarkeringer tips kupongSetup kupong =
+            case tips of
+                [] ->
+                    kupong
 
-        head :: tail ->
-            case head.sik of
-                True ->
-                    produserKupong tail kupongSetup (kupong ++ [ { nr = head.nr, markeringer = markeringForKamp head.x EnkelUtg } ])
+                head :: tail ->
+                    case head.sik of
+                        True ->
+                            kupongMarkeringer tail kupongSetup (kupong ++ [ { nr = head.nr, markeringer = markeringForKamp head.x EnkelUtg } ])
 
-                False ->
-                    case kupongSetup of
-                        [] ->
-                            kupong
+                        False ->
+                            case kupongSetup of
+                                [] ->
+                                    kupong
 
-                        kupongkamp :: lasttail ->
-                            produserKupong tail lasttail (kupong ++ [ { nr = kupongkamp.nr, markeringer = markeringForKamp head.x kupongkamp.gardering } ])
+                                kupongkamp :: lasttail ->
+                                    kupongMarkeringer tail lasttail (kupong ++ [ { nr = kupongkamp.nr, markeringer = markeringForKamp head.x kupongkamp.gardering } ])
+    in
+        { kupongNr = kupongSetup.number, kampkryss = List.sortBy .nr (kupongMarkeringer tips kupongSetup.setup []) }
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -146,19 +150,19 @@ marked gameNumber mark kupong =
         List.member mark (List.concat (List.map (\k -> k.markeringer) kamp))
 
 
-resultatKupongerRowsView : List String -> List (List Kampkryss) -> List (Html Msg)
+resultatKupongerRowsView : List String -> List ResultatKupong -> List (Html Msg)
 resultatKupongerRowsView gameNumbers kuponger =
     List.concat
         (List.map
             (\kupong ->
-                ([ div [] [ text "test" ] ]
+                ([ div [] [ text kupong.kupongNr ] ]
                     ++ List.map
                         (\gameNumber ->
                             div [ class "row" ]
                                 [ div [ class "number" ] [ text gameNumber ]
-                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber H kupong) ] []
-                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber U kupong) ] []
-                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber B kupong) ] []
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber H kupong.kampkryss) ] []
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber U kupong.kampkryss) ] []
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber B kupong.kampkryss) ] []
                                 ]
                         )
                         gameNumbers

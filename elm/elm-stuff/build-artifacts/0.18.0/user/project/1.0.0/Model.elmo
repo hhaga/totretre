@@ -63,6 +63,18 @@ var _user$project$Model$Kampkryss = F2(
 	function (a, b) {
 		return {nr: a, markeringer: b};
 	});
+var _user$project$Model$ResultatKupong = F2(
+	function (a, b) {
+		return {kupongNr: a, kampkryss: b};
+	});
+var _user$project$Model$KupongSetup = F2(
+	function (a, b) {
+		return {number: a, setup: b};
+	});
+var _user$project$Model$KupongSetup2 = F2(
+	function (a, b) {
+		return {number: a, setup: b};
+	});
 var _user$project$Model$B = {ctor: 'B'};
 var _user$project$Model$U = {ctor: 'U'};
 var _user$project$Model$H = {ctor: 'H'};
@@ -74,41 +86,16 @@ var _user$project$Model$EnkelUtg = {ctor: 'EnkelUtg'};
 var _user$project$Model$toTreTreSetup = {
 	ctor: '::',
 	_0: {
-		ctor: '::',
-		_0: _user$project$Model$EnkelUtg,
-		_1: {
+		number: '1',
+		setup: {
 			ctor: '::',
 			_0: _user$project$Model$EnkelUtg,
 			_1: {
 				ctor: '::',
-				_0: _user$project$Model$HalvUtenUtg,
+				_0: _user$project$Model$EnkelUtg,
 				_1: {
 					ctor: '::',
-					_0: _user$project$Model$EnkelUtg,
-					_1: {
-						ctor: '::',
-						_0: _user$project$Model$HalvUtenUtg,
-						_1: {
-							ctor: '::',
-							_0: _user$project$Model$HalvUtenUtg,
-							_1: {ctor: '[]'}
-						}
-					}
-				}
-			}
-		}
-	},
-	_1: {
-		ctor: '::',
-		_0: {
-			ctor: '::',
-			_0: _user$project$Model$EnkelUtg,
-			_1: {
-				ctor: '::',
-				_0: _user$project$Model$HalvUtenUtg,
-				_1: {
-					ctor: '::',
-					_0: _user$project$Model$EnkelUtg,
+					_0: _user$project$Model$HalvUtenUtg,
 					_1: {
 						ctor: '::',
 						_0: _user$project$Model$EnkelUtg,
@@ -124,10 +111,13 @@ var _user$project$Model$toTreTreSetup = {
 					}
 				}
 			}
-		},
-		_1: {
-			ctor: '::',
-			_0: {
+		}
+	},
+	_1: {
+		ctor: '::',
+		_0: {
+			number: '2',
+			setup: {
 				ctor: '::',
 				_0: _user$project$Model$EnkelUtg,
 				_1: {
@@ -138,10 +128,10 @@ var _user$project$Model$toTreTreSetup = {
 						_0: _user$project$Model$EnkelUtg,
 						_1: {
 							ctor: '::',
-							_0: _user$project$Model$HalvUtenUtg,
+							_0: _user$project$Model$EnkelUtg,
 							_1: {
 								ctor: '::',
-								_0: _user$project$Model$EnkelUtg,
+								_0: _user$project$Model$HalvUtenUtg,
 								_1: {
 									ctor: '::',
 									_0: _user$project$Model$HalvUtenUtg,
@@ -151,10 +141,13 @@ var _user$project$Model$toTreTreSetup = {
 						}
 					}
 				}
-			},
-			_1: {
-				ctor: '::',
-				_0: {
+			}
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				number: '3',
+				setup: {
 					ctor: '::',
 					_0: _user$project$Model$EnkelUtg,
 					_1: {
@@ -168,11 +161,42 @@ var _user$project$Model$toTreTreSetup = {
 								_0: _user$project$Model$HalvUtenUtg,
 								_1: {
 									ctor: '::',
+									_0: _user$project$Model$EnkelUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					number: '4',
+					setup: {
+						ctor: '::',
+						_0: _user$project$Model$EnkelUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$EnkelUtg,
+								_1: {
+									ctor: '::',
 									_0: _user$project$Model$HalvUtenUtg,
 									_1: {
 										ctor: '::',
-										_0: _user$project$Model$EnkelUtg,
-										_1: {ctor: '[]'}
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$EnkelUtg,
+											_1: {ctor: '[]'}
+										}
 									}
 								}
 							}
@@ -182,33 +206,8 @@ var _user$project$Model$toTreTreSetup = {
 				_1: {
 					ctor: '::',
 					_0: {
-						ctor: '::',
-						_0: _user$project$Model$HalvUtenUtg,
-						_1: {
-							ctor: '::',
-							_0: _user$project$Model$EnkelUtg,
-							_1: {
-								ctor: '::',
-								_0: _user$project$Model$EnkelUtg,
-								_1: {
-									ctor: '::',
-									_0: _user$project$Model$EnkelUtg,
-									_1: {
-										ctor: '::',
-										_0: _user$project$Model$HalvUtenUtg,
-										_1: {
-											ctor: '::',
-											_0: _user$project$Model$HalvUtenUtg,
-											_1: {ctor: '[]'}
-										}
-									}
-								}
-							}
-						}
-					},
-					_1: {
-						ctor: '::',
-						_0: {
+						number: '5',
+						setup: {
 							ctor: '::',
 							_0: _user$project$Model$HalvUtenUtg,
 							_1: {
@@ -219,10 +218,10 @@ var _user$project$Model$toTreTreSetup = {
 									_0: _user$project$Model$EnkelUtg,
 									_1: {
 										ctor: '::',
-										_0: _user$project$Model$HalvUtenUtg,
+										_0: _user$project$Model$EnkelUtg,
 										_1: {
 											ctor: '::',
-											_0: _user$project$Model$EnkelUtg,
+											_0: _user$project$Model$HalvUtenUtg,
 											_1: {
 												ctor: '::',
 												_0: _user$project$Model$HalvUtenUtg,
@@ -232,10 +231,13 @@ var _user$project$Model$toTreTreSetup = {
 									}
 								}
 							}
-						},
-						_1: {
-							ctor: '::',
-							_0: {
+						}
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							number: '6',
+							setup: {
 								ctor: '::',
 								_0: _user$project$Model$HalvUtenUtg,
 								_1: {
@@ -249,11 +251,42 @@ var _user$project$Model$toTreTreSetup = {
 											_0: _user$project$Model$HalvUtenUtg,
 											_1: {
 												ctor: '::',
+												_0: _user$project$Model$EnkelUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$HalvUtenUtg,
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								number: '7',
+								setup: {
+									ctor: '::',
+									_0: _user$project$Model$HalvUtenUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$EnkelUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$EnkelUtg,
+											_1: {
+												ctor: '::',
 												_0: _user$project$Model$HalvUtenUtg,
 												_1: {
 													ctor: '::',
-													_0: _user$project$Model$EnkelUtg,
-													_1: {ctor: '[]'}
+													_0: _user$project$Model$HalvUtenUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {ctor: '[]'}
+													}
 												}
 											}
 										}
@@ -263,33 +296,8 @@ var _user$project$Model$toTreTreSetup = {
 							_1: {
 								ctor: '::',
 								_0: {
-									ctor: '::',
-									_0: _user$project$Model$HalvUtenUtg,
-									_1: {
-										ctor: '::',
-										_0: _user$project$Model$HalvUtenUtg,
-										_1: {
-											ctor: '::',
-											_0: _user$project$Model$EnkelUtg,
-											_1: {
-												ctor: '::',
-												_0: _user$project$Model$EnkelUtg,
-												_1: {
-													ctor: '::',
-													_0: _user$project$Model$EnkelUtg,
-													_1: {
-														ctor: '::',
-														_0: _user$project$Model$HalvUtenUtg,
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								},
-								_1: {
-									ctor: '::',
-									_0: {
+									number: '8',
+									setup: {
 										ctor: '::',
 										_0: _user$project$Model$HalvUtenUtg,
 										_1: {
@@ -303,20 +311,23 @@ var _user$project$Model$toTreTreSetup = {
 													_0: _user$project$Model$EnkelUtg,
 													_1: {
 														ctor: '::',
-														_0: _user$project$Model$HalvUtenUtg,
+														_0: _user$project$Model$EnkelUtg,
 														_1: {
 															ctor: '::',
-															_0: _user$project$Model$EnkelUtg,
+															_0: _user$project$Model$HalvUtenUtg,
 															_1: {ctor: '[]'}
 														}
 													}
 												}
 											}
 										}
-									},
-									_1: {
-										ctor: '::',
-										_0: {
+									}
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										number: '9',
+										setup: {
 											ctor: '::',
 											_0: _user$project$Model$HalvUtenUtg,
 											_1: {
@@ -327,10 +338,10 @@ var _user$project$Model$toTreTreSetup = {
 													_0: _user$project$Model$EnkelUtg,
 													_1: {
 														ctor: '::',
-														_0: _user$project$Model$HalvUtenUtg,
+														_0: _user$project$Model$EnkelUtg,
 														_1: {
 															ctor: '::',
-															_0: _user$project$Model$EnkelUtg,
+															_0: _user$project$Model$HalvUtenUtg,
 															_1: {
 																ctor: '::',
 																_0: _user$project$Model$EnkelUtg,
@@ -340,64 +351,46 @@ var _user$project$Model$toTreTreSetup = {
 													}
 												}
 											}
-										},
-										_1: {
-											ctor: '::',
-											_0: {
+										}
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											number: '10',
+											setup: {
 												ctor: '::',
-												_0: _user$project$Model$EnkelUtg,
+												_0: _user$project$Model$HalvUtenUtg,
 												_1: {
 													ctor: '::',
-													_0: _user$project$Model$EnkelUtg,
+													_0: _user$project$Model$HalvUtenUtg,
 													_1: {
 														ctor: '::',
 														_0: _user$project$Model$EnkelUtg,
 														_1: {
 															ctor: '::',
-															_0: _user$project$Model$Heil,
+															_0: _user$project$Model$HalvUtenUtg,
 															_1: {
 																ctor: '::',
-																_0: _user$project$Model$HalvUtenUtg,
+																_0: _user$project$Model$EnkelUtg,
 																_1: {
 																	ctor: '::',
-																	_0: _user$project$Model$HalvUtenUtg,
+																	_0: _user$project$Model$EnkelUtg,
 																	_1: {ctor: '[]'}
 																}
 															}
 														}
 													}
 												}
-											},
-											_1: {
-												ctor: '::',
-												_0: {
+											}
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												number: '11',
+												setup: {
 													ctor: '::',
 													_0: _user$project$Model$EnkelUtg,
 													_1: {
-														ctor: '::',
-														_0: _user$project$Model$EnkelUtg,
-														_1: {
-															ctor: '::',
-															_0: _user$project$Model$Heil,
-															_1: {
-																ctor: '::',
-																_0: _user$project$Model$HalvUtenUtg,
-																_1: {
-																	ctor: '::',
-																	_0: _user$project$Model$EnkelUtg,
-																	_1: {
-																		ctor: '::',
-																		_0: _user$project$Model$HalvUtenUtg,
-																		_1: {ctor: '[]'}
-																	}
-																}
-															}
-														}
-													}
-												},
-												_1: {
-													ctor: '::',
-													_0: {
 														ctor: '::',
 														_0: _user$project$Model$EnkelUtg,
 														_1: {
@@ -412,10 +405,68 @@ var _user$project$Model$toTreTreSetup = {
 																	_1: {
 																		ctor: '::',
 																		_0: _user$project$Model$HalvUtenUtg,
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}
+												}
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													number: '12',
+													setup: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$EnkelUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$Heil,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$HalvUtenUtg,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$EnkelUtg,
 																		_1: {
 																			ctor: '::',
-																			_0: _user$project$Model$EnkelUtg,
+																			_0: _user$project$Model$HalvUtenUtg,
 																			_1: {ctor: '[]'}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														number: '13',
+														setup: {
+															ctor: '::',
+															_0: _user$project$Model$EnkelUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$EnkelUtg,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$Heil,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$HalvUtenUtg,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$HalvUtenUtg,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$EnkelUtg,
+																				_1: {ctor: '[]'}
+																			}
 																		}
 																	}
 																}
@@ -425,33 +476,8 @@ var _user$project$Model$toTreTreSetup = {
 													_1: {
 														ctor: '::',
 														_0: {
-															ctor: '::',
-															_0: _user$project$Model$HalvUtenUtg,
-															_1: {
-																ctor: '::',
-																_0: _user$project$Model$EnkelUtg,
-																_1: {
-																	ctor: '::',
-																	_0: _user$project$Model$Heil,
-																	_1: {
-																		ctor: '::',
-																		_0: _user$project$Model$EnkelUtg,
-																		_1: {
-																			ctor: '::',
-																			_0: _user$project$Model$EnkelUtg,
-																			_1: {
-																				ctor: '::',
-																				_0: _user$project$Model$HalvUtenUtg,
-																				_1: {ctor: '[]'}
-																			}
-																		}
-																	}
-																}
-															}
-														},
-														_1: {
-															ctor: '::',
-															_0: {
+															number: '14',
+															setup: {
 																ctor: '::',
 																_0: _user$project$Model$HalvUtenUtg,
 																_1: {
@@ -465,20 +491,23 @@ var _user$project$Model$toTreTreSetup = {
 																			_0: _user$project$Model$EnkelUtg,
 																			_1: {
 																				ctor: '::',
-																				_0: _user$project$Model$HalvUtenUtg,
+																				_0: _user$project$Model$EnkelUtg,
 																				_1: {
 																					ctor: '::',
-																					_0: _user$project$Model$EnkelUtg,
+																					_0: _user$project$Model$HalvUtenUtg,
 																					_1: {ctor: '[]'}
 																				}
 																			}
 																		}
 																	}
 																}
-															},
-															_1: {
-																ctor: '::',
-																_0: {
+															}
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																number: '15',
+																setup: {
 																	ctor: '::',
 																	_0: _user$project$Model$HalvUtenUtg,
 																	_1: {
@@ -489,10 +518,10 @@ var _user$project$Model$toTreTreSetup = {
 																			_0: _user$project$Model$Heil,
 																			_1: {
 																				ctor: '::',
-																				_0: _user$project$Model$HalvUtenUtg,
+																				_0: _user$project$Model$EnkelUtg,
 																				_1: {
 																					ctor: '::',
-																					_0: _user$project$Model$EnkelUtg,
+																					_0: _user$project$Model$HalvUtenUtg,
 																					_1: {
 																						ctor: '::',
 																						_0: _user$project$Model$EnkelUtg,
@@ -502,37 +531,43 @@ var _user$project$Model$toTreTreSetup = {
 																			}
 																		}
 																	}
-																},
-																_1: {
-																	ctor: '::',
-																	_0: {
+																}
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	number: '16',
+																	setup: {
 																		ctor: '::',
-																		_0: _user$project$Model$EnkelUtg,
+																		_0: _user$project$Model$HalvUtenUtg,
 																		_1: {
 																			ctor: '::',
-																			_0: _user$project$Model$Heil,
+																			_0: _user$project$Model$EnkelUtg,
 																			_1: {
 																				ctor: '::',
 																				_0: _user$project$Model$Heil,
 																				_1: {
 																					ctor: '::',
-																					_0: _user$project$Model$EnkelUtg,
+																					_0: _user$project$Model$HalvUtenUtg,
 																					_1: {
 																						ctor: '::',
 																						_0: _user$project$Model$EnkelUtg,
 																						_1: {
 																							ctor: '::',
-																							_0: _user$project$Model$HalvUtenUtg,
+																							_0: _user$project$Model$EnkelUtg,
 																							_1: {ctor: '[]'}
 																						}
 																					}
 																				}
 																			}
 																		}
-																	},
-																	_1: {
-																		ctor: '::',
-																		_0: {
+																	}
+																},
+																_1: {
+																	ctor: '::',
+																	_0: {
+																		number: '17',
+																		setup: {
 																			ctor: '::',
 																			_0: _user$project$Model$EnkelUtg,
 																			_1: {
@@ -546,20 +581,23 @@ var _user$project$Model$toTreTreSetup = {
 																						_0: _user$project$Model$EnkelUtg,
 																						_1: {
 																							ctor: '::',
-																							_0: _user$project$Model$HalvUtenUtg,
+																							_0: _user$project$Model$EnkelUtg,
 																							_1: {
 																								ctor: '::',
-																								_0: _user$project$Model$EnkelUtg,
+																								_0: _user$project$Model$HalvUtenUtg,
 																								_1: {ctor: '[]'}
 																							}
 																						}
 																					}
 																				}
 																			}
-																		},
-																		_1: {
-																			ctor: '::',
-																			_0: {
+																		}
+																	},
+																	_1: {
+																		ctor: '::',
+																		_0: {
+																			number: '18',
+																			setup: {
 																				ctor: '::',
 																				_0: _user$project$Model$EnkelUtg,
 																				_1: {
@@ -570,10 +608,10 @@ var _user$project$Model$toTreTreSetup = {
 																						_0: _user$project$Model$Heil,
 																						_1: {
 																							ctor: '::',
-																							_0: _user$project$Model$HalvUtenUtg,
+																							_0: _user$project$Model$EnkelUtg,
 																							_1: {
 																								ctor: '::',
-																								_0: _user$project$Model$EnkelUtg,
+																								_0: _user$project$Model$HalvUtenUtg,
 																								_1: {
 																									ctor: '::',
 																									_0: _user$project$Model$EnkelUtg,
@@ -583,12 +621,15 @@ var _user$project$Model$toTreTreSetup = {
 																						}
 																					}
 																				}
-																			},
-																			_1: {
-																				ctor: '::',
-																				_0: {
+																			}
+																		},
+																		_1: {
+																			ctor: '::',
+																			_0: {
+																				number: '19',
+																				setup: {
 																					ctor: '::',
-																					_0: _user$project$Model$Heil,
+																					_0: _user$project$Model$EnkelUtg,
 																					_1: {
 																						ctor: '::',
 																						_0: _user$project$Model$Heil,
@@ -597,7 +638,7 @@ var _user$project$Model$toTreTreSetup = {
 																							_0: _user$project$Model$Heil,
 																							_1: {
 																								ctor: '::',
-																								_0: _user$project$Model$EnkelUtg,
+																								_0: _user$project$Model$HalvUtenUtg,
 																								_1: {
 																									ctor: '::',
 																									_0: _user$project$Model$EnkelUtg,
@@ -605,6 +646,37 @@ var _user$project$Model$toTreTreSetup = {
 																										ctor: '::',
 																										_0: _user$project$Model$EnkelUtg,
 																										_1: {ctor: '[]'}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			},
+																			_1: {
+																				ctor: '::',
+																				_0: {
+																					number: '20',
+																					setup: {
+																						ctor: '::',
+																						_0: _user$project$Model$Heil,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$Heil,
+																							_1: {
+																								ctor: '::',
+																								_0: _user$project$Model$Heil,
+																								_1: {
+																									ctor: '::',
+																									_0: _user$project$Model$EnkelUtg,
+																									_1: {
+																										ctor: '::',
+																										_0: _user$project$Model$EnkelUtg,
+																										_1: {
+																											ctor: '::',
+																											_0: _user$project$Model$EnkelUtg,
+																											_1: {ctor: '[]'}
+																										}
 																									}
 																								}
 																							}
