@@ -53,14 +53,14 @@ updateSikkerhet kt kupong =
         updateCurrentKamp kt updatedKamptips kupong
 
 
-usikre : List KampTips -> List KampTips
-usikre tips =
+usikreKamper : List KampTips -> List KampTips
+usikreKamper tips =
     List.filter (\k -> k.sik == False) tips
 
 
 usikreKampNr : List KampTips -> List String
 usikreKampNr tips =
-    List.map (\k -> k.nr) (usikre tips)
+    List.map (\k -> k.nr) (usikreKamper tips)
 
 
 combineNrAndGardering : List KampTips -> List KupongSetup -> List KupongSetup2
@@ -172,6 +172,7 @@ resultatKupongerRowsView gameNumbers kuponger =
         )
 
 
+kupongHeaderView : List (Html Msg)
 kupongHeaderView =
     [ div [ class "number" ] [ text " " ]
     , div [ class "leftcell marking" ] [ text "H" ]
@@ -182,34 +183,17 @@ kupongHeaderView =
 
 view : Model -> Html Msg
 view model =
-    let
-        rows =
-            tipsRowsView gameNumbers model.kupong
-    in
-        div [ class "rows" ]
-            [ div [] kupongHeaderView
-            , div [] rows
-            , button [ onClick CreateAndShow ] [ text "Generer kuponger" ]
-            , div [] (resultatKupongerRowsView gameNumbers model.resultatKuponger)
-            ]
+    div [ class "rows" ]
+        [ div [] kupongHeaderView
+        , div [] (tipsRowsView gameNumbers model.kupong)
+        , button [ onClick CreateAndShow ] [ text "Generer kuponger" ]
+        , div [] (resultatKupongerRowsView gameNumbers model.resultatKuponger)
+        ]
 
 
 init : Model
 init =
-    { kupong =
-        [ { nr = ".1", sik = False, x = H }
-        , { nr = ".2", sik = False, x = H }
-        , { nr = ".3", sik = False, x = H }
-        , { nr = ".4", sik = False, x = H }
-        , { nr = ".5", sik = False, x = H }
-        , { nr = ".6", sik = False, x = H }
-        , { nr = ".7", sik = False, x = H }
-        , { nr = ".8", sik = False, x = H }
-        , { nr = ".9", sik = False, x = H }
-        , { nr = "10", sik = False, x = H }
-        , { nr = "11", sik = False, x = H }
-        , { nr = "12", sik = False, x = H }
-        ]
+    { kupong = List.map (\g -> { nr = g, sik = False, x = H }) gameNumbers
     , resultatKuponger = []
     }
 

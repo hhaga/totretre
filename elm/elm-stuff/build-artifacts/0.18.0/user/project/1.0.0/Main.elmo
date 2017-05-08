@@ -1,53 +1,10 @@
 var _user$project$Main$init = {
-	kupong: {
-		ctor: '::',
-		_0: {nr: '.1', sik: false, x: _user$project$Model$H},
-		_1: {
-			ctor: '::',
-			_0: {nr: '.2', sik: false, x: _user$project$Model$H},
-			_1: {
-				ctor: '::',
-				_0: {nr: '.3', sik: false, x: _user$project$Model$H},
-				_1: {
-					ctor: '::',
-					_0: {nr: '.4', sik: false, x: _user$project$Model$H},
-					_1: {
-						ctor: '::',
-						_0: {nr: '.5', sik: false, x: _user$project$Model$H},
-						_1: {
-							ctor: '::',
-							_0: {nr: '.6', sik: false, x: _user$project$Model$H},
-							_1: {
-								ctor: '::',
-								_0: {nr: '.7', sik: false, x: _user$project$Model$H},
-								_1: {
-									ctor: '::',
-									_0: {nr: '.8', sik: false, x: _user$project$Model$H},
-									_1: {
-										ctor: '::',
-										_0: {nr: '.9', sik: false, x: _user$project$Model$H},
-										_1: {
-											ctor: '::',
-											_0: {nr: '10', sik: false, x: _user$project$Model$H},
-											_1: {
-												ctor: '::',
-												_0: {nr: '11', sik: false, x: _user$project$Model$H},
-												_1: {
-													ctor: '::',
-													_0: {nr: '12', sik: false, x: _user$project$Model$H},
-													_1: {ctor: '[]'}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	},
+	kupong: A2(
+		_elm_lang$core$List$map,
+		function (g) {
+			return {nr: g, sik: false, x: _user$project$Model$H};
+		},
+		_user$project$Model$gameNumbers),
 	resultatKuponger: {ctor: '[]'}
 };
 var _user$project$Main$kupongHeaderView = {
@@ -465,7 +422,6 @@ var _user$project$Main$tipsRowsView = F2(
 			gameNumbers);
 	});
 var _user$project$Main$view = function (model) {
-	var rows = A2(_user$project$Main$tipsRowsView, _user$project$Model$gameNumbers, model.kupong);
 	return A2(
 		_elm_lang$html$Html$div,
 		{
@@ -484,7 +440,7 @@ var _user$project$Main$view = function (model) {
 				_0: A2(
 					_elm_lang$html$Html$div,
 					{ctor: '[]'},
-					rows),
+					A2(_user$project$Main$tipsRowsView, _user$project$Model$gameNumbers, model.kupong)),
 				_1: {
 					ctor: '::',
 					_0: A2(
