@@ -8260,62 +8260,33 @@ var _elm_lang$html$Html_Events$Options = F2(
 		return {stopPropagation: a, preventDefault: b};
 	});
 
-var _user$project$Model$KampTips = F3(
-	function (a, b, c) {
-		return {nr: a, sik: b, x: c};
-	});
-var _user$project$Model$Model = F2(
-	function (a, b) {
-		return {kupong: a, resultatKuponger: b};
-	});
-var _user$project$Model$B = {ctor: 'B'};
-var _user$project$Model$U = {ctor: 'U'};
-var _user$project$Model$H = {ctor: 'H'};
-var _user$project$Model$Utgangspunkt = {ctor: 'Utgangspunkt'};
-var _user$project$Model$Sikker = {ctor: 'Sikker'};
-var _user$project$Model$Heil = {ctor: 'Heil'};
-var _user$project$Model$HalvUtenUtg = {ctor: 'HalvUtenUtg'};
-var _user$project$Model$EnkelUtg = {ctor: 'EnkelUtg'};
-var _user$project$Model$CreateAndShow = {ctor: 'CreateAndShow'};
-var _user$project$Model$SikkerhetMarking = function (a) {
-	return {ctor: 'SikkerhetMarking', _0: a};
-};
-var _user$project$Model$HUBMarking = function (a) {
-	return {ctor: 'HUBMarking', _0: a};
-};
-var _user$project$Model$ClearKupong = {ctor: 'ClearKupong'};
-
-var _user$project$Main$init = {
-	kupong: {ctor: '[]'},
-	resultatKuponger: {ctor: '[]'}
-};
-var _user$project$Main$gameNumbers = {
+var _user$project$Model$gameNumbers = {
 	ctor: '::',
-	_0: '1',
+	_0: '.1',
 	_1: {
 		ctor: '::',
-		_0: '2',
+		_0: '.2',
 		_1: {
 			ctor: '::',
-			_0: '3',
+			_0: '.3',
 			_1: {
 				ctor: '::',
-				_0: '4',
+				_0: '.4',
 				_1: {
 					ctor: '::',
-					_0: '5',
+					_0: '.5',
 					_1: {
 						ctor: '::',
-						_0: '6',
+						_0: '.6',
 						_1: {
 							ctor: '::',
-							_0: '7',
+							_0: '.7',
 							_1: {
 								ctor: '::',
-								_0: '8',
+								_0: '.8',
 								_1: {
 									ctor: '::',
-									_0: '9',
+									_0: '.9',
 									_1: {
 										ctor: '::',
 										_0: '10',
@@ -8337,6 +8308,724 @@ var _user$project$Main$gameNumbers = {
 			}
 		}
 	}
+};
+var _user$project$Model$KampTips = F3(
+	function (a, b, c) {
+		return {nr: a, sik: b, x: c};
+	});
+var _user$project$Model$Model = F2(
+	function (a, b) {
+		return {kupong: a, resultatKuponger: b};
+	});
+var _user$project$Model$KupongKamp = F2(
+	function (a, b) {
+		return {nr: a, gardering: b};
+	});
+var _user$project$Model$Kampkryss = F2(
+	function (a, b) {
+		return {nr: a, markeringer: b};
+	});
+var _user$project$Model$ResultatKupong = F2(
+	function (a, b) {
+		return {kupongNr: a, kampkryss: b};
+	});
+var _user$project$Model$KupongSetup = F2(
+	function (a, b) {
+		return {number: a, setup: b};
+	});
+var _user$project$Model$KupongSetup2 = F2(
+	function (a, b) {
+		return {number: a, setup: b};
+	});
+var _user$project$Model$B = {ctor: 'B'};
+var _user$project$Model$U = {ctor: 'U'};
+var _user$project$Model$H = {ctor: 'H'};
+var _user$project$Model$Utgangspunkt = {ctor: 'Utgangspunkt'};
+var _user$project$Model$Sikker = {ctor: 'Sikker'};
+var _user$project$Model$Heil = {ctor: 'Heil'};
+var _user$project$Model$HalvUtenUtg = {ctor: 'HalvUtenUtg'};
+var _user$project$Model$EnkelUtg = {ctor: 'EnkelUtg'};
+var _user$project$Model$toTreTreSetup = {
+	ctor: '::',
+	_0: {
+		number: '1',
+		setup: {
+			ctor: '::',
+			_0: _user$project$Model$EnkelUtg,
+			_1: {
+				ctor: '::',
+				_0: _user$project$Model$EnkelUtg,
+				_1: {
+					ctor: '::',
+					_0: _user$project$Model$HalvUtenUtg,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Model$EnkelUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$HalvUtenUtg,
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	_1: {
+		ctor: '::',
+		_0: {
+			number: '2',
+			setup: {
+				ctor: '::',
+				_0: _user$project$Model$EnkelUtg,
+				_1: {
+					ctor: '::',
+					_0: _user$project$Model$HalvUtenUtg,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Model$EnkelUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$EnkelUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$HalvUtenUtg,
+								_1: {
+									ctor: '::',
+									_0: _user$project$Model$HalvUtenUtg,
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				number: '3',
+				setup: {
+					ctor: '::',
+					_0: _user$project$Model$EnkelUtg,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Model$HalvUtenUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$EnkelUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$HalvUtenUtg,
+								_1: {
+									ctor: '::',
+									_0: _user$project$Model$EnkelUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					number: '4',
+					setup: {
+						ctor: '::',
+						_0: _user$project$Model$EnkelUtg,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$EnkelUtg,
+								_1: {
+									ctor: '::',
+									_0: _user$project$Model$HalvUtenUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$EnkelUtg,
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						number: '5',
+						setup: {
+							ctor: '::',
+							_0: _user$project$Model$HalvUtenUtg,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$EnkelUtg,
+								_1: {
+									ctor: '::',
+									_0: _user$project$Model$EnkelUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$EnkelUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$HalvUtenUtg,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Model$HalvUtenUtg,
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							number: '6',
+							setup: {
+								ctor: '::',
+								_0: _user$project$Model$HalvUtenUtg,
+								_1: {
+									ctor: '::',
+									_0: _user$project$Model$EnkelUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$EnkelUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$HalvUtenUtg,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Model$EnkelUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$HalvUtenUtg,
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								number: '7',
+								setup: {
+									ctor: '::',
+									_0: _user$project$Model$HalvUtenUtg,
+									_1: {
+										ctor: '::',
+										_0: _user$project$Model$EnkelUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$EnkelUtg,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Model$HalvUtenUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$HalvUtenUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}
+									}
+								}
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									number: '8',
+									setup: {
+										ctor: '::',
+										_0: _user$project$Model$HalvUtenUtg,
+										_1: {
+											ctor: '::',
+											_0: _user$project$Model$HalvUtenUtg,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Model$EnkelUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$EnkelUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$HalvUtenUtg,
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									}
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										number: '9',
+										setup: {
+											ctor: '::',
+											_0: _user$project$Model$HalvUtenUtg,
+											_1: {
+												ctor: '::',
+												_0: _user$project$Model$HalvUtenUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$EnkelUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$HalvUtenUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$EnkelUtg,
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}
+											}
+										}
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											number: '10',
+											setup: {
+												ctor: '::',
+												_0: _user$project$Model$HalvUtenUtg,
+												_1: {
+													ctor: '::',
+													_0: _user$project$Model$HalvUtenUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$HalvUtenUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$EnkelUtg,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$EnkelUtg,
+																	_1: {ctor: '[]'}
+																}
+															}
+														}
+													}
+												}
+											}
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												number: '11',
+												setup: {
+													ctor: '::',
+													_0: _user$project$Model$EnkelUtg,
+													_1: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$EnkelUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$Heil,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$HalvUtenUtg,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$HalvUtenUtg,
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														}
+													}
+												}
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													number: '12',
+													setup: {
+														ctor: '::',
+														_0: _user$project$Model$EnkelUtg,
+														_1: {
+															ctor: '::',
+															_0: _user$project$Model$EnkelUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$Heil,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$HalvUtenUtg,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$EnkelUtg,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$HalvUtenUtg,
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												},
+												_1: {
+													ctor: '::',
+													_0: {
+														number: '13',
+														setup: {
+															ctor: '::',
+															_0: _user$project$Model$EnkelUtg,
+															_1: {
+																ctor: '::',
+																_0: _user$project$Model$EnkelUtg,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$Heil,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$HalvUtenUtg,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$HalvUtenUtg,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$EnkelUtg,
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													},
+													_1: {
+														ctor: '::',
+														_0: {
+															number: '14',
+															setup: {
+																ctor: '::',
+																_0: _user$project$Model$HalvUtenUtg,
+																_1: {
+																	ctor: '::',
+																	_0: _user$project$Model$EnkelUtg,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$Heil,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$EnkelUtg,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$EnkelUtg,
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$Model$HalvUtenUtg,
+																					_1: {ctor: '[]'}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														},
+														_1: {
+															ctor: '::',
+															_0: {
+																number: '15',
+																setup: {
+																	ctor: '::',
+																	_0: _user$project$Model$HalvUtenUtg,
+																	_1: {
+																		ctor: '::',
+																		_0: _user$project$Model$EnkelUtg,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$Heil,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$EnkelUtg,
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$Model$HalvUtenUtg,
+																					_1: {
+																						ctor: '::',
+																						_0: _user$project$Model$EnkelUtg,
+																						_1: {ctor: '[]'}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															},
+															_1: {
+																ctor: '::',
+																_0: {
+																	number: '16',
+																	setup: {
+																		ctor: '::',
+																		_0: _user$project$Model$HalvUtenUtg,
+																		_1: {
+																			ctor: '::',
+																			_0: _user$project$Model$EnkelUtg,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$Heil,
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$Model$HalvUtenUtg,
+																					_1: {
+																						ctor: '::',
+																						_0: _user$project$Model$EnkelUtg,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$EnkelUtg,
+																							_1: {ctor: '[]'}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																},
+																_1: {
+																	ctor: '::',
+																	_0: {
+																		number: '17',
+																		setup: {
+																			ctor: '::',
+																			_0: _user$project$Model$EnkelUtg,
+																			_1: {
+																				ctor: '::',
+																				_0: _user$project$Model$Heil,
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$Model$Heil,
+																					_1: {
+																						ctor: '::',
+																						_0: _user$project$Model$EnkelUtg,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$EnkelUtg,
+																							_1: {
+																								ctor: '::',
+																								_0: _user$project$Model$HalvUtenUtg,
+																								_1: {ctor: '[]'}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	},
+																	_1: {
+																		ctor: '::',
+																		_0: {
+																			number: '18',
+																			setup: {
+																				ctor: '::',
+																				_0: _user$project$Model$EnkelUtg,
+																				_1: {
+																					ctor: '::',
+																					_0: _user$project$Model$Heil,
+																					_1: {
+																						ctor: '::',
+																						_0: _user$project$Model$Heil,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$EnkelUtg,
+																							_1: {
+																								ctor: '::',
+																								_0: _user$project$Model$HalvUtenUtg,
+																								_1: {
+																									ctor: '::',
+																									_0: _user$project$Model$EnkelUtg,
+																									_1: {ctor: '[]'}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		},
+																		_1: {
+																			ctor: '::',
+																			_0: {
+																				number: '19',
+																				setup: {
+																					ctor: '::',
+																					_0: _user$project$Model$EnkelUtg,
+																					_1: {
+																						ctor: '::',
+																						_0: _user$project$Model$Heil,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$Heil,
+																							_1: {
+																								ctor: '::',
+																								_0: _user$project$Model$HalvUtenUtg,
+																								_1: {
+																									ctor: '::',
+																									_0: _user$project$Model$EnkelUtg,
+																									_1: {
+																										ctor: '::',
+																										_0: _user$project$Model$EnkelUtg,
+																										_1: {ctor: '[]'}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			},
+																			_1: {
+																				ctor: '::',
+																				_0: {
+																					number: '20',
+																					setup: {
+																						ctor: '::',
+																						_0: _user$project$Model$Heil,
+																						_1: {
+																							ctor: '::',
+																							_0: _user$project$Model$Heil,
+																							_1: {
+																								ctor: '::',
+																								_0: _user$project$Model$Heil,
+																								_1: {
+																									ctor: '::',
+																									_0: _user$project$Model$EnkelUtg,
+																									_1: {
+																										ctor: '::',
+																										_0: _user$project$Model$EnkelUtg,
+																										_1: {
+																											ctor: '::',
+																											_0: _user$project$Model$EnkelUtg,
+																											_1: {ctor: '[]'}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				},
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};
+var _user$project$Model$CreateAndShow = {ctor: 'CreateAndShow'};
+var _user$project$Model$SikkerhetMarking = function (a) {
+	return {ctor: 'SikkerhetMarking', _0: a};
+};
+var _user$project$Model$HUBMarking = function (a) {
+	return {ctor: 'HUBMarking', _0: a};
+};
+var _user$project$Model$ClearKupong = {ctor: 'ClearKupong'};
+
+var _user$project$Main$init = {
+	kupong: {
+		ctor: '::',
+		_0: {nr: '.1', sik: false, x: _user$project$Model$H},
+		_1: {
+			ctor: '::',
+			_0: {nr: '.2', sik: false, x: _user$project$Model$H},
+			_1: {
+				ctor: '::',
+				_0: {nr: '.3', sik: false, x: _user$project$Model$H},
+				_1: {
+					ctor: '::',
+					_0: {nr: '.4', sik: false, x: _user$project$Model$H},
+					_1: {
+						ctor: '::',
+						_0: {nr: '.5', sik: false, x: _user$project$Model$H},
+						_1: {
+							ctor: '::',
+							_0: {nr: '.6', sik: false, x: _user$project$Model$H},
+							_1: {
+								ctor: '::',
+								_0: {nr: '.7', sik: false, x: _user$project$Model$H},
+								_1: {
+									ctor: '::',
+									_0: {nr: '.8', sik: false, x: _user$project$Model$H},
+									_1: {
+										ctor: '::',
+										_0: {nr: '.9', sik: false, x: _user$project$Model$H},
+										_1: {
+											ctor: '::',
+											_0: {nr: '10', sik: false, x: _user$project$Model$H},
+											_1: {
+												ctor: '::',
+												_0: {nr: '11', sik: false, x: _user$project$Model$H},
+												_1: {
+													ctor: '::',
+													_0: {nr: '12', sik: false, x: _user$project$Model$H},
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	resultatKuponger: {ctor: '[]'}
 };
 var _user$project$Main$kupongHeaderView = {
 	ctor: '::',
@@ -8399,51 +9088,255 @@ var _user$project$Main$kupongHeaderView = {
 		}
 	}
 };
-var _user$project$Main$kupongRowsView = function (gameNumbers) {
-	return A2(
-		_elm_lang$core$List$map,
-		function (gameNumber) {
-			return A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('row'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$div,
+var _user$project$Main$marked = F3(
+	function (gameNumber, mark, kupong) {
+		var kamp = A2(
+			_elm_lang$core$List$filter,
+			function (k) {
+				return _elm_lang$core$Native_Utils.eq(k.nr, gameNumber);
+			},
+			kupong);
+		return A2(
+			_elm_lang$core$List$member,
+			mark,
+			_elm_lang$core$List$concat(
+				A2(
+					_elm_lang$core$List$map,
+					function (k) {
+						return k.markeringer;
+					},
+					kamp)));
+	});
+var _user$project$Main$resultatKupongerRowsView = F2(
+	function (gameNumbers, kuponger) {
+		return _elm_lang$core$List$concat(
+			A2(
+				_elm_lang$core$List$map,
+				function (kupong) {
+					return A2(
+						_elm_lang$core$Basics_ops['++'],
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('number'),
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{ctor: '[]'},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(kupong.kupongNr),
+									_1: {ctor: '[]'}
+								}),
 							_1: {ctor: '[]'}
 						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text(gameNumber),
-							_1: {ctor: '[]'}
-						}),
-					_1: {
+						A2(
+							_elm_lang$core$List$map,
+							function (gameNumber) {
+								return A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('row'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$div,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('number'),
+												_1: {ctor: '[]'}
+											},
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(gameNumber),
+												_1: {ctor: '[]'}
+											}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$input,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$checked(
+																A3(_user$project$Main$marked, gameNumber, _user$project$Model$H, kupong.kampkryss)),
+															_1: {ctor: '[]'}
+														}
+													}
+												},
+												{ctor: '[]'}),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$input,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$checked(
+																	A3(_user$project$Main$marked, gameNumber, _user$project$Model$U, kupong.kampkryss)),
+																_1: {ctor: '[]'}
+															}
+														}
+													},
+													{ctor: '[]'}),
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$input,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$checked(
+																		A3(_user$project$Main$marked, gameNumber, _user$project$Model$B, kupong.kampkryss)),
+																	_1: {ctor: '[]'}
+																}
+															}
+														},
+														{ctor: '[]'}),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									});
+							},
+							gameNumbers));
+				},
+				kuponger));
+	});
+var _user$project$Main$usikre = function (tips) {
+	return A2(
+		_elm_lang$core$List$filter,
+		function (k) {
+			return _elm_lang$core$Native_Utils.eq(k.sik, false);
+		},
+		tips);
+};
+var _user$project$Main$usikreKampNr = function (tips) {
+	return A2(
+		_elm_lang$core$List$map,
+		function (k) {
+			return k.nr;
+		},
+		_user$project$Main$usikre(tips));
+};
+var _user$project$Main$combineNrAndGardering = F2(
+	function (tips, kupongUtgSetups) {
+		return A2(
+			_elm_lang$core$List$map,
+			function (ks) {
+				return {
+					number: ks.number,
+					setup: A3(
+						_elm_lang$core$List$map2,
+						F2(
+							function (x, y) {
+								return {nr: x, gardering: y};
+							}),
+						_user$project$Main$usikreKampNr(tips),
+						ks.setup)
+				};
+			},
+			kupongUtgSetups);
+	});
+var _user$project$Main$updateCurrentKamp = F3(
+	function (oldKampTips, updatedKamptips, kupong) {
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			updatedKamptips,
+			A2(
+				_elm_lang$core$List$filter,
+				function (k) {
+					return !_elm_lang$core$Native_Utils.eq(k.nr, oldKampTips.nr);
+				},
+				kupong));
+	});
+var _user$project$Main$getCurrentKamp = F2(
+	function (nr, kupong) {
+		return A2(
+			_elm_lang$core$List$filter,
+			function (k) {
+				return _elm_lang$core$Native_Utils.eq(k.nr, nr);
+			},
+			kupong);
+	});
+var _user$project$Main$updateHUB = F2(
+	function (kt, kupong) {
+		var kamptips = A2(_user$project$Main$getCurrentKamp, kt.nr, kupong);
+		var updatedKamptips = A2(
+			_elm_lang$core$List$map,
+			function (k) {
+				return _elm_lang$core$Native_Utils.update(
+					k,
+					{x: kt.x});
+			},
+			kamptips);
+		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
+	});
+var _user$project$Main$updateSikkerhet = F2(
+	function (kt, kupong) {
+		var kamptips = A2(_user$project$Main$getCurrentKamp, kt.nr, kupong);
+		var updatedKamptips = A2(
+			_elm_lang$core$List$map,
+			function (k) {
+				return _elm_lang$core$Native_Utils.update(
+					k,
+					{sik: !k.sik});
+			},
+			kamptips);
+		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
+	});
+var _user$project$Main$tipMarked = F3(
+	function (gameNumber, mark, kupong) {
+		var kamp = A2(_user$project$Main$getCurrentKamp, gameNumber, kupong);
+		return !_elm_lang$core$List$isEmpty(
+			A2(
+				_elm_lang$core$List$filter,
+				function (k) {
+					return _elm_lang$core$Native_Utils.eq(k.x, mark);
+				},
+				kamp));
+	});
+var _user$project$Main$tipsRowsView = F2(
+	function (gameNumbers, kupong) {
+		return A2(
+			_elm_lang$core$List$map,
+			function (gameNumber) {
+				return A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('row'),
+						_1: {ctor: '[]'}
+					},
+					{
 						ctor: '::',
 						_0: A2(
-							_elm_lang$html$Html$input,
+							_elm_lang$html$Html$div,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$type_('radio'),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$name(gameNumber),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_user$project$Model$HUBMarking(
-												{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H})),
-										_1: {ctor: '[]'}
-									}
-								}
+								_0: _elm_lang$html$Html_Attributes$class('number'),
+								_1: {ctor: '[]'}
 							},
-							{ctor: '[]'}),
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text(gameNumber),
+								_1: {ctor: '[]'}
+							}),
 						_1: {
 							ctor: '::',
 							_0: A2(
@@ -8458,8 +9351,13 @@ var _user$project$Main$kupongRowsView = function (gameNumbers) {
 											ctor: '::',
 											_0: _elm_lang$html$Html_Events$onClick(
 												_user$project$Model$HUBMarking(
-													{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$U})),
-											_1: {ctor: '[]'}
+													{nr: gameNumber, sik: false, x: _user$project$Model$H})),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$checked(
+													A3(_user$project$Main$tipMarked, gameNumber, _user$project$Model$H, kupong)),
+												_1: {ctor: '[]'}
+											}
 										}
 									}
 								},
@@ -8478,8 +9376,13 @@ var _user$project$Main$kupongRowsView = function (gameNumbers) {
 												ctor: '::',
 												_0: _elm_lang$html$Html_Events$onClick(
 													_user$project$Model$HUBMarking(
-														{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$B})),
-												_1: {ctor: '[]'}
+														{nr: gameNumber, sik: false, x: _user$project$Model$U})),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$checked(
+														A3(_user$project$Main$tipMarked, gameNumber, _user$project$Model$U, kupong)),
+													_1: {ctor: '[]'}
+												}
 											}
 										}
 									},
@@ -8490,31 +9393,56 @@ var _user$project$Main$kupongRowsView = function (gameNumbers) {
 										_elm_lang$html$Html$input,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+											_0: _elm_lang$html$Html_Attributes$type_('radio'),
 											_1: {
 												ctor: '::',
 												_0: _elm_lang$html$Html_Attributes$name(gameNumber),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Events$onClick(
-														_user$project$Model$SikkerhetMarking(
-															{nr: gameNumber, sik: _user$project$Model$Utgangspunkt, x: _user$project$Model$H})),
-													_1: {ctor: '[]'}
+														_user$project$Model$HUBMarking(
+															{nr: gameNumber, sik: false, x: _user$project$Model$B})),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$checked(
+															A3(_user$project$Main$tipMarked, gameNumber, _user$project$Model$B, kupong)),
+														_1: {ctor: '[]'}
+													}
 												}
 											}
 										},
 										{ctor: '[]'}),
-									_1: {ctor: '[]'}
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$input,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Events$onClick(
+															_user$project$Model$SikkerhetMarking(
+																{nr: gameNumber, sik: true, x: _user$project$Model$H})),
+														_1: {ctor: '[]'}
+													}
+												}
+											},
+											{ctor: '[]'}),
+										_1: {ctor: '[]'}
+									}
 								}
 							}
 						}
-					}
-				});
-		},
-		gameNumbers);
-};
+					});
+			},
+			gameNumbers);
+	});
 var _user$project$Main$view = function (model) {
-	var rows = _user$project$Main$kupongRowsView(_user$project$Main$gameNumbers);
+	var rows = A2(_user$project$Main$tipsRowsView, _user$project$Model$gameNumbers, model.kupong);
 	return A2(
 		_elm_lang$html$Html$div,
 		{
@@ -8545,68 +9473,158 @@ var _user$project$Main$view = function (model) {
 						},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('+'),
+							_0: _elm_lang$html$Html$text('Generer kuponger'),
 							_1: {ctor: '[]'}
 						}),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
+							A2(_user$project$Main$resultatKupongerRowsView, _user$project$Model$gameNumbers, model.resultatKuponger)),
+						_1: {ctor: '[]'}
+					}
 				}
 			}
 		});
 };
-var _user$project$Main$createKupongs = function (kupong) {
-	return {ctor: '[]'};
-};
-var _user$project$Main$updateCurrentKamp = F3(
-	function (oldKampTips, updatedKamptips, kupong) {
-		return A2(
-			_elm_lang$core$Basics_ops['++'],
-			updatedKamptips,
-			A2(
-				_elm_lang$core$List$filter,
-				function (k) {
-					return !_elm_lang$core$Native_Utils.eq(k.nr, oldKampTips.nr);
+var _user$project$Main$markeringForKamp = F2(
+	function (utgangspunkt, systemvalg) {
+		var _p0 = systemvalg;
+		switch (_p0.ctor) {
+			case 'EnkelUtg':
+				return {
+					ctor: '::',
+					_0: utgangspunkt,
+					_1: {ctor: '[]'}
+				};
+			case 'HalvUtenUtg':
+				return A2(
+					_elm_lang$core$List$filter,
+					function (x) {
+						return !_elm_lang$core$Native_Utils.eq(x, utgangspunkt);
+					},
+					{
+						ctor: '::',
+						_0: _user$project$Model$H,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$U,
+							_1: {
+								ctor: '::',
+								_0: _user$project$Model$B,
+								_1: {ctor: '[]'}
+							}
+						}
+					});
+			default:
+				return {
+					ctor: '::',
+					_0: _user$project$Model$H,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Model$U,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Model$B,
+							_1: {ctor: '[]'}
+						}
+					}
+				};
+		}
+	});
+var _user$project$Main$produserKupong = F2(
+	function (tips, kupongSetup) {
+		var kupongMarkeringer = F3(
+			function (tips, kupongSetup, kupong) {
+				kupongMarkeringer:
+				while (true) {
+					var _p1 = tips;
+					if (_p1.ctor === '[]') {
+						return kupong;
+					} else {
+						var _p6 = _p1._1;
+						var _p5 = _p1._0;
+						var _p2 = _p5.sik;
+						if (_p2 === true) {
+							var _v3 = _p6,
+								_v4 = kupongSetup,
+								_v5 = A2(
+								_elm_lang$core$Basics_ops['++'],
+								kupong,
+								{
+									ctor: '::',
+									_0: {
+										nr: _p5.nr,
+										markeringer: A2(_user$project$Main$markeringForKamp, _p5.x, _user$project$Model$EnkelUtg)
+									},
+									_1: {ctor: '[]'}
+								});
+							tips = _v3;
+							kupongSetup = _v4;
+							kupong = _v5;
+							continue kupongMarkeringer;
+						} else {
+							var _p3 = kupongSetup;
+							if (_p3.ctor === '[]') {
+								return kupong;
+							} else {
+								var _p4 = _p3._0;
+								var _v7 = _p6,
+									_v8 = _p3._1,
+									_v9 = A2(
+									_elm_lang$core$Basics_ops['++'],
+									kupong,
+									{
+										ctor: '::',
+										_0: {
+											nr: _p4.nr,
+											markeringer: A2(_user$project$Main$markeringForKamp, _p5.x, _p4.gardering)
+										},
+										_1: {ctor: '[]'}
+									});
+								tips = _v7;
+								kupongSetup = _v8;
+								kupong = _v9;
+								continue kupongMarkeringer;
+							}
+						}
+					}
+				}
+			});
+		return {
+			kupongNr: kupongSetup.number,
+			kampkryss: A2(
+				_elm_lang$core$List$sortBy,
+				function (_) {
+					return _.nr;
 				},
-				kupong));
+				A3(
+					kupongMarkeringer,
+					tips,
+					kupongSetup.setup,
+					{ctor: '[]'}))
+		};
 	});
-var _user$project$Main$getCurrentKamp = F2(
-	function (kt, kupong) {
-		return A2(
-			_elm_lang$core$List$filter,
-			function (k) {
-				return _elm_lang$core$Native_Utils.eq(k.nr, kt.nr);
-			},
-			kupong);
-	});
-var _user$project$Main$updateHUB = F2(
-	function (kt, kupong) {
-		var kamptips = A2(_user$project$Main$getCurrentKamp, kt, kupong);
-		var updatedKamptips = A2(
-			_elm_lang$core$List$map,
-			function (k) {
-				return _elm_lang$core$Native_Utils.update(
-					k,
-					{x: kt.x});
-			},
-			kamptips);
-		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
-	});
-var _user$project$Main$updateSikkerhet = F2(
-	function (kt, kupong) {
-		var kamptips = A2(_user$project$Main$getCurrentKamp, kt, kupong);
-		var updatedKamptips = A2(
-			_elm_lang$core$List$map,
-			function (k) {
-				return _elm_lang$core$Native_Utils.update(
-					k,
-					{sik: kt.sik});
-			},
-			kamptips);
-		return A3(_user$project$Main$updateCurrentKamp, kt, updatedKamptips, kupong);
-	});
+var _user$project$Main$createKupongs = function (tips) {
+	var generateHelper = F2(
+		function (tips, kupongSetups) {
+			return A2(
+				_elm_lang$core$List$map,
+				function (ks) {
+					return A2(_user$project$Main$produserKupong, tips, ks);
+				},
+				kupongSetups);
+		});
+	return A2(
+		generateHelper,
+		tips,
+		A2(_user$project$Main$combineNrAndGardering, tips, _user$project$Model$toTreTreSetup));
+};
 var _user$project$Main$update = F2(
 	function (msg, model) {
-		var _p0 = msg;
-		switch (_p0.ctor) {
+		var _p7 = msg;
+		switch (_p7.ctor) {
 			case 'ClearKupong':
 				return {ctor: '_Tuple2', _0: _user$project$Main$init, _1: _elm_lang$core$Platform_Cmd$none};
 			case 'HUBMarking':
@@ -8615,7 +9633,7 @@ var _user$project$Main$update = F2(
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
-							kupong: A2(_user$project$Main$updateHUB, _p0._0, model.kupong)
+							kupong: A2(_user$project$Main$updateHUB, _p7._0, model.kupong)
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
@@ -8625,7 +9643,7 @@ var _user$project$Main$update = F2(
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
 						{
-							kupong: A2(_user$project$Main$updateSikkerhet, _p0._0, model.kupong)
+							kupong: A2(_user$project$Main$updateSikkerhet, _p7._0, model.kupong)
 						}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
