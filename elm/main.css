@@ -8,28 +8,36 @@
   width: 40px;
 }
 
-label > input[type="radio"] {
+input[type="radio"] {
     display:none;
 }
-label > input[type="radio"] {
+input[type="radio"] + label {
     display:inline-block;
-    width:30px;
-    height:30px;
-    /*margin:-2px 10px 0 0;*/
-    background: url('H.png') left top no-repeat;
+    width:40px;
+    height:40px;
+    margin:-2px 10px 0 0;
+
     vertical-align:middle;
     cursor:pointer;
 }
-label > input[type="radio"]:checked {
+input[type="radio"]:checked + label {
     display:inline-block;
-    width:30px;
-    height:30px;
-    /*margin:-2px 10px 0 0;*/
-    background: url('H.png') left top no-repeat;
+    width:40px;
+    height:40px;
+    margin:-2px 10px 0 0;
+    background: url('checked.png') left top no-repeat;
     vertical-align:middle;
     cursor:pointer;
 }
 
-.label {
+.label.H {
   background: url('H.png') left top no-repeat;
+}
+
+.label.U {
+  background: url('U.png') left top no-repeat;
+}
+
+.label.B {
+  background: url('B.png') left top no-repeat;
 }

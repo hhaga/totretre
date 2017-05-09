@@ -8984,67 +8984,6 @@ var _user$project$Main$init = {
 		_user$project$Model$gameNumbers),
 	resultatKuponger: {ctor: '[]'}
 };
-var _user$project$Main$kupongHeaderView = {
-	ctor: '::',
-	_0: A2(
-		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('number'),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html$text(' '),
-			_1: {ctor: '[]'}
-		}),
-	_1: {
-		ctor: '::',
-		_0: A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('leftcell marking'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html$text('H'),
-				_1: {ctor: '[]'}
-			}),
-		_1: {
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('middlecell marking'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('U'),
-					_1: {ctor: '[]'}
-				}),
-			_1: {
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('rightcell marking'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('B'),
-						_1: {ctor: '[]'}
-					}),
-				_1: {ctor: '[]'}
-			}
-		}
-	}
-};
 var _user$project$Main$marked = F3(
 	function (gameNumber, mark, kupong) {
 		var kamp = A2(
@@ -9297,13 +9236,49 @@ var _user$project$Main$tipsRowsView = F2(
 						_1: {
 							ctor: '::',
 							_0: A2(
-								_elm_lang$html$Html$label,
+								_elm_lang$html$Html$input,
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('label H'),
-									_1: {ctor: '[]'}
+									_0: _elm_lang$html$Html_Attributes$type_('radio'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(
+												_user$project$Model$HUBMarking(
+													{nr: gameNumber, sik: false, x: _user$project$Model$H})),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$id(
+													A2(_elm_lang$core$Basics_ops['++'], gameNumber, 'H')),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$checked(
+														A3(_user$project$Main$tipMarked, gameNumber, _user$project$Model$H, kupong)),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
 								},
-								{
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$label,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('label H'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$for(
+												A2(_elm_lang$core$Basics_ops['++'], gameNumber, 'H')),
+											_1: {ctor: '[]'}
+										}
+									},
+									{ctor: '[]'}),
+								_1: {
 									ctor: '::',
 									_0: A2(
 										_elm_lang$html$Html$input,
@@ -9317,43 +9292,11 @@ var _user$project$Main$tipsRowsView = F2(
 													ctor: '::',
 													_0: _elm_lang$html$Html_Events$onClick(
 														_user$project$Model$HUBMarking(
-															{nr: gameNumber, sik: false, x: _user$project$Model$H})),
+															{nr: gameNumber, sik: false, x: _user$project$Model$U})),
 													_1: {
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$checked(
-															A3(_user$project$Main$tipMarked, gameNumber, _user$project$Model$H, kupong)),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										},
-										{ctor: '[]'}),
-									_1: {ctor: '[]'}
-								}),
-							_1: {
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$label,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('label U'),
-										_1: {ctor: '[]'}
-									},
-									{
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$input,
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$type_('radio'),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$name(gameNumber),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Events$onClick(
-															_user$project$Model$HUBMarking(
-																{nr: gameNumber, sik: false, x: _user$project$Model$U})),
+														_0: _elm_lang$html$Html_Attributes$id(
+															A2(_elm_lang$core$Basics_ops['++'], gameNumber, 'U')),
 														_1: {
 															ctor: '::',
 															_0: _elm_lang$html$Html_Attributes$checked(
@@ -9362,20 +9305,25 @@ var _user$project$Main$tipsRowsView = F2(
 														}
 													}
 												}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$label,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('label U'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$for(
+														A2(_elm_lang$core$Basics_ops['++'], gameNumber, 'U')),
+													_1: {ctor: '[]'}
+												}
 											},
 											{ctor: '[]'}),
-										_1: {ctor: '[]'}
-									}),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$label,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('label B'),
-											_1: {ctor: '[]'}
-										},
-										{
+										_1: {
 											ctor: '::',
 											_0: A2(
 												_elm_lang$html$Html$input,
@@ -9392,37 +9340,58 @@ var _user$project$Main$tipsRowsView = F2(
 																	{nr: gameNumber, sik: false, x: _user$project$Model$B})),
 															_1: {
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$checked(
-																	A3(_user$project$Main$tipMarked, gameNumber, _user$project$Model$B, kupong)),
-																_1: {ctor: '[]'}
+																_0: _elm_lang$html$Html_Attributes$id(
+																	A2(_elm_lang$core$Basics_ops['++'], gameNumber, 'B')),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$checked(
+																		A3(_user$project$Main$tipMarked, gameNumber, _user$project$Model$B, kupong)),
+																	_1: {ctor: '[]'}
+																}
 															}
 														}
 													}
 												},
 												{ctor: '[]'}),
-											_1: {ctor: '[]'}
-										}),
-									_1: {
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$input,
-											{
+											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+												_0: A2(
+													_elm_lang$html$Html$label,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('label B'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$for(
+																A2(_elm_lang$core$Basics_ops['++'], gameNumber, 'B')),
+															_1: {ctor: '[]'}
+														}
+													},
+													{ctor: '[]'}),
 												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$name(gameNumber),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Events$onClick(
-															_user$project$Model$SikkerhetMarking(
-																{nr: gameNumber, sik: true, x: _user$project$Model$H})),
-														_1: {ctor: '[]'}
-													}
+													_0: A2(
+														_elm_lang$html$Html$input,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$name(gameNumber),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Events$onClick(
+																		_user$project$Model$SikkerhetMarking(
+																			{nr: gameNumber, sik: true, x: _user$project$Model$H})),
+																	_1: {ctor: '[]'}
+																}
+															}
+														},
+														{ctor: '[]'}),
+													_1: {ctor: '[]'}
 												}
-											},
-											{ctor: '[]'}),
-										_1: {ctor: '[]'}
+											}
+										}
 									}
 								}
 							}
@@ -9444,35 +9413,28 @@ var _user$project$Main$view = function (model) {
 			_0: A2(
 				_elm_lang$html$Html$div,
 				{ctor: '[]'},
-				_user$project$Main$kupongHeaderView),
+				A2(_user$project$Main$tipsRowsView, _user$project$Model$gameNumbers, model.kupong)),
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$div,
-					{ctor: '[]'},
-					A2(_user$project$Main$tipsRowsView, _user$project$Model$gameNumbers, model.kupong)),
+					_elm_lang$html$Html$button,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onClick(_user$project$Model$CreateAndShow),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Generer kuponger'),
+						_1: {ctor: '[]'}
+					}),
 				_1: {
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$button,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Events$onClick(_user$project$Model$CreateAndShow),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('Generer kuponger'),
-							_1: {ctor: '[]'}
-						}),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{ctor: '[]'},
-							A2(_user$project$Main$resultatKupongerRowsView, _user$project$Model$gameNumbers, model.resultatKuponger)),
-						_1: {ctor: '[]'}
-					}
+						_elm_lang$html$Html$div,
+						{ctor: '[]'},
+						A2(_user$project$Main$resultatKupongerRowsView, _user$project$Model$gameNumbers, model.resultatKuponger)),
+					_1: {ctor: '[]'}
 				}
 			}
 		});
