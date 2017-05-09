@@ -133,9 +133,9 @@ tipsRowsView gameNumbers kupong =
             (\gameNumber ->
                 div [ class "row" ]
                     [ div [ class "number" ] [ text gameNumber ]
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = H }), checked (tipMarked gameNumber H kupong) ] []
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = U }), checked (tipMarked gameNumber U kupong) ] []
-                    , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = B }), checked (tipMarked gameNumber B kupong) ] []
+                    , label [ class "label H" ] [ input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = H }), checked (tipMarked gameNumber H kupong) ] [] ]
+                    , label [ class "label U" ] [ input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = U }), checked (tipMarked gameNumber U kupong) ] [] ]
+                    , label [ class "label B" ] [ input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = B }), checked (tipMarked gameNumber B kupong) ] [] ]
                     , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }) ] []
                     ]
             )
