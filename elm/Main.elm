@@ -139,7 +139,8 @@ tipsRowsView gameNumbers kupong =
                     , label [ class "label U", for (gameNumber ++ "U") ] []
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = B }), id (gameNumber ++ "B"), checked (tipMarked gameNumber B kupong) ] []
                     , label [ class "label B", for (gameNumber ++ "B") ] []
-                    , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }) ] []
+                    , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }), id (gameNumber ++ "Sikker") ] []
+                    , label [ class "label Sikker", for (gameNumber ++ "Sikker") ] []
                     ]
             )
 
