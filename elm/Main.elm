@@ -139,8 +139,10 @@ tipsRowsView gameNumbers kupong =
                     , label [ class "label U", for (gameNumber ++ "U") ] []
                     , input [ type_ "radio", name gameNumber, onClick (HUBMarking { nr = gameNumber, sik = False, x = B }), id (gameNumber ++ "B"), checked (tipMarked gameNumber B kupong) ] []
                     , label [ class "label B", for (gameNumber ++ "B") ] []
-                    , input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }), id (gameNumber ++ "Sikker") ] []
-                    , label [ class "label Sikker", for (gameNumber ++ "Sikker") ] []
+                    , label [ class " switch", for (gameNumber ++ "Sikker") ]
+                        [ input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }), id (gameNumber ++ "Sikker") ] []
+                        , div [ class "slider round" ] []
+                        ]
                     ]
             )
 
@@ -164,9 +166,9 @@ resultatKupongerRowsView gameNumbers kuponger =
                         (\gameNumber ->
                             div [ class "row" ]
                                 [ div [ class "number" ] [ text gameNumber ]
-                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber H kupong.kampkryss) ] []
-                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber U kupong.kampkryss) ] []
-                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber B kupong.kampkryss) ] []
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber H kupong.kampkryss), disabled True ] []
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber U kupong.kampkryss), disabled True ] []
+                                , input [ type_ "checkbox", name gameNumber, checked (marked gameNumber B kupong.kampkryss), disabled True ] []
                                 ]
                         )
                         gameNumbers
