@@ -158,11 +158,11 @@ marked gameNumber mark kupong =
 
 resultatKupongerRowsView : List String -> List ResultatKupong -> List (Html Msg)
 resultatKupongerRowsView gameNumbers kuponger =
-    List.concat
-        (List.map
-            (\kupong ->
-                ([ div [] [ text kupong.kupongNr ] ]
-                    ++ List.map
+    List.map
+        (\kupong ->
+            (div [ class "kupong", id ("kupong" ++ kupong.kupongNr) ]
+                (div [] [ text kupong.kupongNr ]
+                    :: List.map
                         (\gameNumber ->
                             div [ class "row" ]
                                 [ div [ class "number" ] [ text gameNumber ]
@@ -174,8 +174,8 @@ resultatKupongerRowsView gameNumbers kuponger =
                         gameNumbers
                 )
             )
-            kuponger
         )
+        kuponger
 
 
 view : Model -> Html Msg
@@ -183,7 +183,7 @@ view model =
     div [ class "rows" ]
         [ div [] (tipsRowsView gameNumbers model.kupong)
         , button [ onClick CreateAndShow ] [ text "Generer kuponger" ]
-        , div [] (resultatKupongerRowsView gameNumbers model.resultatKuponger)
+        , div [ id "content" ] (resultatKupongerRowsView gameNumbers model.resultatKuponger)
         ]
 
 
