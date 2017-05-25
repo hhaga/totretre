@@ -8,6 +8,10 @@
   width: 40px;
 }
 
+.kupongNummer {
+  text-align: center;
+}
+
 .row {
   margin: 5px;
 }
@@ -107,4 +111,10 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+
+.kupong {
+  display: inline-block;
+  width: 10%;
 }

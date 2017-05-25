@@ -161,7 +161,7 @@ resultatKupongerRowsView gameNumbers kuponger =
     List.map
         (\kupong ->
             (div [ class "kupong", id ("kupong" ++ kupong.kupongNr) ]
-                (div [] [ text kupong.kupongNr ]
+                (div [ class "kupongNummer" ] [ text kupong.kupongNr ]
                     :: List.map
                         (\gameNumber ->
                             div [ class "row" ]
