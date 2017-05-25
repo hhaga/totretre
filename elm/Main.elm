@@ -143,6 +143,24 @@ tipsRowsView gameNumbers kupong =
                         [ input [ type_ "checkbox", name gameNumber, onClick (SikkerhetMarking { nr = gameNumber, sik = True, x = H }), id (gameNumber ++ "Sikker") ] []
                         , div [ class "slider round" ] []
                         ]
+                    , span
+                        [ class
+                            (if (List.member gameNumber (usikreKampNr kupong)) then
+                                ""
+                             else
+                                "hidden"
+                            )
+                        ]
+                        [ text "Utgangspunkt" ]
+                    , span
+                        [ class
+                            (if (List.member gameNumber (usikreKampNr kupong)) then
+                                "hidden"
+                             else
+                                ""
+                            )
+                        ]
+                        [ text "* Sikker" ]
                     ]
             )
 
@@ -181,8 +199,8 @@ resultatKupongerRowsView gameNumbers kuponger =
 view : Model -> Html Msg
 view model =
     div [ class "rows" ]
-        [ div [] (tipsRowsView gameNumbers model.kupong)
-        , button [ onClick CreateAndShow ] [ text "Generer kuponger" ]
+        [ div [ class "tip" ] (tipsRowsView gameNumbers model.kupong)
+        , button [ class "button", onClick CreateAndShow ] [ text "Generer kuponger" ]
         , div [ id "content" ] (resultatKupongerRowsView gameNumbers model.resultatKuponger)
         ]
 
