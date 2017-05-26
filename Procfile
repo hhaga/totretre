@@ -1,1 +1,2 @@
-web: bin/compile
+api: yarn api
+client: yarn client

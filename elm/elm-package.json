@@ -7,6 +7,11 @@
         "."
     ],
     "exposed-modules": [],
+    "scripts": {
+        "api": "node api.js",
+        "build": "webpack",
+        "client": "webpack-dev-server --port 3000"
+    },
     "dependencies": {
         "elm-lang/core": "5.1.1 <= v < 6.0.0",
         "elm-lang/html": "2.0.0 <= v < 3.0.0"
