@@ -1,1 +1,1 @@
-web: elm-reactor
+web: elm
