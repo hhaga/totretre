@@ -1,1 +1,1 @@
-web: https://totretre.herokuapp.com
+web: elm-app build
