@@ -2,7 +2,7 @@
     "name": "ToTreTre",
     "repository": "https://github.com/hhaga/totretre",
     "env": {
-        "ELM_COMPILE": "elm make elm/Main.elm --output main.js"
+        "ELM_COMPILE": "cd elm && elm make Main.elm --output main.js"
     },
     "buildpacks": [
         {
