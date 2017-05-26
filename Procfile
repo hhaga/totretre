@@ -1,1 +1,1 @@
-web: elm-app build
+web: elm-reactor
