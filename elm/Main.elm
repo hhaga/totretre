@@ -151,7 +151,7 @@ tipsRowsView gameNumbers kupong =
                                 "hidden"
                             )
                         ]
-                        [ text "Utgangspunkt" ]
+                        [ text "Utgangspunkt " ]
                     , span
                         [ class
                             (if (List.member gameNumber (usikreKampNr kupong)) then
