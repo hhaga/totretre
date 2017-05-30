@@ -9497,39 +9497,61 @@ var _user$project$Main$tipsRowsView = F2(
 var _user$project$Main$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('rows'),
-			_1: {ctor: '[]'}
-		},
+		{ctor: '[]'},
 		{
 			ctor: '::',
 			_0: A2(
 				_elm_lang$html$Html$div,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('tip'),
+					_0: _elm_lang$html$Html_Attributes$class('tip_site'),
 					_1: {ctor: '[]'}
 				},
-				A2(_user$project$Main$tipsRowsView, _user$project$Model$gameNumbers, model.kupong)),
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('tip'),
+							_1: {ctor: '[]'}
+						},
+						A2(_user$project$Main$tipsRowsView, _user$project$Model$gameNumbers, model.kupong)),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$button,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('button'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(_user$project$Model$CreateAndShow),
+									_1: {ctor: '[]'}
+								}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Generer kuponger'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}),
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$button,
+					_elm_lang$html$Html$iframe,
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('button'),
+						_0: _elm_lang$html$Html_Attributes$src('https://norsk-tipping.no/sport/tipping'),
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$html$Html_Events$onClick(_user$project$Model$CreateAndShow),
+							_0: _elm_lang$html$Html_Attributes$class('iframe'),
 							_1: {ctor: '[]'}
 						}
 					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('Generer kuponger'),
-						_1: {ctor: '[]'}
-					}),
+					{ctor: '[]'}),
 				_1: {
 					ctor: '::',
 					_0: A2(

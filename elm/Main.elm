@@ -198,9 +198,13 @@ resultatKupongerRowsView gameNumbers kuponger =
 
 view : Model -> Html Msg
 view model =
-    div [ class "rows" ]
-        [ div [ class "tip" ] (tipsRowsView gameNumbers model.kupong)
-        , button [ class "button", onClick CreateAndShow ] [ text "Generer kuponger" ]
+    div []
+        [ div [ class "tip_site" ]
+            [ div [ class "tip" ] (tipsRowsView gameNumbers model.kupong)
+            , button [ class "button", onClick CreateAndShow ] [ text "Generer kuponger" ]
+            ]
+        , iframe [ src "https://norsk-tipping.no/sport/tipping", class "iframe" ]
+            []
         , div [ id "content" ] (resultatKupongerRowsView gameNumbers model.resultatKuponger)
         ]
 

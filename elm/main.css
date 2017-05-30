@@ -12,6 +12,11 @@
   margin-right: 15px;
 }
 
+.tip_site {
+  float: left;
+  width: 33%;
+}
+
 .kupongNummer {
   text-align: center;
 }
@@ -139,4 +144,10 @@ input:checked + .slider:before {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+.iframe {
+  float: left;
+  width: 66%;
+  height: 700px;
 }
